@@ -31,4 +31,12 @@ public class validate {
             return false;
         }    
     }
+    public static boolean isPositiveOrZero(double n) {
+        return n >= 0;
+    }
+    
+    public static boolean isPositive(double n) {
+        return n > 0;
+    }
+    
 }
