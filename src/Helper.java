@@ -16,6 +16,8 @@ import org.jsoup.select.Elements;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Helper {
     
@@ -153,5 +155,5 @@ public class Helper {
         double val = Double.parseDouble(testNum);
         return val > 0;
     }
-    
+    //add numbers
 }
