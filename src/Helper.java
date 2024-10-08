@@ -155,5 +155,5 @@ public class Helper {
         double val = Double.parseDouble(testNum);
         return val > 0;
     }
-    //add numbers
+    //random stuff yeah
 }
