@@ -1,0 +1,6 @@
+Steps to pushing to the GitHub repo
+git pull origin master
+git status (optional, shows what files have been changed)
+git add . (or, instead of '.', put the specific file you changed)
+git commit -m "Input your message here!"
+git push origin master
