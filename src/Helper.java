@@ -109,5 +109,49 @@ public class Helper {
         System.out.printf(successMsg);
         return dict;
     }
+    //Tristan's Validated 
+    public static boolean Validated(String testVal, String testVal2, String testVal3)
+    {
+        //list
+        List<String> input = new ArrayList<>();
+        input.add(testVal);
+        input.add(testVal2);
+        input.add(testVal3);
+        boolean isValidated = true;
+        //loop      
+        for (int i = 0; i < 3; i++)
+        {
+            if (isNumber(input.get(i)))
+            {
+                isValidated = isPos(input.get(i));
+            }
+            else
+            {
+                isValidated = false;
+            }
+            
+        }
+            return isValidated;
+    }
+    //isNumber
+    public static boolean isNumber(String testNum)
+    {
+        try
+        {   
+            double val = Double.parseDouble(testNum);
+            return true;
+        }
+        catch(NumberFormatException e)
+        {
+            return false;
+        }
+        
+    }
+    //isPos
+    public static boolean isPos(String testNum)
+    {
+        double val = Double.parseDouble(testNum);
+        return val > 0;
+    }
     
 }
