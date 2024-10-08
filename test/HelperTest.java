@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 
+import java.util.Dictionary;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,51 +14,6 @@ import static org.junit.Assert.*;
 public class HelperTest {
     
     public HelperTest() {
-    }
-
-    /**
-     * Test of validatePositiveArray method, of class Helper.
-     */
-    @Test
-    public void testValidatePositiveArray() {
-        System.out.println("validatePositiveArray");
-        int[] array = {3, 6, 5};
-        int n = 3;
-        boolean expResult = true;
-        boolean result = Helper.validatePositiveArray(array, n);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isInRange method, of class Helper.
-     */
-    @Test
-    public void testIsInRange() {
-        System.out.println("isInRange");
-        int n = 5;
-        int low = 3;
-        int high = 7;
-        boolean expResult = true;
-        boolean result = Helper.isInRange(n, low, high);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isPalindrome method, of class Helper.
-     */
-    @Test
-    public void testIsPalindrome() {
-        System.out.println("isPalindrome");
-        String text = "abbc";
-        boolean expResult = false;
-        boolean result = Helper.isPalindrome(text);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
 
     /**
@@ -80,17 +36,26 @@ public class HelperTest {
     @Test
     public void testMonthlyPayment() {
         System.out.println("monthlyPayment");
-        double amount = 0.0;
-        double yearlyInterestRate = 0.0;
-        int numYears = 0;
-        double expResult = 0.0;
-        double result = Helper.monthlyPayment(amount, yearlyInterestRate, numYears);
+        double amount;
+        double yearlyInterestRate;
+        int numYears;
+        double expResult;
+        double result;
+        amount = 0.0;
+        yearlyInterestRate = 0.0;
+        numYears = 0;
+        expResult = -1;
+        result = Helper.monthlyPayment(amount, yearlyInterestRate, numYears);
         assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
         amount = 200000;
-        yearlyInterestRate = 6;
+        yearlyInterestRate = 0;
         numYears = 15;
+        expResult = 1111.11;
+        result = Helper.monthlyPayment(amount, yearlyInterestRate, numYears);
+        assertEquals(expResult, result, 0);
+        amount = 200000;
+        numYears = 15;
+        yearlyInterestRate = 6;
         expResult = 1687.71;
         result = Helper.monthlyPayment(amount, yearlyInterestRate, numYears);
         assertEquals(expResult, result, 0);
@@ -103,30 +68,48 @@ public class HelperTest {
     }
 
     /**
-     * Test of validateUserInput method, of class Helper.
+     * Test of isPositive method, of class Helper.
      */
     @Test
-    public void testValidateUserInput() {
-        System.out.println("validateUserInput");
+    public void testIsPositive() {
+        System.out.println("isPositive");
+        double num = 0.0;
         boolean expResult = false;
-        boolean result = Helper.validateUserInput();
+        boolean result = Helper.isPositive(num);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        num = 3.4;
+        expResult = true;
+        result = Helper.isPositive(num);
+        assertEquals(expResult, result);
     }
 
     /**
-     * Test of convertAnnualToMonthly method, of class Helper.
+     * Test of isPositiveZeroIncluded method, of class Helper.
      */
     @Test
-    public void testConvertAnnualToMonthly() {
-        System.out.println("convertAnnualToMonthly");
-        double yearlyInterestRate = 0.0;
-        double expResult = 0.0;
-        double result = Helper.convertAnnualToMonthly(yearlyInterestRate);
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+    public void testIsPositiveZeroIncluded() {
+        System.out.println("isPositiveZeroIncluded");
+        double num = 0.0;
+        boolean expResult = true;
+        boolean result = Helper.isPositiveZeroIncluded(num);
+        assertEquals(expResult, result);
+        num = -5.4;
+        expResult = false;
+        result = Helper.isPositiveZeroIncluded(num);
+        assertEquals(expResult, result);
     }
+
+    /**
+     * Test of webScraper method, of class Helper.
+     */
+//    @Test
+//    public void testWebScraper() {
+//        System.out.println("webScraper");
+//        Dictionary<String, Double> expResult = null;
+//        Dictionary<String, Double> result = Helper.webScraper();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }

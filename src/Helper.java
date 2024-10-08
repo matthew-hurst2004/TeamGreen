@@ -19,35 +19,14 @@ import java.util.Hashtable;
 
 public class Helper {
     
-    public static boolean validatePositiveArray(int[] array, int n)
+    public static boolean isPositive(double num)
     {
-        for (int i = 0; i < n; i++)
-        {
-            if (array[i] <= 0)
-            {
-                return false;
-            }
-        }
-        
-        return true;
+        return (num > 0);
     }
     
-    public static boolean isInRange(int n, int low, int high)
+    public static boolean isPositiveZeroIncluded(double num)
     {
-        return ((n >= low) && (n <= high));
-    }
-    
-    public static boolean isPalindrome(String text)
-    {
-        int length = text.length();
-        for (int i = 0; i <= (length / 2); i++)
-        {
-            if (text.charAt(i) != text.charAt(length-1-i))
-            {
-                return false;
-            }
-        }
-        return true;
+        return (num >= 0);
     }
     
     public static boolean isValidNumber(String num)
@@ -80,23 +59,17 @@ public class Helper {
         }
     }
     
-    public static boolean validateUserInput()
-    {
-        return false;
-    }
-    
-    public static double convertAnnualToMonthly(double yearlyInterestRate)
-    {
-        double temp = yearlyInterestRate + 1;
-        temp = Math.pow(temp, (1/12));
-        return temp - 1;
-    }
-    
     public static double monthlyPayment(double amount, double yearlyInterestRate, int numYears)
     {
-        if (numYears == 0)
+        // A return value of -1 indicates an error.
+        if (!isPositive(numYears) || !isPositiveZeroIncluded(yearlyInterestRate) || !isPositive(amount))
         {
-            return 0.0;
+            return -1;
+        }
+        
+        if (yearlyInterestRate == 0)
+        {
+            return Math.round((amount / (numYears * 12)) * 100.0) / 100.0;
         }
         
         double monthlyInterestRate = yearlyInterestRate / 1200;
