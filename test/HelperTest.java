@@ -94,6 +94,12 @@ public class HelperTest {
         expResult = 1687.71;
         result = Helper.monthlyPayment(amount, yearlyInterestRate, numYears);
         assertEquals(expResult, result, 0);
+        amount = 500000;
+        numYears = 30;
+        yearlyInterestRate = 8;
+        expResult = 3668.82;
+        result = Helper.monthlyPayment(amount, yearlyInterestRate, numYears);
+        assertEquals(expResult, result, 0);
     }
 
     /**
@@ -106,7 +112,7 @@ public class HelperTest {
         boolean result = Helper.validateUserInput();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
 
     /**
@@ -120,7 +126,7 @@ public class HelperTest {
         double result = Helper.convertAnnualToMonthly(yearlyInterestRate);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
     
 }
