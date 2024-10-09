@@ -41,20 +41,60 @@ public class parentInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         calculator1.setText("Clac1");
+        calculator1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator1MouseClicked(evt);
+            }
+        });
 
         calculator2.setText("Calc2");
+        calculator2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator2MouseClicked(evt);
+            }
+        });
 
         calculator3.setText("Calc3");
+        calculator3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator3MouseClicked(evt);
+            }
+        });
 
         calculator4.setText("Calc4");
+        calculator4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator4MouseClicked(evt);
+            }
+        });
 
         calculator5.setText("Calc5");
+        calculator5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator5MouseClicked(evt);
+            }
+        });
 
         calculator6.setText("Calc6");
+        calculator6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator6MouseClicked(evt);
+            }
+        });
 
         calculator7.setText("Calc7");
+        calculator7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator7MouseClicked(evt);
+            }
+        });
 
         calculator8.setText("Calc8");
+        calculator8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calculator8MouseClicked(evt);
+            }
+        });
 
         quitButton.setText("Quit");
         quitButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,22 +109,23 @@ public class parentInterface extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(125, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(calculator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calculator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calculator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calculator4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
-                .addGap(125, 125, 125)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(calculator5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calculator6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calculator7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calculator8, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
-                .addGap(125, 125, 125))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(quitButton)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(calculator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calculator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calculator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calculator4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addGap(125, 125, 125)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(calculator5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calculator6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calculator7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calculator8, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addGap(125, 125, 125))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(quitButton)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,6 +157,43 @@ public class parentInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(1);
     }//GEN-LAST:event_quitButtonMouseClicked
+
+    private void calculator1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator1MouseClicked
+        // TODO add your handling code here:
+        new Calc1().setVisible(true);
+
+    }//GEN-LAST:event_calculator1MouseClicked
+
+    private void calculator2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator2MouseClicked
+        // TODO add your handling code here:
+        new Calc2().setVisible(true);
+    }//GEN-LAST:event_calculator2MouseClicked
+
+    private void calculator3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator3MouseClicked
+        // TODO add your handling code here:
+        new Calc3().setVisible(true);
+    }//GEN-LAST:event_calculator3MouseClicked
+
+    private void calculator4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator4MouseClicked
+        // TODO add your handling code here:
+        new Calc4().setVisible(true);
+    }//GEN-LAST:event_calculator4MouseClicked
+
+    private void calculator5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator5MouseClicked
+        new Calc5().setVisible(true);
+    }//GEN-LAST:event_calculator5MouseClicked
+
+    private void calculator6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator6MouseClicked
+        new Calc6().setVisible(true);
+    }//GEN-LAST:event_calculator6MouseClicked
+
+    private void calculator7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator7MouseClicked
+        new Calc7().setVisible(true);
+    }//GEN-LAST:event_calculator7MouseClicked
+
+    private void calculator8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator8MouseClicked
+        new Calc8().setVisible(true);
+    }//GEN-LAST:event_calculator8MouseClicked
 
     /**
      * @param args the command line arguments
