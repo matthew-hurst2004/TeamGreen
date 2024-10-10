@@ -37,6 +37,7 @@ public class parentInterface extends javax.swing.JFrame {
         calculator7 = new javax.swing.JButton();
         calculator8 = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,6 +104,8 @@ public class parentInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,14 +127,20 @@ public class parentInterface extends javax.swing.JFrame {
                             .addComponent(calculator8, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
                         .addGap(125, 125, 125))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(185, 185, 185)
                         .addComponent(quitButton)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(quitButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(quitButton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(calculator1)
                     .addComponent(calculator5))
@@ -239,6 +248,7 @@ public class parentInterface extends javax.swing.JFrame {
     private javax.swing.JButton calculator6;
     private javax.swing.JButton calculator7;
     private javax.swing.JButton calculator8;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton quitButton;
     // End of variables declaration//GEN-END:variables
 }
