@@ -30,6 +30,7 @@ public class HelperTest {
         // fail("The test case is a prototype.");
     }
 
+    
     /**
      * Test of monthlyPayment method, of class Helper.
      */
