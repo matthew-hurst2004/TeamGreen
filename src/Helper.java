@@ -155,5 +155,14 @@ public class Helper {
         double val = Double.parseDouble(testNum);
         return val > 0;
     }
-    //random stuff yeah
+    //isNegative
+    public static boolean isNegative(String testNum)
+    {
+        double val = Double.parseDouble(testNum);
+        return val < 0;}
+    
+    public static boolean isNegativeOrZero(String testNum)
+    {
+        double val = Double.parseDouble(testNum);
+        return val <= 0;}
 }
