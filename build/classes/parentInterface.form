@@ -24,25 +24,27 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <EmptySpace pref="125" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="calculator1" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator2" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="calculator4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="calculator4" alignment="0" pref="120" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="calculator5" max="32767" attributes="0"/>
                           <Component id="calculator6" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator7" alignment="0" max="32767" attributes="0"/>
-                          <Component id="calculator8" alignment="0" max="32767" attributes="0"/>
+                          <Component id="calculator8" alignment="0" pref="120" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="jButton1" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                       <Component id="quitButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -53,8 +55,14 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="quitButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="quitButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="calculator1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="calculator5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -74,7 +82,7 @@
                   <Component id="calculator4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="calculator8" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="118" max="32767" attributes="0"/>
+              <EmptySpace pref="104" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,7 +90,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="calculator1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Currency Calculator "/>
+        <Property name="text" type="java.lang.String" value="Clac1"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator1MouseClicked"/>
@@ -90,7 +98,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Interest Calculator"/>
+        <Property name="text" type="java.lang.String" value="Calc2"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator2MouseClicked"/>
@@ -98,7 +106,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Auto Loan Calculator"/>
+        <Property name="text" type="java.lang.String" value="Calc3"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator3MouseClicked"/>
@@ -106,7 +114,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Rent vs Buy Calculator"/>
+        <Property name="text" type="java.lang.String" value="Calc4"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator4MouseClicked"/>
@@ -114,7 +122,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mortgage Calculator"/>
+        <Property name="text" type="java.lang.String" value="Calc5"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator5MouseClicked"/>
@@ -122,8 +130,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Refinance Calculator"/>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="text" type="java.lang.String" value="Calc6"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator6MouseClicked"/>
@@ -131,7 +138,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Roth IRA Calculator"/>
+        <Property name="text" type="java.lang.String" value="Calc7"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator7MouseClicked"/>
@@ -139,8 +146,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Down Payment Calculator"/>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="text" type="java.lang.String" value="Calc8"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator8MouseClicked"/>
@@ -153,6 +159,11 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="quitButtonMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
