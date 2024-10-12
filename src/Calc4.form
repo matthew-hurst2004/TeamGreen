@@ -26,100 +26,110 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="downPaymentLabel" max="32767" attributes="0"/>
-                      <Component id="testingHomePurchaseLabel" max="32767" attributes="0"/>
-                      <Component id="interestRateLabel" max="32767" attributes="0"/>
-                      <Component id="loanTermLabel" max="32767" attributes="0"/>
-                      <Component id="propertyTaxLabel" max="32767" attributes="0"/>
-                      <Component id="homeInsuraceLabel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                      <Component id="propertyTaxIncreaseLabel" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="buyingClosingCostsLabel" min="-2" pref="119" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="homePurchaseLabel" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="homePurchaseTestTextField" alignment="0" max="32767" attributes="0"/>
-                      <Component id="downPaymentTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="loanTermTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="propertyTaxTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="buyingClosingCosts" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="propertyTaxIncreaseTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="homeInsuranceTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="interestRateTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="jTextField19" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="jTextField17" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="jTextField18" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="jTextField21" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                  <Component id="jTextField20" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
-                      <Component id="closeButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="downPaymentLabel" max="32767" attributes="0"/>
+                              <Component id="testingHomePurchaseLabel" max="32767" attributes="0"/>
+                              <Component id="interestRateLabel" max="32767" attributes="0"/>
+                              <Component id="loanTermLabel" max="32767" attributes="0"/>
+                              <Component id="propertyTaxLabel" max="32767" attributes="0"/>
+                              <Component id="homeInsuraceLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="hoaFeeLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="maintenanceCostLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="homeValueAppreciationLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="propertyTaxIncreaseLabel" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="buyingClosingCostsLabel" min="-2" pref="119" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="homePurchaseTestTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="downPaymentTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="loanTermTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="propertyTaxTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="buyingClosingCosts" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="propertyTaxIncreaseTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="homeInsuranceTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="interestRateTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="homeValueAppreciationTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="hoaFeeTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="maintenanceCostTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="homePurchaseLabel" min="-2" pref="217" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="insuranceIncreaseLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="sellingClosingCostsLabel" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="sellingClosingCostsTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="InsuranceIncreaseTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="caclulateButton" min="-2" pref="165" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="clearButton" min="-2" pref="125" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="caclulateButton" min="-2" pref="165" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearButton" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="rentLabel" min="-2" pref="255" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="closeButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="testingHomeRentLabel" max="32767" attributes="0"/>
-                                  <Component id="jLabel12" alignment="0" pref="76" max="32767" attributes="0"/>
-                                  <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Component id="yourInfoLabel" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="testingHomeRentLabel" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="homeRentTestTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                           <Component id="jTextField5" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                                           <Component id="jTextField1" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="jTextField7" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="jTextField6" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="jTextField3" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="jTextField2" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="jTextField4" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="88" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="outPutLabel" min="-2" pref="108" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="rentLabel" min="-2" pref="128" max="-2" attributes="0"/>
-                                          <Component id="yourInfoLabel" min="-2" pref="128" max="-2" attributes="0"/>
-                                          <Component id="jTextField7" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Component id="jTextField6" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextField3" min="-2" pref="71" max="-2" attributes="0"/>
-                                                  <Component id="jTextField2" min="-2" pref="71" max="-2" attributes="0"/>
-                                                  <Component id="jTextField4" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane1" min="-2" pref="47" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jTextField8" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane1" min="-2" pref="47" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -127,112 +137,96 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-              <Component id="testingHomePurchaseLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="homePurchaseLabel" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="homePurchaseTestTextField" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="downPaymentTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="downPaymentLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="interestRateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="interestRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="loanTermTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="loanTermLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="buyingClosingCosts" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="buyingClosingCostsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="propertyTaxTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="propertyTaxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="propertyTaxIncreaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="propertyTaxIncreaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="homeInsuranceTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="homeInsuraceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField19" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="closeButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="outPutLabel" min="-2" pref="58" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="rentLabel" min="-2" pref="41" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="testingHomeRentLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="yourInfoLabel" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="homePurchaseLabel" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="rentLabel" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="closeButton" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="homePurchaseTestTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="testingHomeRentLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="homeRentTestTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="testingHomePurchaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="downPaymentTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="downPaymentLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="interestRateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="interestRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="loanTermTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="loanTermLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="buyingClosingCosts" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="buyingClosingCostsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="propertyTaxTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="propertyTaxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="propertyTaxIncreaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="propertyTaxIncreaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="homeInsuranceTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="homeInsuraceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="hoaFeeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hoaFeeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="maintenanceCostTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="maintenanceCostLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <Component id="yourInfoLabel" min="-2" pref="38" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -249,28 +243,42 @@
                               </Group>
                           </Group>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="homeValueAppreciationTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="homeValueAppreciationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="outPutLabel" min="-2" pref="58" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField20" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="clearButton" pref="56" max="32767" attributes="0"/>
                           <Component id="caclulateButton" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="InsuranceIncreaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="insuranceIncreaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="sellingClosingCostsTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="sellingClosingCostsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -293,16 +301,28 @@
     </Component>
     <Component class="javax.swing.JLabel" name="rentLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Home Rent"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="homePurchaseLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Home Purchase"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="yourInfoLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Your Information"/>
       </Properties>
     </Component>
@@ -336,7 +356,7 @@
         <Property name="text" type="java.lang.String" value="jTextField7"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
+    <Component class="javax.swing.JTextField" name="homeRentTestTextField">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -393,30 +413,15 @@
     </Component>
     <Component class="javax.swing.JTextField" name="homeInsuranceTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField17">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField17"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="hoaFeeTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField18">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField18"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="maintenanceCostTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField19">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField19"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="homeValueAppreciationTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField20">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField20"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="InsuranceIncreaseTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField21">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField21"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="sellingClosingCostsTextField">
     </Component>
     <Component class="javax.swing.JLabel" name="outPutLabel">
       <Properties>
@@ -468,29 +473,30 @@
         <Property name="text" type="java.lang.String" value="Home insurance&#x9;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="hoaFeeLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel7"/>
+        <Property name="text" type="java.lang.String" value="HOA fee"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="maintenanceCostLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel8"/>
+        <Property name="text" type="java.lang.String" value="Maintenance cost"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="homeValueAppreciationLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel9"/>
+        <Property name="text" type="java.lang.String" value="Home value appreciation"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="insuranceIncreaseLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel10"/>
+        <Property name="text" type="java.lang.String" value="Cost/insurance increase"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="sellingClosingCostsLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel11"/>
+        <Property name="text" type="java.lang.String" value="Selling closing costs"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
