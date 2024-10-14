@@ -30,12 +30,12 @@ public class Calc4 extends javax.swing.JFrame {
         rentLabel = new javax.swing.JLabel();
         homePurchaseLabel = new javax.swing.JLabel();
         yourInfoLabel = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        marginalStateTaxRateTextField = new javax.swing.JTextField();
+        averageInvestmentReturnTextField = new javax.swing.JTextField();
+        marginalFederalTaxRateTextField = new javax.swing.JTextField();
+        renterInsuranceTextField = new javax.swing.JTextField();
+        securityDepositTextField = new javax.swing.JTextField();
+        upfrontCostTextField = new javax.swing.JTextField();
         homeRentTestTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -69,12 +69,12 @@ public class Calc4 extends javax.swing.JFrame {
         insuranceIncreaseLabel = new javax.swing.JLabel();
         sellingClosingCostsLabel = new javax.swing.JLabel();
         rentalFeeIncreaseLabel = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        renterInsuranceLabel = new javax.swing.JLabel();
+        securityDepositLabel = new javax.swing.JLabel();
+        upfrontCostLabel = new javax.swing.JLabel();
+        averageInvestmentReturnLabel = new javax.swing.JLabel();
+        marginalFederalTaxRateLabel = new javax.swing.JLabel();
+        marginalStateTaxRateLabel = new javax.swing.JLabel();
         clearButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -115,18 +115,6 @@ public class Calc4 extends javax.swing.JFrame {
         yourInfoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         yourInfoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         yourInfoLabel.setText("Your Information");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
-
-        jTextField5.setText("jTextField5");
-
-        jTextField6.setText("jTextField6");
-
-        jTextField7.setText("jTextField7");
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -187,17 +175,17 @@ public class Calc4 extends javax.swing.JFrame {
 
         rentalFeeIncreaseLabel.setText("Rental fee increase");
 
-        jLabel13.setText("jLabel13");
+        renterInsuranceLabel.setText("Renter's insurance");
 
-        jLabel14.setText("jLabel14");
+        securityDepositLabel.setText("Security deposit");
 
-        jLabel15.setText("jLabel15");
+        upfrontCostLabel.setText("Upfront cost");
 
-        jLabel16.setText("jLabel16");
+        averageInvestmentReturnLabel.setText("Average investment return\t");
 
-        jLabel17.setText("jLabel17");
+        marginalFederalTaxRateLabel.setText("Marginal federal tax rate");
 
-        jLabel18.setText("jLabel18");
+        marginalStateTaxRateLabel.setText("Marginal state tax rate");
 
         clearButton.setText("Clear");
 
@@ -348,33 +336,33 @@ public class Calc4 extends javax.swing.JFrame {
                                     .addComponent(yourInfoLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(marginalFederalTaxRateLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(securityDepositLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(renterInsuranceLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(testingHomeRentLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(rentalFeeIncreaseLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(upfrontCostLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(averageInvestmentReturnLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(marginalStateTaxRateLabel))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(homeRentTestTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(renterInsuranceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel20))
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(upfrontCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(securityDepositTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(averageInvestmentReturnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(marginalStateTaxRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(marginalFederalTaxRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
@@ -484,33 +472,33 @@ public class Calc4 extends javax.swing.JFrame {
                             .addComponent(jLabel11))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
+                            .addComponent(renterInsuranceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(renterInsuranceLabel)
                             .addComponent(jLabel20))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14))
+                            .addComponent(securityDepositTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(securityDepositLabel))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15))
+                            .addComponent(upfrontCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(upfrontCostLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(yourInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16)
+                            .addComponent(averageInvestmentReturnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(averageInvestmentReturnLabel)
                             .addComponent(jLabel21))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
+                            .addComponent(marginalFederalTaxRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(marginalFederalTaxRateLabel)
                             .addComponent(jLabel22))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18)
+                            .addComponent(marginalStateTaxRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(marginalStateTaxRateLabel)
                             .addComponent(jLabel23))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -576,6 +564,8 @@ public class Calc4 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField InsuranceIncreaseTextField;
+    private javax.swing.JLabel averageInvestmentReturnLabel;
+    private javax.swing.JTextField averageInvestmentReturnTextField;
     private javax.swing.JTextField buyingClosingCosts;
     private javax.swing.JLabel buyingClosingCostsLabel;
     private javax.swing.JButton caclulateButton;
@@ -599,12 +589,6 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -621,16 +605,14 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel loanTermLabel;
     private javax.swing.JTextField loanTermTextField;
     private javax.swing.JLabel maintenanceCostLabel;
     private javax.swing.JTextField maintenanceCostTextField;
+    private javax.swing.JLabel marginalFederalTaxRateLabel;
+    private javax.swing.JTextField marginalFederalTaxRateTextField;
+    private javax.swing.JLabel marginalStateTaxRateLabel;
+    private javax.swing.JTextField marginalStateTaxRateTextField;
     private javax.swing.JLabel outPutLabel;
     private javax.swing.JLabel propertyTaxIncreaseLabel;
     private javax.swing.JTextField propertyTaxIncreaseTextField;
@@ -639,10 +621,16 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel rentLabel;
     private javax.swing.JLabel rentalFeeIncreaseLabel;
     private javax.swing.JTextField rentalFeeIncreaseTextField;
+    private javax.swing.JLabel renterInsuranceLabel;
+    private javax.swing.JTextField renterInsuranceTextField;
+    private javax.swing.JLabel securityDepositLabel;
+    private javax.swing.JTextField securityDepositTextField;
     private javax.swing.JLabel sellingClosingCostsLabel;
     private javax.swing.JTextField sellingClosingCostsTextField;
     private javax.swing.JLabel testingHomePurchaseLabel;
     private javax.swing.JLabel testingHomeRentLabel;
+    private javax.swing.JLabel upfrontCostLabel;
+    private javax.swing.JTextField upfrontCostTextField;
     private javax.swing.JLabel yourInfoLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -142,37 +142,37 @@
                                   <Component id="yourInfoLabel" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel17" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel14" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel13" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="marginalFederalTaxRateLabel" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="securityDepositLabel" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="renterInsuranceLabel" alignment="1" max="32767" attributes="0"/>
                                           <Component id="testingHomeRentLabel" alignment="1" max="32767" attributes="0"/>
                                           <Component id="rentalFeeIncreaseLabel" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel15" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel18" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="upfrontCostLabel" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="averageInvestmentReturnLabel" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="marginalStateTaxRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="homeRentTestTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField5" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <Component id="renterInsuranceTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jTextField7" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Component id="jTextField6" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="upfrontCostTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="securityDepositTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Component id="jTextField3" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <Component id="averageInvestmentReturnTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel21" min="-2" pref="43" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jTextField2" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <Component id="marginalStateTaxRateTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel23" min="-2" pref="43" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField4" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <Component id="marginalFederalTaxRateTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel22" min="-2" pref="43" max="-2" attributes="0"/>
                                           </Group>
@@ -314,38 +314,38 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="renterInsuranceTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="renterInsuranceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="securityDepositTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="securityDepositLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="upfrontCostTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="upfrontCostLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="yourInfoLabel" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="averageInvestmentReturnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="averageInvestmentReturnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="marginalFederalTaxRateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="marginalFederalTaxRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="marginalStateTaxRateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="marginalStateTaxRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -399,35 +399,17 @@
         <Property name="text" type="java.lang.String" value="Your Information"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="marginalStateTaxRateTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="averageInvestmentReturnTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="marginalFederalTaxRateTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField5"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="renterInsuranceTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField6"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="securityDepositTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField7"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="upfrontCostTextField">
     </Component>
     <Component class="javax.swing.JTextField" name="homeRentTestTextField">
     </Component>
@@ -577,34 +559,34 @@
         <Property name="text" type="java.lang.String" value="Rental fee increase"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="renterInsuranceLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel13"/>
+        <Property name="text" type="java.lang.String" value="Renter&apos;s insurance"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
+    <Component class="javax.swing.JLabel" name="securityDepositLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel14"/>
+        <Property name="text" type="java.lang.String" value="Security deposit"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
+    <Component class="javax.swing.JLabel" name="upfrontCostLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel15"/>
+        <Property name="text" type="java.lang.String" value="Upfront cost"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="averageInvestmentReturnLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel16"/>
+        <Property name="text" type="java.lang.String" value="Average investment return&#x9;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel17">
+    <Component class="javax.swing.JLabel" name="marginalFederalTaxRateLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel17"/>
+        <Property name="text" type="java.lang.String" value="Marginal federal tax rate"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel18">
+    <Component class="javax.swing.JLabel" name="marginalStateTaxRateLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel18"/>
+        <Property name="text" type="java.lang.String" value="Marginal state tax rate"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="clearButton">
