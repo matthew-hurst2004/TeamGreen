@@ -24,14 +24,22 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+<<<<<<< HEAD
+              <EmptySpace pref="73" max="32767" attributes="0"/>
+=======
               <EmptySpace pref="115" max="32767" attributes="0"/>
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="calculator1" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator2" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator3" alignment="0" max="32767" attributes="0"/>
+<<<<<<< HEAD
+                          <Component id="calculator4" alignment="0" max="32767" attributes="0"/>
+=======
                           <Component id="rentVsBuyCalculator" alignment="0" max="32767" attributes="0"/>
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
                       </Group>
                       <EmptySpace pref="125" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -82,7 +90,11 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="calculator1">
       <Properties>
+<<<<<<< HEAD
+        <Property name="text" type="java.lang.String" value="Down Payment Calculator"/>
+=======
         <Property name="text" type="java.lang.String" value="Currency Calculator "/>
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator1MouseClicked"/>
