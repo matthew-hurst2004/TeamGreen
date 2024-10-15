@@ -139,6 +139,12 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
+        downPaymentTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                downPaymentTextFieldKeyTyped(evt);
+            }
+        });
+
         buyingClosingCosts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buyingClosingCostsActionPerformed(evt);
@@ -377,9 +383,9 @@ public class Calc4 extends javax.swing.JFrame {
                                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(upfrontCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(outputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(closeButton, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -537,6 +543,11 @@ public class Calc4 extends javax.swing.JFrame {
     private void homePurchaseTestTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homePurchaseTestTextFieldKeyTyped
         Helper.consumeNotNumbersAllowDecimal(homePurchaseTestTextField, evt);
     }//GEN-LAST:event_homePurchaseTestTextFieldKeyTyped
+
+    private void downPaymentTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_downPaymentTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(downPaymentTextField, evt);
+        
+    }//GEN-LAST:event_downPaymentTextFieldKeyTyped
 
     /**
      * @param args the command line arguments
