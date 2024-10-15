@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <EmptySpace pref="118" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -33,14 +33,14 @@
                           <Component id="calculator3" alignment="0" max="32767" attributes="0"/>
                           <Component id="rentVsBuyCalculator" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="125" max="32767" attributes="0"/>
+                      <EmptySpace pref="127" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="calculator5" max="32767" attributes="0"/>
                           <Component id="calculator6" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator7" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator8" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                      <EmptySpace pref="117" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="quitButton" min="-2" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="calculator1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Currency Calculator "/>
+        <Property name="text" type="java.lang.String" value="Down Payment Calculator"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator1MouseClicked"/>
@@ -139,7 +139,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="calculator8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Down Payment Calculator"/>
+        <Property name="text" type="java.lang.String" value="Currency Calculator"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
