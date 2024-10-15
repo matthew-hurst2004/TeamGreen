@@ -136,53 +136,51 @@
                               <Component id="rentLabel" min="-2" pref="255" max="-2" attributes="0"/>
                               <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                              <Component id="yourInfoLabel" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="marginalFederalTaxRateLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="securityDepositLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="renterInsuranceLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="testingHomeRentLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="rentalFeeIncreaseLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="upfrontCostLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="averageInvestmentReturnLabel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="marginalStateTaxRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="yourInfoLabel" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="marginalFederalTaxRateLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="securityDepositLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="renterInsuranceLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="testingHomeRentLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="rentalFeeIncreaseLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="upfrontCostLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="averageInvestmentReturnLabel" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="marginalStateTaxRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="homeRentTestTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="renterInsuranceTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="homeRentTestTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="renterInsuranceTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="securityDepositTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="averageInvestmentReturnTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel21" min="-2" pref="43" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="marginalStateTaxRateTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel23" min="-2" pref="43" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="marginalFederalTaxRateTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel22" min="-2" pref="43" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="rentalFeeIncreaseTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel11" min="-2" pref="65" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="upfrontCostTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="outputLabel" min="-2" pref="187" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Component id="securityDepositTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="averageInvestmentReturnTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel21" min="-2" pref="43" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="marginalStateTaxRateTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel23" min="-2" pref="43" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="marginalFederalTaxRateTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel22" min="-2" pref="43" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="rentalFeeIncreaseTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel11" min="-2" pref="65" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="upfrontCostTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="outputLabel" min="-2" pref="187" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -449,6 +447,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="loanTermTextField">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="loanTermTextFieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="propertyTaxTextField">
     </Component>
@@ -461,7 +462,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="interestRateTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="interestRateTextFieldActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="interestRateTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="homeInsuranceTextField">
