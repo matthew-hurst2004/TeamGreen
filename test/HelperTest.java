@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 
+import java.awt.event.KeyEvent;
 import java.util.Dictionary;
+import javax.swing.JTextField;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,6 +32,7 @@ public class HelperTest {
         // fail("The test case is a prototype.");
     }
 
+    
     /**
      * Test of monthlyPayment method, of class Helper.
      */
