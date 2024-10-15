@@ -31,7 +31,7 @@
                           <Component id="calculator1" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator2" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="calculator4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="rentVsBuyCalculator" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -71,7 +71,7 @@
               </Group>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="calculator4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rentVsBuyCalculator" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="calculator8" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="118" max="32767" attributes="0"/>
@@ -104,12 +104,12 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator3MouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="calculator4">
+    <Component class="javax.swing.JButton" name="rentVsBuyCalculator">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rent vs Buy Calculator"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calculator4MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rentVsBuyCalculatorMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="calculator5">
