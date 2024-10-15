@@ -3,11 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Projects/School/Software_Design/Java/HealthTracker/test/HelperTest.java</file>
             <file>file:/C:/Projects/School/Software_Design/Java/HealthTracker/src/Helper.java</file>
             <file>file:/C:/Projects/School/Software_Design/Java/HealthTracker/src/parentInterface.java</file>
             <file>file:/C:/Projects/School/Software_Design/Java/HealthTracker/validate.java</file>
             <file>file:/C:/Projects/School/Software_Design/Java/HealthTracker/src/Calc1.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Green%20Team%20project/TeamGreen/src/parentInterface.java</file>
+=======
+            <file>file:/C:/Genral%20school%20work/software%20dev/greenProject/greenTeam%20personal/TeamGreen/src/Calc4.java</file>
+            <file>file:/C:/Genral%20school%20work/software%20dev/greenProject/greenTeam%20personal/TeamGreen/src/Helper.java</file>
+            <file>file:/C:/Genral%20school%20work/software%20dev/greenProject/greenTeam%20personal/TeamGreen/src/parentInterface.java</file>
+>>>>>>> 3b4f89bb7a06fb91cda4b0d0f0649182a72c4f6a
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
         </group>
     </open-files>
 </project-private>

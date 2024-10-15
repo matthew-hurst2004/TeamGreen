@@ -31,66 +31,71 @@ public class parentInterface extends javax.swing.JFrame {
         calculator1 = new javax.swing.JButton();
         calculator2 = new javax.swing.JButton();
         calculator3 = new javax.swing.JButton();
-        calculator4 = new javax.swing.JButton();
+        rentVsBuyCalculator = new javax.swing.JButton();
         calculator5 = new javax.swing.JButton();
         calculator6 = new javax.swing.JButton();
         calculator7 = new javax.swing.JButton();
         calculator8 = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD
         calculator1.setText("Down Payment Calculator");
+=======
+        calculator1.setText("Currency Calculator ");
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
         calculator1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator1MouseClicked(evt);
             }
         });
 
-        calculator2.setText("Calc2");
+        calculator2.setText("Interest Calculator");
         calculator2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator2MouseClicked(evt);
             }
         });
 
-        calculator3.setText("Calc3");
+        calculator3.setText("Auto Loan Calculator");
         calculator3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator3MouseClicked(evt);
             }
         });
 
-        calculator4.setText("Calc4");
-        calculator4.addMouseListener(new java.awt.event.MouseAdapter() {
+        rentVsBuyCalculator.setText("Rent vs Buy Calculator");
+        rentVsBuyCalculator.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                calculator4MouseClicked(evt);
+                rentVsBuyCalculatorMouseClicked(evt);
             }
         });
 
-        calculator5.setText("Calc5");
+        calculator5.setText("Mortgage Calculator");
         calculator5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator5MouseClicked(evt);
             }
         });
 
-        calculator6.setText("Calc6");
+        calculator6.setText("Refinance Calculator");
+        calculator6.setToolTipText("");
         calculator6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator6MouseClicked(evt);
             }
         });
 
-        calculator7.setText("Calc7");
+        calculator7.setText("Roth IRA Calculator");
         calculator7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator7MouseClicked(evt);
             }
         });
 
-        calculator8.setText("Calc8");
+        calculator8.setText("Down Payment Calculator");
+        calculator8.setToolTipText("");
         calculator8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculator8MouseClicked(evt);
@@ -104,43 +109,43 @@ public class parentInterface extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(73, Short.MAX_VALUE)
+=======
+                .addContainerGap(115, Short.MAX_VALUE)
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(calculator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(calculator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(calculator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
                             .addComponent(calculator4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                            .addComponent(rentVsBuyCalculator, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> e01acf814d063c6097ef153d917206b167ae2a9b
                         .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(calculator5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(calculator6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(calculator7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(calculator8, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
-                        .addGap(125, 125, 125))
+                            .addComponent(calculator8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(115, 115, 115))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(185, 185, 185)
                         .addComponent(quitButton)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(quitButton)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(quitButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(calculator1)
                     .addComponent(calculator5))
@@ -154,9 +159,9 @@ public class parentInterface extends javax.swing.JFrame {
                     .addComponent(calculator7))
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calculator4)
+                    .addComponent(rentVsBuyCalculator)
                     .addComponent(calculator8))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,10 +188,10 @@ public class parentInterface extends javax.swing.JFrame {
         new Calc3().setVisible(true);
     }//GEN-LAST:event_calculator3MouseClicked
 
-    private void calculator4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator4MouseClicked
+    private void rentVsBuyCalculatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rentVsBuyCalculatorMouseClicked
         // TODO add your handling code here:
         new Calc4().setVisible(true);
-    }//GEN-LAST:event_calculator4MouseClicked
+    }//GEN-LAST:event_rentVsBuyCalculatorMouseClicked
 
     private void calculator5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculator5MouseClicked
         new Calc5().setVisible(true);
@@ -243,12 +248,11 @@ public class parentInterface extends javax.swing.JFrame {
     private javax.swing.JButton calculator1;
     private javax.swing.JButton calculator2;
     private javax.swing.JButton calculator3;
-    private javax.swing.JButton calculator4;
     private javax.swing.JButton calculator5;
     private javax.swing.JButton calculator6;
     private javax.swing.JButton calculator7;
     private javax.swing.JButton calculator8;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton quitButton;
+    private javax.swing.JButton rentVsBuyCalculator;
     // End of variables declaration//GEN-END:variables
 }
