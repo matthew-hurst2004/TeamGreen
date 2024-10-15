@@ -157,24 +157,18 @@ public class Helper {
         double val = Double.parseDouble(testNum);
         return val > 0;
     }
-    //isNegative
-    public static boolean isNegative(String testNum)
-    {
-        double val = Double.parseDouble(testNum);
-        return val < 0;}
     
-    public static boolean isNegativeOrZero(String testNum)
-    {
-        double val = Double.parseDouble(testNum);
-        return val <= 0;}
-
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
             evt.consume();
-        else if (c == '.' && textField.getText().contains("."))   {
-        evt.consume();
+        else if (c == '.' && textField.getText().contains("."))   {    
+            evt.consume();
         }
+        String userInput = textField.getText();
+        int nums = userInput.length();
+        if (nums > 12)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+            evt.consume();
     }
     
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 

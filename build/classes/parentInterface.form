@@ -33,14 +33,14 @@
                           <Component id="calculator3" alignment="0" max="32767" attributes="0"/>
                           <Component id="rentVsBuyCalculator" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                      <EmptySpace pref="125" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="calculator5" max="32767" attributes="0"/>
                           <Component id="calculator6" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator7" alignment="0" max="32767" attributes="0"/>
                           <Component id="calculator8" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace pref="115" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="quitButton" min="-2" max="-2" attributes="0"/>
