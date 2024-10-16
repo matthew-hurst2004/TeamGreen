@@ -107,6 +107,12 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
+        rentalFeeIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                rentalFeeIncreaseTextFieldKeyTyped(evt);
+            }
+        });
+
         rentLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rentLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rentLabel.setText("Home Rent");
@@ -118,6 +124,42 @@ public class Calc4 extends javax.swing.JFrame {
         yourInfoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         yourInfoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         yourInfoLabel.setText("Your Information");
+
+        marginalStateTaxRateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                marginalStateTaxRateTextFieldKeyTyped(evt);
+            }
+        });
+
+        averageInvestmentReturnTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                averageInvestmentReturnTextFieldKeyTyped(evt);
+            }
+        });
+
+        marginalFederalTaxRateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                marginalFederalTaxRateTextFieldKeyTyped(evt);
+            }
+        });
+
+        renterInsuranceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                renterInsuranceTextFieldKeyTyped(evt);
+            }
+        });
+
+        securityDepositTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                securityDepositTextFieldKeyTyped(evt);
+            }
+        });
+
+        upfrontCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                upfrontCostTextFieldKeyTyped(evt);
+            }
+        });
 
         homeRentTestTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -653,8 +695,36 @@ public class Calc4 extends javax.swing.JFrame {
     }//GEN-LAST:event_sellingClosingCostsTextFieldKeyTyped
 
     private void homeRentTestTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeRentTestTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(sellingClosingCostsTextField, evt);
+        Helper.consumeNotNumbersAllowDecimal(homeRentTestTextField, evt);
     }//GEN-LAST:event_homeRentTestTextFieldKeyTyped
+
+    private void rentalFeeIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rentalFeeIncreaseTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimalAndNeg(rentalFeeIncreaseTextField, evt);
+    }//GEN-LAST:event_rentalFeeIncreaseTextFieldKeyTyped
+
+    private void renterInsuranceTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_renterInsuranceTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(renterInsuranceTextField, evt);
+    }//GEN-LAST:event_renterInsuranceTextFieldKeyTyped
+
+    private void securityDepositTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_securityDepositTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(securityDepositTextField, evt);
+    }//GEN-LAST:event_securityDepositTextFieldKeyTyped
+
+    private void upfrontCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_upfrontCostTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(upfrontCostTextField, evt);
+    }//GEN-LAST:event_upfrontCostTextFieldKeyTyped
+
+    private void averageInvestmentReturnTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_averageInvestmentReturnTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(averageInvestmentReturnTextField, evt);
+    }//GEN-LAST:event_averageInvestmentReturnTextFieldKeyTyped
+
+    private void marginalFederalTaxRateTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_marginalFederalTaxRateTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(marginalFederalTaxRateTextField, evt);
+    }//GEN-LAST:event_marginalFederalTaxRateTextFieldKeyTyped
+
+    private void marginalStateTaxRateTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_marginalStateTaxRateTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(marginalStateTaxRateTextField, evt);
+    }//GEN-LAST:event_marginalStateTaxRateTextFieldKeyTyped
 
     /**
      * @param args the command line arguments
