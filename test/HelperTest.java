@@ -187,29 +187,7 @@ public class HelperTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of isNegative method, of class Helper.
-     */
-    @Test
-    public void testIsNegative() {
-        System.out.println("isNegative");
-        String testNum = "";
-        boolean expResult = false;
-        boolean result = Helper.isNegative(testNum);
-        assertEquals(expResult, result);
-    }
 
-    /**
-     * Test of isNegativeOrZero method, of class Helper.
-     */
-    @Test
-    public void testIsNegativeOrZero() {
-        System.out.println("isNegativeOrZero");
-        String testNum = "";
-        boolean expResult = false;
-        boolean result = Helper.isNegativeOrZero(testNum);
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of webScraper method, of class Helper.

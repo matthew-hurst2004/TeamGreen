@@ -175,34 +175,34 @@ public class Helper {
         return val > 0;
     }
     
-    public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
+    public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
         char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
+        String userInput = textField.getText();
+        int userLength = userInput.length();        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
             evt.consume();
         else if (c == '.' && textField.getText().contains("."))   {    
             evt.consume();
         }
-        String userInput = textField.getText();
-        int nums = userInput.length();
-        if (nums > 12)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+
+        if (userLength > 12)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
             evt.consume();
     }
-    public static void consumeNotNumbersAllowDecimalandNeg (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Accepts one . and one -
-            evt.consume();
-        else if (c == '.' && textField.getText().contains("."))   {    
-            evt.consume();
-        }
-        else if (c == '-' && textField.getText().contains("-"))   {    
-            evt.consume();
-        }
-        
-        String userInput = textField.getText();
-        int nums = userInput.length();
-        if (nums > 12)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
-            evt.consume();
+    public static void consumeNotNumbersAllowDecimalandNeg (JTextField textField, KeyEvent evt) {// It has an issue where if numbers are already in the text field a negative cannot be added
+    char c = evt.getKeyChar();
+    String userInput = textField.getText();
+    int userLength = userInput.length();
+    if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE || c == '-')) {
+        evt.consume();
+    } else if (c == '.' && textField.getText().contains(".")) {
+        evt.consume();
+    } else if (c == '-' && textField.getText().length() > 0) {
+        evt.consume();
     }
+    
+    if (userLength >= 12) {
+        evt.consume();
+    }
+}
     
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();
