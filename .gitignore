@@ -1,4 +1,5 @@
-# nbproject/
-# build/
-# dist/
-# build.xml
+nbproject/
+build/
+dist/
+build.xml
+/build/

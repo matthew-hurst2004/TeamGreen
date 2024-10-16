@@ -103,6 +103,115 @@ public class HelperTest {
     }
 
     /**
+     * Test of formatDouble method, of class Helper.
+     */
+    @Test
+    public void testFormatDouble() {
+        System.out.println("formatDouble");
+        double value = 0.0;
+        String expResult = "0.00";
+        String result = Helper.formatDouble(value);
+        assertEquals(expResult, result);
+        value = 5.4;
+        expResult = "5.40";
+        result = Helper.formatDouble(value);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of calculateDownPaymentReturnString method, of class Helper.
+     */
+    @Test
+    public void testCalculateDownPaymentReturnString() {
+        System.out.println("calculateDownPaymentReturnString");
+        double homePrice = 500000;
+        double percentageDownPayment = 20;
+        double closingCosts = 15000;
+        String expResult = "115,000.00";
+        String result = Helper.calculateDownPaymentReturnString(homePrice, percentageDownPayment, closingCosts);
+        assertEquals(expResult, result);
+        homePrice = 400000;
+        percentageDownPayment = 20;
+        closingCosts = 25000;
+        expResult = "105,000.00";
+        result = Helper.calculateDownPaymentReturnString(homePrice, percentageDownPayment, closingCosts);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of webScraper method, of class Helper.
+     */
+    @Test
+    public void testWebScraper() {
+        System.out.println("webScraper");
+        Dictionary<String, Double> expResult = null;
+        Dictionary<String, Double> result = Helper.webScraper();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of Validated method, of class Helper.
+     */
+    @Test
+    public void testValidated() {
+        System.out.println("Validated");
+        String testVal = "";
+        String testVal2 = "";
+        String testVal3 = "";
+        boolean expResult = false;
+        boolean result = Helper.Validated(testVal, testVal2, testVal3);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of isNumber method, of class Helper.
+     */
+    @Test
+    public void testIsNumber() {
+        System.out.println("isNumber");
+        String testNum = "";
+        boolean expResult = false;
+        boolean result = Helper.isNumber(testNum);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of isPos method, of class Helper.
+     */
+    @Test
+    public void testIsPos() {
+        System.out.println("isPos");
+        String testNum = "";
+        boolean expResult = false;
+        boolean result = Helper.isPos(testNum);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of isNegative method, of class Helper.
+     */
+    @Test
+    public void testIsNegative() {
+        System.out.println("isNegative");
+        String testNum = "";
+        boolean expResult = false;
+        boolean result = Helper.isNegative(testNum);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of isNegativeOrZero method, of class Helper.
+     */
+    @Test
+    public void testIsNegativeOrZero() {
+        System.out.println("isNegativeOrZero");
+        String testNum = "";
+        boolean expResult = false;
+        boolean result = Helper.isNegativeOrZero(testNum);
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of webScraper method, of class Helper.
      */
 //    @Test
