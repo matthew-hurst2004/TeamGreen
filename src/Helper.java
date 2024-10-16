@@ -178,7 +178,8 @@ public class Helper {
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
         char c = evt.getKeyChar();
         String userInput = textField.getText();
-        int userLength = userInput.length();        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
+        int userLength = userInput.length();        
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
             evt.consume();
         else if (c == '.' && textField.getText().contains("."))   {    
             evt.consume();
@@ -187,7 +188,7 @@ public class Helper {
         if (userLength > 12)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
             evt.consume();
     }
-    public static void consumeNotNumbersAllowDecimalandNeg (JTextField textField, KeyEvent evt) {// It has an issue where if numbers are already in the text field a negative cannot be added
+    public static void consumeNotNumbersAllowDecimalAndNeg (JTextField textField, KeyEvent evt) {// It has an issue where if numbers are already in the text field a negative cannot be added
     char c = evt.getKeyChar();
     String userInput = textField.getText();
     int userLength = userInput.length();
