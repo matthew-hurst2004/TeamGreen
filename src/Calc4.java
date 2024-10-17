@@ -1,5 +1,6 @@
 
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -636,7 +637,11 @@ public class Calc4 extends javax.swing.JFrame {
     }//GEN-LAST:event_closeButtonMouseClicked
 
     private void caclulateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caclulateButtonMouseClicked
-        // TODO add your handling code here:
+    String homePurchaseString = homePurchaseTestTextField.getText();
+    double homePurchaseDouble = Double.parseDouble(homePurchaseString);
+
+    JOptionPane.showMessageDialog(null,"Sorry, be sure to enter a number in all necessary boxes.");
+    
     }//GEN-LAST:event_caclulateButtonMouseClicked
     public void keyTyped(KeyEvent evt) {
         Helper.consumeNotNumbersAllowDecimal(homePurchaseTestTextField, evt);
