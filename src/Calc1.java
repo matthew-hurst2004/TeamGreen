@@ -156,6 +156,13 @@ public class Calc1 extends javax.swing.JFrame {
         if (Helper.isValidNumber(homePriceString))
         {
             homePrice = Double.parseDouble(homePriceString);
+            if (homePrice == 0)
+            {
+                JOptionPane.showMessageDialog(this, "You must enter a non-zero home price!", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField1.requestFocus();
+                jTextField1.setText("$");
+                return;
+            }
         }
         
         else
