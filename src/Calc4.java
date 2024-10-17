@@ -639,8 +639,14 @@ public class Calc4 extends javax.swing.JFrame {
     private void caclulateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caclulateButtonMouseClicked
     String homePurchaseString = homePurchaseTestTextField.getText();
     double homePurchaseDouble = Double.parseDouble(homePurchaseString);
-
-    JOptionPane.showMessageDialog(null,"Sorry, be sure to enter a number in all necessary boxes.");
+    String homeRentString = homeRentTestTextField.getText();
+    double homeRentDouble = Double.parseDouble(homeRentString);
+    
+    double rentOverallRate = homeRentDouble;
+    
+    
+    
+    JOptionPane.showMessageDialog(null,"A great journeyh to the end was compeleted!!!");
     
     }//GEN-LAST:event_caclulateButtonMouseClicked
     public void keyTyped(KeyEvent evt) {
