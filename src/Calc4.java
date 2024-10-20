@@ -1,6 +1,8 @@
 
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -355,7 +357,7 @@ public class Calc4 extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel13.setText("Note: Any empty box will be seen as a zero. ");
+        jLabel13.setText("Note: Any empty box will be seen as a zero. Also commas won't be accepted ");
 
         jLabel14.setText("Not including first months rent");
 
@@ -647,20 +649,20 @@ public class Calc4 extends javax.swing.JFrame {
     // The doubles without comments are not put into the calculations
     double homeRentDouble = Double.parseDouble(homeRentTestTextField.getText());   // put into the calculations, not done
     double homePurchaseDouble; // put in to the calculations, not done
-    double downPaymentDouble;
-    double homeInterestRateDouble;
+    double downPaymentDouble; 
+    double homeInterestRateDouble; 
     double loanTermDouble;       
-    double buyingClosingCostsDouble;
+    double buyingClosingCostsDouble; 
     double homePropertyTaxDouble; //put in the calculations
     double propertyTaxIncreaseDouble; // put in the calculations
-    double homeInsuranceDouble; 
+    double homeInsuranceDouble; // put in the calculatoins
     double hoaFeeDouble; // put in the calculations
     double maintenanceCostDouble;
     double homeValueAppreciationDouble;
     double InsuranceIncreaseDouble; 
     double sellingClosingCostsDouble; 
     double rentalFeeIncreaseDouble; 
-    double renterInsuranceDouble;
+    double renterInsuranceDouble; // put in the calculations
     double securityDepositDouble; 
     double upfrontCostDouble; // Put into the calculations
     double averageInvestmentReturnDouble; 
@@ -811,25 +813,36 @@ public class Calc4 extends javax.swing.JFrame {
         outputLabel.setText("Purchasing the home is cheaper from the very first month");
         return;}
     
-    double rentOverallRate = homeRentDouble; // Add more here as expanding 
+    double rentOverallRate = homeRentDouble ; // Add more here as expanding 
     double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
     double homeBuildUp = homePurchaseDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0;
-    homePropertyTaxDouble = homePropertyTaxDouble * 100; // Converting to a decimal
-    propertyTaxIncreaseDouble = propertyTaxIncreaseDouble * 100; // Converting to a decimal
+    if (homePropertyTaxDouble != 0){
+        homePropertyTaxDouble = (1 + (homePropertyTaxDouble / 100)) / 12 ; // Converting to a decimal
+    }
+    else { 
+        homePropertyTaxDouble = 1;
+        }
+    propertyTaxIncreaseDouble = propertyTaxIncreaseDouble / 100; // Converting to a decimal
     
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) {
         outputLabel.setText("works");
-        rentBuildUp = rentBuildUp + rentOverallRate;
-        homeBuildUp = homeBuildUp + (hoaFeeDouble /12) + (homePropertyTaxDouble /12);
-        homePropertyTaxDouble = homePropertyTaxDouble + (propertyTaxIncreaseDouble / 12);
+        rentBuildUp = rentBuildUp + rentOverallRate + renterInsuranceDouble;
+        homeBuildUp = (homeBuildUp + (hoaFeeDouble /12) + (homeInsuranceDouble / 12)) * (homePropertyTaxDouble );
+        homePropertyTaxDouble = homePropertyTaxDouble + (propertyTaxIncreaseDouble / 12); // property tax increasing over time
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
     }
+    
+    
+    BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);
+    BigDecimal roundedYears = bd.setScale(2, RoundingMode.HALF_UP); // round the years to the second decimal place
+    
     if (monthsUntillRentMoreBuy <= 2400){
-        outputLabel.setText("Renting is cheaper for " + String.valueOf(monthsUntillRentMoreBuy) + " months");
+        outputLabel.setText("Renting is cheaper for " + String.valueOf(monthsUntillRentMoreBuy) + " months or " + String.valueOf(roundedYears) + " years" );
     }
     else {outputLabel.setText("Renting is cheaper for over 200 years and maybe for infinity. ");
     }
+    
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
     }//GEN-LAST:event_caclulateButtonMouseClicked
     public void keyTyped(KeyEvent evt) {

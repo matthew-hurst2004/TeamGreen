@@ -754,7 +754,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Note: Any empty box will be seen as a zero. "/>
+        <Property name="text" type="java.lang.String" value="Note: Any empty box will be seen as a zero. Also commas won&apos;t be accepted "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
