@@ -98,6 +98,7 @@ public class Calc4 extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -356,6 +357,8 @@ public class Calc4 extends javax.swing.JFrame {
 
         jLabel13.setText("Note: Any empty box will be seen as a zero. ");
 
+        jLabel14.setText("Not including first months rent");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -458,17 +461,12 @@ public class Calc4 extends javax.swing.JFrame {
                                             .addComponent(marginalStateTaxRateLabel))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(upfrontCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(homeRentTestTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(renterInsuranceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel20))
                                             .addComponent(securityDepositTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(rentalFeeIncreaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(marginalStateTaxRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -482,8 +480,16 @@ public class Calc4 extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 193, Short.MAX_VALUE))))
+                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(rentalFeeIncreaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(upfrontCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -598,7 +604,8 @@ public class Calc4 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(upfrontCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(upfrontCostLabel))
+                            .addComponent(upfrontCostLabel)
+                            .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(yourInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -644,8 +651,8 @@ public class Calc4 extends javax.swing.JFrame {
     double homeInterestRateDouble;
     double loanTermDouble;       
     double buyingClosingCostsDouble;
-    double homePropertyTax;
-    double propertyTaxIncreaseDouble;
+    double homePropertyTaxDouble; //put in the calculations
+    double propertyTaxIncreaseDouble; // put in the calculations
     double homeInsuranceDouble; 
     double hoaFeeDouble; // put in the calculations
     double maintenanceCostDouble;
@@ -655,7 +662,7 @@ public class Calc4 extends javax.swing.JFrame {
     double rentalFeeIncreaseDouble; 
     double renterInsuranceDouble;
     double securityDepositDouble; 
-    double upfrontCostDouble; 
+    double upfrontCostDouble; // Put into the calculations
     double averageInvestmentReturnDouble; 
     double marginalFederalTaxRateDouble; 
     double marginalStateTaxRateDouble; 
@@ -753,9 +760,9 @@ public class Calc4 extends javax.swing.JFrame {
     
     if (propertyTaxTextField.getText().equals("")) 
     {
-        homePropertyTax = 0;
+        homePropertyTaxDouble = 0;
     } else {
-        homePropertyTax = Double.parseDouble(propertyTaxTextField.getText());
+        homePropertyTaxDouble = Double.parseDouble(propertyTaxTextField.getText());
     }
     
     if (buyingClosingCosts.getText().equals("")) 
@@ -805,14 +812,17 @@ public class Calc4 extends javax.swing.JFrame {
         return;}
     
     double rentOverallRate = homeRentDouble; // Add more here as expanding 
-    double rentBuildUp = 0;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
+    double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
     double homeBuildUp = homePurchaseDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0;
+    homePropertyTaxDouble = homePropertyTaxDouble * 100; // Converting to a decimal
+    propertyTaxIncreaseDouble = propertyTaxIncreaseDouble * 100; // Converting to a decimal
     
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) {
         outputLabel.setText("works");
         rentBuildUp = rentBuildUp + rentOverallRate;
-        homeBuildUp = homeBuildUp + (hoaFeeDouble /12);
+        homeBuildUp = homeBuildUp + (hoaFeeDouble /12) + (homePropertyTaxDouble /12);
+        homePropertyTaxDouble = homePropertyTaxDouble + (propertyTaxIncreaseDouble / 12);
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
     }
     if (monthsUntillRentMoreBuy <= 2400){
@@ -978,6 +988,7 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
