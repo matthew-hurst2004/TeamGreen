@@ -637,16 +637,24 @@ public class Calc4 extends javax.swing.JFrame {
     }//GEN-LAST:event_closeButtonMouseClicked
 
     private void caclulateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caclulateButtonMouseClicked
-    double homePurchaseDouble = Double.parseDouble(homePurchaseTestTextField.getText()); 
     double homeRentDouble = Double.parseDouble(homeRentTestTextField.getText());   // list of implemented Rent, Purchse, HOA
+    double homePurchaseDouble;
+    double hoaFeeDouble;
+    
+    if (homePurchaseTestTextField.getText().equals("")) {
+        homePurchaseDouble = 0;
+    } else {
+        homePurchaseDouble = Double.parseDouble(homePurchaseTestTextField.getText());
+    }
     
     if (hoaFeeTextField.getText().equals("")){
-        double hoaFeeDouble = 0;   
+        hoaFeeDouble = 0;   
     }
     else{
-        double hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
+        hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
     }
-    if (homePurchaseDouble <= homeRentDouble){
+    
+    if (homePurchaseDouble <= homeRentDouble){ // Checks for an edge case of a home purchase being cheaper from the first day
         outputLabel.setText("Purchasing the home is cheaper from the very first month");
         return;}
     
@@ -663,7 +671,7 @@ public class Calc4 extends javax.swing.JFrame {
     if (monthsUntillRentMoreBuy <= 2400){
         outputLabel.setText("Renting is cheaper for " + String.valueOf(monthsUntillRentMoreBuy) + " months");
     }
-    else {outputLabel.setText("Renting is cheaper for over 200 years");
+    else {outputLabel.setText("Renting is cheaper for over 200 years and maybe for infinity. ");
     }
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
     }//GEN-LAST:event_caclulateButtonMouseClicked
