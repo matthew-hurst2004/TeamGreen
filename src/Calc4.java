@@ -637,11 +637,157 @@ public class Calc4 extends javax.swing.JFrame {
     }//GEN-LAST:event_closeButtonMouseClicked
 
     private void caclulateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caclulateButtonMouseClicked
-    double homeRentDouble = Double.parseDouble(homeRentTestTextField.getText());   // list of implemented Rent, Purchse, HOA
-    double homePurchaseDouble;
-    double hoaFeeDouble;
+    // The doubles without comments are not put into the calculations
+    double homeRentDouble = Double.parseDouble(homeRentTestTextField.getText());   // put into the calculations, not done
+    double homePurchaseDouble; // put in to the calculations, not done
+    double downPaymentDouble;
+    double homeInterestRateDouble;
+    double loanTermDouble;       
+    double buyingClosingCostsDouble;
+    double homePropertyTax;
+    double propertyTaxIncreaseDouble;
+    double homeInsuranceDouble; 
+    double hoaFeeDouble; // put in the calculations
+    double maintenanceCostDouble;
+    double homeValueAppreciationDouble;
+    double InsuranceIncreaseDouble; 
+    double sellingClosingCostsDouble; 
+    double rentalFeeIncreaseDouble; 
+    double renterInsuranceDouble;
+    double securityDepositDouble; 
+    double upfrontCostDouble; 
+    double averageInvestmentReturnDouble; 
+    double marginalFederalTaxRateDouble; 
+    double marginalStateTaxRateDouble; 
+   
+    if (marginalStateTaxRateTextField.getText().equals("")) 
+    {
+        marginalStateTaxRateDouble = 0;
+    } else {
+        marginalStateTaxRateDouble = Double.parseDouble(marginalStateTaxRateTextField.getText());
+    }                 
+      
+    if (marginalFederalTaxRateTextField.getText().equals("")) 
+    {
+        marginalFederalTaxRateDouble = 0;
+    } else {
+        marginalFederalTaxRateDouble = Double.parseDouble(marginalFederalTaxRateTextField.getText());
+    }                     
+            
+    if (averageInvestmentReturnTextField.getText().equals("")) 
+    {
+        averageInvestmentReturnDouble = 0;
+    } else {
+        averageInvestmentReturnDouble = Double.parseDouble(averageInvestmentReturnTextField.getText());
+    }                  
+            
+    if (upfrontCostTextField.getText().equals("")) 
+    {
+        upfrontCostDouble = 0;
+    } else {
+        upfrontCostDouble = Double.parseDouble(upfrontCostTextField.getText());
+    }                  
+     
+    if (securityDepositTextField.getText().equals("")) 
+    {
+        securityDepositDouble = 0;
+    } else {
+        securityDepositDouble = Double.parseDouble(securityDepositTextField.getText());
+    }                       
+            
+    if (renterInsuranceTextField.getText().equals("")) 
+    {
+        renterInsuranceDouble = 0;
+    } else {
+        renterInsuranceDouble = Double.parseDouble(renterInsuranceTextField.getText());
+    }                    
+            
+    if (rentalFeeIncreaseTextField.getText().equals("")) 
+    {
+        rentalFeeIncreaseDouble = 0;
+    } else {
+        rentalFeeIncreaseDouble = Double.parseDouble(rentalFeeIncreaseTextField.getText());
+    }        
+        
+    if (sellingClosingCostsTextField.getText().equals("")) 
+    {
+        sellingClosingCostsDouble = 0;
+    } else {
+        sellingClosingCostsDouble = Double.parseDouble(sellingClosingCostsTextField.getText());
+    }        
     
-    if (homePurchaseTestTextField.getText().equals("")) {
+    if (InsuranceIncreaseTextField.getText().equals("")) 
+    {
+        InsuranceIncreaseDouble = 0;
+    } else {
+        InsuranceIncreaseDouble = Double.parseDouble(InsuranceIncreaseTextField.getText());
+    }    
+    
+    if (homeValueAppreciationTextField.getText().equals("")) 
+    {
+        homeValueAppreciationDouble = 0;
+    } else {
+        homeValueAppreciationDouble = Double.parseDouble(homeValueAppreciationTextField.getText());
+    }
+    
+    if (maintenanceCostTextField.getText().equals("")) 
+    {
+        maintenanceCostDouble = 0;
+    } else {
+        maintenanceCostDouble = Double.parseDouble(maintenanceCostTextField.getText());
+    }
+    
+    if (homeInsuranceTextField.getText().equals("")) 
+    {
+        homeInsuranceDouble = 0;
+    } else {
+        homeInsuranceDouble = Double.parseDouble(homeInsuranceTextField.getText());
+    }
+    
+    if (propertyTaxIncreaseTextField.getText().equals("")) 
+    {
+        propertyTaxIncreaseDouble = 0;
+    } else {
+        propertyTaxIncreaseDouble = Double.parseDouble(propertyTaxIncreaseTextField.getText());
+    }
+    
+    if (propertyTaxTextField.getText().equals("")) 
+    {
+        homePropertyTax = 0;
+    } else {
+        homePropertyTax = Double.parseDouble(propertyTaxTextField.getText());
+    }
+    
+    if (buyingClosingCosts.getText().equals("")) 
+    {
+        buyingClosingCostsDouble = 0;
+    } else {
+        buyingClosingCostsDouble = Double.parseDouble(buyingClosingCosts.getText());
+    }
+    
+    if (loanTermTextField.getText().equals("")) 
+    {
+        loanTermDouble = 0;
+    } else {
+        loanTermDouble = Double.parseDouble(loanTermTextField.getText());
+    }
+    
+    if (interestRateTextField.getText().equals("")) 
+    {
+        homeInterestRateDouble = 0;
+    } else {
+        homeInterestRateDouble = Double.parseDouble(interestRateTextField.getText());
+    }
+            
+    if (downPaymentTextField.getText().equals("")) 
+    {
+        downPaymentDouble = 0;
+    } else {
+        downPaymentDouble = Double.parseDouble(downPaymentTextField.getText());
+    }
+    
+    if (homePurchaseTestTextField.getText().equals("")) 
+    {
         homePurchaseDouble = 0;
     } else {
         homePurchaseDouble = Double.parseDouble(homePurchaseTestTextField.getText());
@@ -666,6 +812,7 @@ public class Calc4 extends javax.swing.JFrame {
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) {
         outputLabel.setText("works");
         rentBuildUp = rentBuildUp + rentOverallRate;
+        homeBuildUp = homeBuildUp + (hoaFeeDouble /12);
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
     }
     if (monthsUntillRentMoreBuy <= 2400){
