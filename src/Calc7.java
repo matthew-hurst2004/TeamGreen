@@ -188,6 +188,26 @@ public class Calc7 extends javax.swing.JFrame {
     }//GEN-LAST:event_closeButtonMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // checks every textbox for a valid number 
+        if (! Helper.isValidNumber(jTextField6.getText())) {
+            jTextField6.setText(""); jTextField6.requestFocus();
+        }
+        if (! Helper.isValidNumber(jTextField5.getText())) {
+            jTextField5.setText(""); jTextField5.requestFocus();
+        }
+        if (! Helper.isValidNumber(jTextField4.getText())) {
+            jTextField4.setText(""); jTextField4.requestFocus();
+        }
+        if (! Helper.isValidNumber(jTextField3.getText())) {
+            jTextField3.setText(""); jTextField3.requestFocus();
+        }
+        if (! Helper.isValidNumber(jTextField2.getText())) {
+            jTextField2.setText(""); jTextField2.requestFocus();
+        }
+        if (! Helper.isValidNumber(jTextField6.getText())) {
+            jTextField1.setText(""); jTextField1.requestFocus();
+        }
+// checks for valid number when button is clicked
         if (Helper.isValidNumber(jTextField1.getText()) && (Helper.isValidNumber(jTextField2.getText())) && (Helper.isValidNumber(jTextField3.getText())) && (Helper.isValidNumber(jTextField4.getText())) && (Helper.isValidNumber(jTextField5.getText())) && (Helper.isValidNumber(jTextField6.getText()))) {
             jLabel9.setText("Valid");
         }
