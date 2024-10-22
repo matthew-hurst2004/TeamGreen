@@ -42,9 +42,9 @@ public class Calc4 extends javax.swing.JFrame {
         renterInsuranceTextField = new javax.swing.JTextField();
         securityDepositTextField = new javax.swing.JTextField();
         upfrontCostTextField = new javax.swing.JTextField();
-        homeRentTestTextField = new javax.swing.JTextField();
+        monthlyRentTextField = new javax.swing.JTextField();
         caclulateButton = new javax.swing.JButton();
-        homePurchaseTestTextField = new javax.swing.JTextField();
+        homePurchasePriceTextField = new javax.swing.JTextField();
         downPaymentTextField = new javax.swing.JTextField();
         loanTermTextField = new javax.swing.JTextField();
         propertyTaxTextField = new javax.swing.JTextField();
@@ -99,7 +99,7 @@ public class Calc4 extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
+        noteLabel = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -170,9 +170,9 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
-        homeRentTestTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        monthlyRentTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                homeRentTestTextFieldKeyTyped(evt);
+                monthlyRentTextFieldKeyTyped(evt);
             }
         });
 
@@ -183,9 +183,9 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
-        homePurchaseTestTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        homePurchasePriceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                homePurchaseTestTextFieldKeyTyped(evt);
+                homePurchasePriceTextFieldKeyTyped(evt);
             }
         });
 
@@ -263,9 +263,9 @@ public class Calc4 extends javax.swing.JFrame {
 
         outputLabel.setText("output");
 
-        testingHomeRentLabel.setText("rate ");
+        testingHomeRentLabel.setText("Monthly Rent ");
 
-        testingHomePurchaseLabel.setText("purchase");
+        testingHomePurchaseLabel.setText("Home Price");
 
         downPaymentLabel.setText("Down payment");
 
@@ -357,7 +357,7 @@ public class Calc4 extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel13.setText("Note: Any empty box will be seen as a zero. Also commas won't be accepted ");
+        noteLabel.setText("Note: Any empty box will be seen as a zero. Also commas won't be accepted ");
 
         jLabel14.setText("Not including first months rent");
 
@@ -388,7 +388,7 @@ public class Calc4 extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(homePurchaseTestTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(homePurchasePriceTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(downPaymentTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -463,7 +463,7 @@ public class Calc4 extends javax.swing.JFrame {
                                             .addComponent(marginalStateTaxRateLabel))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(homeRentTestTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(monthlyRentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(renterInsuranceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -502,7 +502,7 @@ public class Calc4 extends javax.swing.JFrame {
                                         .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(noteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(closeButton)))
                 .addContainerGap())
@@ -513,14 +513,14 @@ public class Calc4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeButton)
-                    .addComponent(jLabel13))
+                    .addComponent(noteLabel))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(homePurchaseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(homePurchaseTestTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(homePurchasePriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(testingHomePurchaseLabel))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -588,7 +588,7 @@ public class Calc4 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(testingHomeRentLabel)
-                            .addComponent(homeRentTestTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(monthlyRentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rentalFeeIncreaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -647,9 +647,9 @@ public class Calc4 extends javax.swing.JFrame {
 
     private void caclulateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caclulateButtonMouseClicked
     // The doubles without comments are not put into the calculations
-    double homeRentDouble = Double.parseDouble(homeRentTestTextField.getText());   // put into the calculations, not done
-    double homePurchaseDouble; // put in to the calculations, not done
-    double downPaymentDouble; 
+    double homeRentDouble = Double.parseDouble(monthlyRentTextField.getText());   // put into the calculations, not done
+    double homePriceDouble; // put in to the calculations, not done. shouln't be used all at once not done
+    double downPaymentDouble; // put in but not done
     double homeInterestRateDouble; 
     double loanTermDouble;       
     double buyingClosingCostsDouble; 
@@ -793,13 +793,14 @@ public class Calc4 extends javax.swing.JFrame {
         downPaymentDouble = 0;
     } else {
         downPaymentDouble = Double.parseDouble(downPaymentTextField.getText());
+        downPaymentDouble = downPaymentDouble / 100;
     }
     
-    if (homePurchaseTestTextField.getText().equals("")) 
+    if (homePurchasePriceTextField.getText().equals("")) 
     {
-        homePurchaseDouble = 0;
+        homePriceDouble = 0;
     } else {
-        homePurchaseDouble = Double.parseDouble(homePurchaseTestTextField.getText());
+        homePriceDouble = Double.parseDouble(homePurchasePriceTextField.getText());
     }
     
     if (hoaFeeTextField.getText().equals("")){
@@ -809,30 +810,31 @@ public class Calc4 extends javax.swing.JFrame {
         hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
     }
     
-    if (homePurchaseDouble <= homeRentDouble){ // Checks for an edge case of a home purchase being cheaper from the first day
+    if (homePriceDouble <= homeRentDouble){ // Checks for an edge case of a home purchase being cheaper from the first day
         outputLabel.setText("Purchasing the home is cheaper from the very first month");
         return;}
     
+    
     double rentOverallRate = homeRentDouble ; // Add more here as expanding 
     double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
-    double homeBuildUp = homePurchaseDouble; //This is also a flag but for the home
+    double homeBuildUp = homePriceDouble * downPaymentDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0;
     if (homePropertyTaxDouble != 0){
-        homePropertyTaxDouble = (1 + (homePropertyTaxDouble / 100)) / 12 ; // Converting to a decimal
+        homePropertyTaxDouble = ((homePropertyTaxDouble / 100) / 12) + 1 ; // Converting to a decimal and changes from yearly to monthly
     }
     else { 
         homePropertyTaxDouble = 1;
         }
     propertyTaxIncreaseDouble = propertyTaxIncreaseDouble / 100; // Converting to a decimal
+    double loanAmount = homePriceDouble - homeBuildUp; // This is the home price being subtracted by the down payment
     
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) {
         outputLabel.setText("works");
         rentBuildUp = rentBuildUp + rentOverallRate + renterInsuranceDouble;
-        homeBuildUp = (homeBuildUp + (hoaFeeDouble /12) + (homeInsuranceDouble / 12)) * (homePropertyTaxDouble );
+        homeBuildUp = (homeBuildUp + (hoaFeeDouble /12) + (homeInsuranceDouble / 12)) * (homePropertyTaxDouble);
         homePropertyTaxDouble = homePropertyTaxDouble + (propertyTaxIncreaseDouble / 12); // property tax increasing over time
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
     }
-    
     
     BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);
     BigDecimal roundedYears = bd.setScale(2, RoundingMode.HALF_UP); // round the years to the second decimal place
@@ -846,12 +848,12 @@ public class Calc4 extends javax.swing.JFrame {
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
     }//GEN-LAST:event_caclulateButtonMouseClicked
     public void keyTyped(KeyEvent evt) {
-        Helper.consumeNotNumbersAllowDecimal(homePurchaseTestTextField, evt);
+        Helper.consumeNotNumbersAllowDecimal(homePurchasePriceTextField, evt);
     }
 
-    private void homePurchaseTestTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homePurchaseTestTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(homePurchaseTestTextField, evt);
-    }//GEN-LAST:event_homePurchaseTestTextFieldKeyTyped
+    private void homePurchasePriceTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homePurchasePriceTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(homePurchasePriceTextField, evt);
+    }//GEN-LAST:event_homePurchasePriceTextFieldKeyTyped
 
     private void downPaymentTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_downPaymentTextFieldKeyTyped
         Helper.consumeNotNumbersAllowDecimal(downPaymentTextField, evt);
@@ -901,9 +903,9 @@ public class Calc4 extends javax.swing.JFrame {
         Helper.consumeNotNumbersAllowDecimal(sellingClosingCostsTextField, evt);
     }//GEN-LAST:event_sellingClosingCostsTextFieldKeyTyped
 
-    private void homeRentTestTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeRentTestTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(homeRentTestTextField, evt);
-    }//GEN-LAST:event_homeRentTestTextFieldKeyTyped
+    private void monthlyRentTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_monthlyRentTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(monthlyRentTextField, evt);
+    }//GEN-LAST:event_monthlyRentTextFieldKeyTyped
 
     private void rentalFeeIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rentalFeeIncreaseTextFieldKeyTyped
         Helper.consumeNotNumbersAllowDecimalAndNeg(rentalFeeIncreaseTextField, evt);
@@ -988,8 +990,7 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel homeInsuraceLabel;
     private javax.swing.JTextField homeInsuranceTextField;
     private javax.swing.JLabel homePurchaseLabel;
-    private javax.swing.JTextField homePurchaseTestTextField;
-    private javax.swing.JTextField homeRentTestTextField;
+    private javax.swing.JTextField homePurchasePriceTextField;
     private javax.swing.JLabel homeValueAppreciationLabel;
     private javax.swing.JTextField homeValueAppreciationTextField;
     private javax.swing.JLabel insuranceIncreaseLabel;
@@ -1000,7 +1001,6 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -1024,6 +1024,8 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JTextField marginalFederalTaxRateTextField;
     private javax.swing.JLabel marginalStateTaxRateLabel;
     private javax.swing.JTextField marginalStateTaxRateTextField;
+    private javax.swing.JTextField monthlyRentTextField;
+    private javax.swing.JLabel noteLabel;
     private javax.swing.JLabel outputLabel;
     private javax.swing.JLabel propertyTaxIncreaseLabel;
     private javax.swing.JTextField propertyTaxIncreaseTextField;

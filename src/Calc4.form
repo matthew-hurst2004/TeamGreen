@@ -48,7 +48,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="homePurchaseTestTextField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="homePurchasePriceTextField" alignment="0" max="32767" attributes="0"/>
                                           <Component id="downPaymentTextField" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -143,7 +143,7 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="homeRentTestTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="monthlyRentTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="renterInsuranceTextField" min="-2" pref="71" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -197,7 +197,7 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel13" min="-2" pref="563" max="-2" attributes="0"/>
+                      <Component id="noteLabel" min="-2" pref="563" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="closeButton" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -212,7 +212,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="closeButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="noteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -220,7 +220,7 @@
                       <Component id="homePurchaseLabel" min="-2" pref="41" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="homePurchaseTestTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="homePurchasePriceTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="testingHomePurchaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -302,7 +302,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="testingHomeRentLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="homeRentTestTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="monthlyRentTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -438,9 +438,9 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="upfrontCostTextFieldKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="homeRentTestTextField">
+    <Component class="javax.swing.JTextField" name="monthlyRentTextField">
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homeRentTestTextFieldKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="monthlyRentTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="caclulateButton">
@@ -451,9 +451,9 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="caclulateButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="homePurchaseTestTextField">
+    <Component class="javax.swing.JTextField" name="homePurchasePriceTextField">
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homePurchaseTestTextFieldKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homePurchasePriceTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="downPaymentTextField">
@@ -523,12 +523,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="testingHomeRentLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="rate "/>
+        <Property name="text" type="java.lang.String" value="Monthly Rent "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="testingHomePurchaseLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="purchase"/>
+        <Property name="text" type="java.lang.String" value="Home Price"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="downPaymentLabel">
@@ -752,7 +752,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="noteLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Note: Any empty box will be seen as a zero. Also commas won&apos;t be accepted "/>
       </Properties>
