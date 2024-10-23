@@ -57,7 +57,12 @@ public class Calc3 extends javax.swing.JFrame {
 
         jTextField4.setText("$");
 
-        jTextField5.setText("$");
+        jTextField5.setText("$0");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Calculate Monthly Payment");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -273,6 +278,10 @@ public class Calc3 extends javax.swing.JFrame {
         jLabel6.setText("You would owe $" + formattedAnswer + " a month.");
         jLabel6.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments
