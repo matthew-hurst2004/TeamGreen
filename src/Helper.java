@@ -79,7 +79,7 @@ public class Helper {
     {
         try
         {
-            return ((Helper.isValidNumber(num)) && (Double.parseDouble(num) < 100));
+            return ((Helper.isValidNumber(num)) && (Double.parseDouble(num) <= 100));
         }
         catch (NumberFormatException e)
         {
