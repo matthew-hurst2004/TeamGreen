@@ -287,6 +287,7 @@ public class Calc7 extends javax.swing.JFrame {
         // consume non-numbers and allow one decimal
         // checks each time a key is pressed
         Helper.consumeNotNumbersAllowDecimal(jTextField6, evt);
+        // hmmm trying something
     }//GEN-LAST:event_jTextField6KeyTyped
 
     /**
