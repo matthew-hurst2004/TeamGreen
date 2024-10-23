@@ -87,6 +87,13 @@ public class Helper {
         }
     }
     
+    public static double computeAutoLoan(double principal, double interestMonthly, double loanTermMonths)
+    {
+        double numerator = principal * (interestMonthly * Math.pow((1 + interestMonthly), loanTermMonths));
+        double denominator = (Math.pow((1+interestMonthly), loanTermMonths)) - 1;
+        return numerator / denominator;
+    }
+    
     public static double monthlyPayment(double amount, double yearlyInterestRate, int numYears)
     {
         // A return value of -1 indicates an error.

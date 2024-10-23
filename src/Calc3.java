@@ -267,9 +267,7 @@ public class Calc3 extends javax.swing.JFrame {
         double principal = carPrice - downPayment - tradeInValue;
         double interestBy100 = interestRate / 100;
         double interestMonthly = interestBy100 / 12;
-        double numerator = principal * (interestMonthly * Math.pow((1 + interestMonthly), loanTermMonths));
-        double denominator = (Math.pow((1+interestMonthly), loanTermMonths)) - 1;
-        double answer = numerator / denominator;
+        double answer = Helper.computeAutoLoan(principal, interestMonthly, loanTermMonths);
         String formattedAnswer = Helper.formatDouble(answer);
         
         jLabel6.setText("You would owe $" + formattedAnswer + " a month.");
