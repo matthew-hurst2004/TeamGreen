@@ -75,6 +75,18 @@ public class Helper {
         }
     }
     
+    public static boolean isValidPercentageUnderEq100(String num)
+    {
+        try
+        {
+            return ((Helper.isValidNumber(num)) && (Double.parseDouble(num) < 100));
+        }
+        catch (NumberFormatException e)
+        {
+            return false;
+        }
+    }
+    
     public static double monthlyPayment(double amount, double yearlyInterestRate, int numYears)
     {
         // A return value of -1 indicates an error.
