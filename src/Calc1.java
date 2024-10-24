@@ -53,7 +53,7 @@ public class Calc1 extends javax.swing.JFrame {
 
         jTextField1.setText("$");
 
-        jTextField3.setText("0");
+        jTextField3.setText("$0");
 
         jLabel2.setText("Home Price (without commas)");
 
@@ -148,6 +148,14 @@ public class Calc1 extends javax.swing.JFrame {
         String homePriceString = jTextField1.getText();
         String closingCostsString = jTextField3.getText();
         
+        if (homePriceString.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a home price!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.requestFocus();
+            jTextField1.setText("$");
+            return;
+        }
+        
         if (homePriceString.charAt(0) == '$')
         {
             homePriceString = homePriceString.substring(1);
@@ -176,6 +184,13 @@ public class Calc1 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField2.getText()))
         {
             percentage = Double.parseDouble(jTextField2.getText());
+            if (percentage >= 100)
+            {
+                JOptionPane.showMessageDialog(this, "If your down payment is 100% or over, you can afford the house in cash! Enter a smaller percentage!", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField2.requestFocus();
+                jTextField2.setText("");
+                return;
+            }
         }
         
         else
@@ -183,6 +198,14 @@ public class Calc1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "You must enter a positive numeric value for your percentage!", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField2.requestFocus();
             jTextField2.setText("");
+            return;
+        }
+        
+        if (closingCostsString.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "You must enter something for closing costs! Enter 0 if none.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField3.requestFocus();
+            jTextField3.setText("$0");
             return;
         }
         
@@ -200,7 +223,7 @@ public class Calc1 extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "You must enter a positive and numeric value for your closing costs!", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField3.requestFocus();
-            jTextField3.setText("0");
+            jTextField3.setText("$0");
             return;
         }
         
