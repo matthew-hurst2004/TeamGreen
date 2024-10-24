@@ -800,7 +800,7 @@ public class Calc4 extends javax.swing.JFrame {
     {
         homeInterestRateDouble = 0;
     } else {
-        homeInterestRateDouble = Double.parseDouble(interestRateTextField.getText()) / 100;
+        homeInterestRateDouble = (Double.parseDouble(interestRateTextField.getText()) / 100)/12;
     }
             
 
@@ -836,32 +836,37 @@ public class Calc4 extends javax.swing.JFrame {
         return;}
     
     
-    double rentOverallRate = homeRentDouble ; // Add more here as expanding 
+    double rentOverallRate = homeRentDouble + renterInsuranceDouble ; // Add more here as expanding 
     double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
-    double homeBuildUp = homePriceDouble * downPaymentPercentageDouble; //This is also a flag but for the home
+    double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0;
     if (homePropertyTaxDouble != 0){
-        homePropertyTaxDouble = ((homePropertyTaxDouble / 100) / 12) + 1 ; // Converting to a decimal and changes from yearly to monthly
+        homePropertyTaxDouble = ((homePropertyTaxDouble / 100) / 12)  ; // Converting to a decimal and changes from yearly to monthly
     }
     else { 
-        homePropertyTaxDouble = 1;
+        homePropertyTaxDouble =0;
         }
     propertyTaxIncreaseDouble = propertyTaxIncreaseDouble / 100; // Converting to a decimal
     double loanAmount = homePriceDouble - downPaymentAmountDouble; // This is the home price being subtracted by the down payment
     double numberOfPayments = loanTermDouble * 12;
-    double loanLoopValue = loanAmount / numberOfPayments;
+    rentalFeeIncreaseDouble = (rentalFeeIncreaseDouble / 100) + 1;
+
     
-    
-    while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) {
-        numberOfPayments = numberOfPayments - 1;
+    while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
+        double monthlyPayment = (loanTermDouble * homeInterestRateDouble * Math.pow(1 + homeInterestRateDouble, numberOfPayments)) /(Math.pow(1 + homeInterestRateDouble, numberOfPayments) - 1);
+
         if (numberOfPayments > 0){
-            loanLoopValue = loanLoopValue * homeInterestRateDouble;
+            homeBuildUp = ((homeBuildUp * (homePropertyTaxDouble + 1)) + monthlyPayment + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
         }
+        else {
+            homeBuildUp = ((homeBuildUp * (homePropertyTaxDouble + 1)) + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
+            }
         
-        rentBuildUp = rentBuildUp + rentOverallRate + renterInsuranceDouble;
-        homeBuildUp = (homeBuildUp + (hoaFeeDouble /12) + (homeInsuranceDouble / 12)) * (homePropertyTaxDouble);
-        homePropertyTaxDouble = homePropertyTaxDouble + (propertyTaxIncreaseDouble / 12); // property tax increasing over time
+        rentBuildUp = rentBuildUp + rentOverallRate;
+        rentOverallRate = rentOverallRate * rentalFeeIncreaseDouble;
+        homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 12)+1); // property tax increasing over time
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
+        numberOfPayments = numberOfPayments - 1;
     }
     
     BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);
@@ -870,7 +875,7 @@ public class Calc4 extends javax.swing.JFrame {
     if (monthsUntillRentMoreBuy <= 2400){
         outputLabel.setText("Renting is cheaper for " + String.valueOf(monthsUntillRentMoreBuy) + " months or " + String.valueOf(roundedYears) + " years" );
     }
-    else {outputLabel.setText("Renting is cheaper for over 200 years and maybe for infinity. ");
+    else {outputLabel.setText("Renting is cheaper for over 200 years and maybe indefinitely. ");
     }
     
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
