@@ -174,6 +174,30 @@ public class Calc3 extends javax.swing.JFrame {
         double downPayment = 0;
         double tradeInValue = 0;
         
+        if (carPriceString.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid car price!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.requestFocus();
+            jTextField1.setText("$");
+            return;
+        }
+        
+        if (downPaymentString.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid down payment!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField4.requestFocus();
+            jTextField4.setText("$");
+            return; 
+        }
+        
+        if (tradeInValueString.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid trade in value! If you do not have one, enter 0!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField5.requestFocus();
+            jTextField5.setText("$0");
+            return;
+        }
+        
         if (carPriceString.charAt(0) == '$')
         {
             carPriceString = carPriceString.substring(1);

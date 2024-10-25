@@ -812,6 +812,14 @@ public class Calc4 extends javax.swing.JFrame {
         homePriceDouble = Double.parseDouble(homePurchasePriceTextField.getText());
     }
 
+    
+    if (hoaFeeTextField.getText().equals("")){
+        hoaFeeDouble = 0;   
+    }
+    else{
+        hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
+    }
+    
     if (downPaymentTextField.getText().equals("")) 
     {
         downPaymentPercentageDouble = 0;
@@ -821,13 +829,6 @@ public class Calc4 extends javax.swing.JFrame {
         downPaymentPercentageDouble = downPaymentPercentageDouble / 100;
         downPaymentAmountDouble = downPaymentPercentageDouble * homePriceDouble ;
         }
-    
-    if (hoaFeeTextField.getText().equals("")){
-        hoaFeeDouble = 0;   
-    }
-    else{
-        hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
-    }
     
     
     
@@ -841,7 +842,7 @@ public class Calc4 extends javax.swing.JFrame {
     double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0;
     if (homePropertyTaxDouble != 0){
-        homePropertyTaxDouble = ((homePropertyTaxDouble / 100) / 12)  ; // Converting to a decimal and changes from yearly to monthly
+        homePropertyTaxDouble = (homePropertyTaxDouble / 100) * homePriceDouble  ; // Converting to a decimal and changes from yearly to monthly
     }
     else { 
         homePropertyTaxDouble =0;
@@ -856,15 +857,15 @@ public class Calc4 extends javax.swing.JFrame {
         double monthlyPayment = (loanTermDouble * homeInterestRateDouble * Math.pow(1 + homeInterestRateDouble, numberOfPayments)) /(Math.pow(1 + homeInterestRateDouble, numberOfPayments) - 1);
 
         if (numberOfPayments > 0){
-            homeBuildUp = ((homeBuildUp * (homePropertyTaxDouble + 1)) + monthlyPayment + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
+            homeBuildUp = ((homeBuildUp + (homePropertyTaxDouble)) + monthlyPayment + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
         }
         else {
-            homeBuildUp = ((homeBuildUp * (homePropertyTaxDouble + 1)) + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
+            homeBuildUp = ((homeBuildUp + (homePropertyTaxDouble)) + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
             }
         
         rentBuildUp = rentBuildUp + rentOverallRate;
         rentOverallRate = rentOverallRate * rentalFeeIncreaseDouble;
-        homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 12)+1); // property tax increasing over time
+        homePropertyTaxDouble = (homePropertyTaxDouble ) * ((propertyTaxIncreaseDouble / 12)+1); // property tax increasing over time
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
         numberOfPayments = numberOfPayments - 1;
     }
