@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -27,8 +30,8 @@ public class Calc6 extends javax.swing.JFrame {
 
         closeButton = new javax.swing.JButton();
         txtRemainingBalance = new javax.swing.JTextField();
-        txtMonthlyPayment = new javax.swing.JTextField();
-        txtInterestRate = new javax.swing.JTextField();
+        txtCurrentMonthlyPayment = new javax.swing.JTextField();
+        txtCurrentInterestRate = new javax.swing.JTextField();
         txtNewLoanTerm = new javax.swing.JTextField();
         txtNewInterestRate = new javax.swing.JTextField();
         txtPoints = new javax.swing.JTextField();
@@ -69,17 +72,17 @@ public class Calc6 extends javax.swing.JFrame {
             }
         });
 
-        txtMonthlyPayment.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtMonthlyPayment.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCurrentMonthlyPayment.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCurrentMonthlyPayment.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtMonthlyPaymentKeyTyped(evt);
+                txtCurrentMonthlyPaymentKeyTyped(evt);
             }
         });
 
-        txtInterestRate.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtInterestRate.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCurrentInterestRate.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCurrentInterestRate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtInterestRateKeyTyped(evt);
+                txtCurrentInterestRateKeyTyped(evt);
             }
         });
 
@@ -222,11 +225,11 @@ public class Calc6 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(txtInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtCurrentInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(lblPercent1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(txtRemainingBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtMonthlyPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtCurrentMonthlyPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(52, 52, 52)
                                         .addComponent(lblCurrentLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -316,12 +319,12 @@ public class Calc6 extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblMonthlyPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMonthlyPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCurrentMonthlyPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCurrentInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCurrentInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblPercent1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -344,13 +347,13 @@ public class Calc6 extends javax.swing.JFrame {
         Helper.consumeNotNumbersAllowDecimal(txtRemainingBalance, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtRemainingBalanceKeyTyped
 
-    private void txtMonthlyPaymentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMonthlyPaymentKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtMonthlyPayment, evt);        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMonthlyPaymentKeyTyped
+    private void txtCurrentMonthlyPaymentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCurrentMonthlyPaymentKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtCurrentMonthlyPayment, evt);        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCurrentMonthlyPaymentKeyTyped
 
-    private void txtInterestRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInterestRateKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtInterestRate, evt);        // TODO add your handling code here:
-    }//GEN-LAST:event_txtInterestRateKeyTyped
+    private void txtCurrentInterestRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCurrentInterestRateKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtCurrentInterestRate, evt);        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCurrentInterestRateKeyTyped
 
     private void txtNewLoanTermKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewLoanTermKeyTyped
         Helper.consumeNotNumbersAllowDecimal(txtNewLoanTerm, evt);        // TODO add your handling code here:
@@ -373,7 +376,119 @@ public class Calc6 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCashOutAmountKeyTyped
 
     private void btnCalculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalculateMouseClicked
-        // TODO add your handling code here:
+        //variables
+        double principal = 0;
+        double currentMonthlyPayment = 0;
+        double currentInterestRate = 0;
+        double newLoanTerm = 0;
+        double newInterestRate = 0;
+        double points = 0;
+        double costFees = 0;
+        double cashOutAmount = 0;
+
+        //remaining balance
+        try
+        {
+            principal = Double.parseDouble(txtRemainingBalance.getText());
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for remaining balance.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtRemainingBalance.setText("");
+            txtRemainingBalance.requestFocusInWindow();
+        }
+        //current monthly payment
+        try
+        {
+            currentMonthlyPayment = Double.parseDouble(txtCurrentMonthlyPayment.getText());
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for current monthly payment.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtCurrentMonthlyPayment.setText("");
+            txtCurrentMonthlyPayment.requestFocusInWindow();
+        }
+        //Current Interest Rate
+        try
+        {
+           currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText());
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for the current interest rate.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtCurrentInterestRate.setText("");
+            txtCurrentInterestRate.requestFocusInWindow();
+        }
+        //New Loan Term
+        try
+        {
+            newLoanTerm = Math.floor(Double.parseDouble(txtNewLoanTerm.getText())*12);
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for new loan term.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtNewLoanTerm.setText("");
+            txtNewLoanTerm.requestFocusInWindow();
+        }
+        //New Interest Rate
+        try
+        {
+            newInterestRate = Double.parseDouble(txtNewInterestRate.getText())/1200;
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for the new interest rate.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtNewInterestRate.setText("");
+            txtNewInterestRate.requestFocusInWindow();
+        }
+        //Points
+        try
+        {
+            points = Double.parseDouble(txtPoints.getText());
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for points.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtPoints.setText("");
+            txtPoints.requestFocusInWindow();
+        }
+        //Costs and Fees
+        try
+        {
+            costFees = Double.parseDouble(txtCostFees.getText());
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for cost and fees.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtCostFees.setText("");
+            txtCostFees.requestFocusInWindow();
+        }
+        // Cash Out Amount
+        try
+        {
+            cashOutAmount = Double.parseDouble(txtCashOutAmount.getText());
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for the cash out amount.","ERROR",
+            JOptionPane.ERROR_MESSAGE);
+            txtCashOutAmount.setText("");
+            txtCashOutAmount.requestFocusInWindow();
+        }
+
+	//monthly payment test - remember formatting decimal
+//        double principal = Double.parseDouble(txtRemainingBalance.getText());
+//        double term = Math.floor(Double.parseDouble(txtNewLoanTerm.getText())*12);
+//        double newInterestRate = Double.parseDouble(txtNewInterestRate.getText())/1200;
+        double newMonthlyPayment = Helper.MonthlyPayment(principal, newLoanTerm, newInterestRate);
+        System.out.println(newMonthlyPayment);
     }//GEN-LAST:event_btnCalculateMouseClicked
 
     private void btnClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseClicked
@@ -437,8 +552,8 @@ public class Calc6 extends javax.swing.JFrame {
     private javax.swing.JLabel lblYear;
     private javax.swing.JTextField txtCashOutAmount;
     private javax.swing.JTextField txtCostFees;
-    private javax.swing.JTextField txtInterestRate;
-    private javax.swing.JTextField txtMonthlyPayment;
+    private javax.swing.JTextField txtCurrentInterestRate;
+    private javax.swing.JTextField txtCurrentMonthlyPayment;
     private javax.swing.JTextField txtNewInterestRate;
     private javax.swing.JTextField txtNewLoanTerm;
     private javax.swing.JTextField txtPoints;

@@ -194,6 +194,12 @@ public class Helper {
         return val > 0;
     }
     
+    //Calc 6 monthly payment
+    public static double MonthlyPayment(double P, double n, double iRate) 
+    {
+        return (P * iRate * Math.pow(1 + iRate, n) / (Math.pow(1 + iRate, n) - 1));
+    }//
+    
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
         char c = evt.getKeyChar();
         String userInput = textField.getText();

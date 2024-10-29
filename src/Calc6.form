@@ -46,12 +46,12 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="txtInterestRate" min="-2" pref="109" max="-2" attributes="0"/>
+                                              <Component id="txtCurrentInterestRate" min="-2" pref="109" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="lblPercent1" min="-2" pref="21" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="txtRemainingBalance" min="-2" pref="109" max="-2" attributes="0"/>
-                                          <Component id="txtMonthlyPayment" min="-2" pref="109" max="-2" attributes="0"/>
+                                          <Component id="txtCurrentMonthlyPayment" min="-2" pref="109" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -171,13 +171,13 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblMonthlyPayment" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="txtMonthlyPayment" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtCurrentMonthlyPayment" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblCurrentInterestRate" min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="txtInterestRate" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="txtCurrentInterestRate" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="lblPercent1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -217,7 +217,7 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRemainingBalanceKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMonthlyPayment">
+    <Component class="javax.swing.JTextField" name="txtCurrentMonthlyPayment">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -226,10 +226,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMonthlyPaymentKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCurrentMonthlyPaymentKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtInterestRate">
+    <Component class="javax.swing.JTextField" name="txtCurrentInterestRate">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -238,7 +238,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtInterestRateKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCurrentInterestRateKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNewLoanTerm">
