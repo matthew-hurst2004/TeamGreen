@@ -880,6 +880,7 @@ public class Calc4 extends javax.swing.JFrame {
     }
     
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
+
     }//GEN-LAST:event_caclulateButtonMouseClicked
     public void keyTyped(KeyEvent evt) {
         Helper.consumeNotNumbersAllowDecimal(homePurchasePriceTextField, evt);
