@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -88,11 +89,11 @@ public class Calc2 extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Year", "Deposit", "Interest", "Ending Balance"
+                "Year", "Total Amount", "Interest", "Ending Balance"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -106,10 +107,12 @@ public class Calc2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(100);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(150);
@@ -182,17 +185,86 @@ public class Calc2 extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
+        
         int years = 0;
+        double totalContribution = 0;
+        double yearlyContribution = 0;
+        double interestRate = 0;
         String yearsString = jTextField4.getText();
+        String initialContributionString = jTextField2.getText();
+        String yearlyContributionString = jTextField3.getText();
+        String interestRateString = jTextField1.getText();
+        
+        if (initialContributionString.charAt(0) == '$')
+        {
+            initialContributionString = initialContributionString.substring(1);
+        }
+        
+        if (yearlyContributionString.charAt(0) == '$')
+        {
+            yearlyContributionString = yearlyContributionString.substring(1);
+        }
+        
         if (Helper.isValidNumber(yearsString))
         {
             years = Integer.parseInt(yearsString);
         }
         
+        else
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid number of years!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField4.setText("");
+            jTextField4.requestFocus();
+            return;
+        }
+        
+        if (Helper.isValidNumber(initialContributionString))
+        {
+            totalContribution = Double.parseDouble(initialContributionString);
+        }
+        
+        else
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid initial contribution!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField2.setText("$");
+            jTextField2.requestFocus();
+            return;
+        }
+        
+        if (Helper.isValidNumber(yearlyContributionString))
+        {
+            yearlyContribution = Double.parseDouble(yearlyContributionString);
+        }
+        
+        else
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid yearly contribution! If none, enter 0.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField3.setText("$");
+            jTextField3.requestFocus();
+            return;
+        }
+        
+        if (Helper.isValidNumber(interestRateString))
+        {
+            interestRate = (Double.parseDouble(interestRateString)) / 100;
+        }
+        
+        else
+        {
+            JOptionPane.showMessageDialog(this, "You must enter a valid interest rate!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField1.requestFocus();
+            return;
+        }
+        
+        totalContribution += yearlyContribution;
+        
         for (int i = 0; i < years; i++)
         {
-            Object[] newrow = {(i+1), 1, 1, 1};
+            double tempSumHolder = totalContribution * interestRate;
+            Object[] newrow = {(i+1), "$" + Helper.formatDouble(totalContribution), "$" + Helper.formatDouble(tempSumHolder), "$" + Helper.formatDouble(totalContribution + tempSumHolder)};
             addRowToTable(newrow);
+            totalContribution += yearlyContribution + tempSumHolder;
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
