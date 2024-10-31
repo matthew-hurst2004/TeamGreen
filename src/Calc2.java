@@ -195,6 +195,14 @@ public class Calc2 extends javax.swing.JFrame {
         String yearlyContributionString = jTextField3.getText();
         String interestRateString = jTextField1.getText();
         
+        if (initialContributionString.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "You can not enter a blank initial contribution!", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField2.setText("$");
+            jTextField2.requestFocus();
+            return;
+        }
+        
         if (initialContributionString.charAt(0) == '$')
         {
             initialContributionString = initialContributionString.substring(1);
