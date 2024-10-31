@@ -376,123 +376,53 @@ public class Calc6 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCashOutAmountKeyTyped
 
     private void btnCalculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalculateMouseClicked
-        //variables
-        double principal = 0;
-        double currentMonthlyPayment = 0;
-        double currentInterestRate = 0;
-        double newLoanTerm = 0;
-        double newInterestRate = 0;
-        double points = 0;
-        double costFees = 0;
-        double cashOutAmount = 0;
-
-        //remaining balance
-        try
+        
+        double remainingBalance = Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
+        double currentMonthlyPayment = Helper.getInput(txtCurrentMonthlyPayment,"Invalid input. Please enter a positive numeric value for current monthly payment.");
+        double currentInterestRate = Helper.getInput(txtCurrentInterestRate,"Invalid input. Please enter a positive numeric value for the current interest rate.") /1200.0;
+        double newLoanTerm = Math.floor(Helper.getInput(txtNewLoanTerm,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
+        double newInterestRate = Helper.getInput(txtNewInterestRate,"Invalid input. Please enter a positive numeric value for the new interest rate.") / 1200.0;
+        double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.");
+        double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
+        double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a positive numeric value for the cash out amount.");
+       
+        double accumulatedInterestCurrent = 0;
+        double accumulatedInterestNew = 0;
+        double months = 0;
+        //validates
+        if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanTerm < 0 
+                || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
         {
-            principal = Double.parseDouble(txtRemainingBalance.getText());
+            return; //exits
         }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for remaining balance.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtRemainingBalance.setText("");
-            txtRemainingBalance.requestFocusInWindow();
-        }
-        //current monthly payment
-        try
-        {
-            currentMonthlyPayment = Double.parseDouble(txtCurrentMonthlyPayment.getText());
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for current monthly payment.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtCurrentMonthlyPayment.setText("");
-            txtCurrentMonthlyPayment.requestFocusInWindow();
-        }
-        //Current Interest Rate
-        try
-        {
-           currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText());
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for the current interest rate.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtCurrentInterestRate.setText("");
-            txtCurrentInterestRate.requestFocusInWindow();
-        }
-        //New Loan Term
-        try
-        {
-            newLoanTerm = Math.floor(Double.parseDouble(txtNewLoanTerm.getText())*12);
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for new loan term.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtNewLoanTerm.setText("");
-            txtNewLoanTerm.requestFocusInWindow();
-        }
-        //New Interest Rate
-        try
-        {
-            newInterestRate = Double.parseDouble(txtNewInterestRate.getText())/1200;
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for the new interest rate.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtNewInterestRate.setText("");
-            txtNewInterestRate.requestFocusInWindow();
-        }
-        //Points
-        try
-        {
-            points = Double.parseDouble(txtPoints.getText());
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for points.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtPoints.setText("");
-            txtPoints.requestFocusInWindow();
-        }
-        //Costs and Fees
-        try
-        {
-            costFees = Double.parseDouble(txtCostFees.getText());
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for cost and fees.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtCostFees.setText("");
-            txtCostFees.requestFocusInWindow();
-        }
-        // Cash Out Amount
-        try
-        {
-            cashOutAmount = Double.parseDouble(txtCashOutAmount.getText());
-        }
-        catch (NumberFormatException e)
-        {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a positive numeric value for the cash out amount.","ERROR",
-            JOptionPane.ERROR_MESSAGE);
-            txtCashOutAmount.setText("");
-            txtCashOutAmount.requestFocusInWindow();
-        }
-
-	//monthly payment test - remember formatting decimal
-//        double principal = Double.parseDouble(txtRemainingBalance.getText());
-//        double term = Math.floor(Double.parseDouble(txtNewLoanTerm.getText())*12);
-//        double newInterestRate = Double.parseDouble(txtNewInterestRate.getText())/1200;
-        double newMonthlyPayment = Helper.MonthlyPayment(principal, newLoanTerm, newInterestRate);
+        
+        
+        double newMonthlyPayment = Helper.monthlyPayment(remainingBalance, newLoanTerm, newInterestRate);
+        accumulatedInterestCurrent = Helper.accumulatedInterest(remainingBalance, currentMonthlyPayment, currentInterestRate);
+        accumulatedInterestNew = Helper.accumulatedInterest(remainingBalance, newMonthlyPayment, newInterestRate);
         System.out.println(newMonthlyPayment);
+        System.out.println(accumulatedInterestCurrent);
+        System.out.println(accumulatedInterestNew);
+        System.out.println(months);
+
+
+
+
+
+
+    // end button
     }//GEN-LAST:event_btnCalculateMouseClicked
 
     private void btnClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearMouseClicked
-                // TODO add your handling code here:
+        txtRemainingBalance.setText("");
+        txtCurrentMonthlyPayment.setText("");
+        txtCurrentInterestRate.setText("");
+        txtNewLoanTerm.setText("");
+        txtNewInterestRate.setText("");
+        txtPoints.setText("");
+        txtCostFees.setText("");
+        txtCashOutAmount.setText("");
+        txtRemainingBalance.requestFocusInWindow();
     }//GEN-LAST:event_btnClearMouseClicked
 
     /**
