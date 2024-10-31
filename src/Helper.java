@@ -216,6 +216,31 @@ public class Helper {
             return -1; // Return an invalid value
         }
     }
+    
+    // Accumulated interest
+    public static double accumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
+    {
+        double accumulatedInterest = 0;
+        double months = 0;
+        
+        if (monthlyPayment <= remainingBalance * iRate) 
+        {
+            System.out.println("Monthly payment is too low to pay off the balance.");
+            return -1;
+        }
+
+        while (remainingBalance > 0) 
+        {
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest; // Add interest to the balance
+            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+            accumulatedInterest += interest;
+            months++;
+            
+        }
+      return accumulatedInterest;  
+        
+    }
 
 
     
