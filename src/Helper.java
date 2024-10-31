@@ -8,6 +8,7 @@
  * @author matth
  */
 
+import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -20,6 +21,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Helper {
@@ -195,10 +197,29 @@ public class Helper {
     }
     
     //Calc 6 monthly payment
-    public static double MonthlyPayment(double P, double n, double iRate) 
+    public static double monthlyPayment(double P, double n, double iRate) 
     {
         return (P * iRate * Math.pow(1 + iRate, n) / (Math.pow(1 + iRate, n) - 1));
-    }//
+    }
+    // Input validation Calc 6
+    
+    public static double getInput(JTextField textField, String errorMessage) 
+    {
+        
+        try 
+        {
+            return Double.parseDouble(textField.getText());
+        } 
+        catch (NumberFormatException e) 
+        {
+            JOptionPane.showMessageDialog(null, errorMessage, "ERROR", JOptionPane.ERROR_MESSAGE);
+            textField.setText("");
+            textField.requestFocusInWindow();
+            return -1; // Return an invalid value
+        }
+    }
+
+
     
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
         char c = evt.getKeyChar();
