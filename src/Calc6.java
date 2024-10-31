@@ -385,8 +385,9 @@ public class Calc6 extends javax.swing.JFrame {
         double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.");
         double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
         double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a positive numeric value for the cash out amount.");
-        double interest = 0;
+       
         double accumulatedInterest = 0;
+        double months = 0;
         //validates
         if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanTerm < 0 
                 || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
@@ -396,14 +397,23 @@ public class Calc6 extends javax.swing.JFrame {
         
 
         double newMonthlyPayment = Helper.monthlyPayment(remainingBalance, newLoanTerm, newInterestRate);
-        for (int i = 1; i <= newLoanTerm; i++) 
+        if (newMonthlyPayment <= remainingBalance * newInterestRate) 
         {
-            interest = remainingBalance * newInterestRate;
-            remainingBalance = remainingBalance - (newMonthlyPayment - interest);
+            System.out.println("Monthly payment is too low to pay off the balance.");
+        }
+
+        while (remainingBalance > 0) 
+        {
+            double interest = remainingBalance * newInterestRate;
+            remainingBalance += interest; // Add interest to the balance
+            remainingBalance -= newMonthlyPayment; // Subtract the monthly payment
             accumulatedInterest += interest;
+            months++;
+            
         }
         System.out.println(newMonthlyPayment);
         System.out.println(accumulatedInterest);
+        System.out.println(months);
 
 
 
