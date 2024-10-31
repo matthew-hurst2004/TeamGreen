@@ -202,10 +202,8 @@ public class Helper {
         return (P * iRate * Math.pow(1 + iRate, n) / (Math.pow(1 + iRate, n) - 1));
     }
     // Input validation Calc 6
-    
     public static double getInput(JTextField textField, String errorMessage) 
     {
-        
         try 
         {
             return Double.parseDouble(textField.getText());

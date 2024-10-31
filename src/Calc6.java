@@ -377,7 +377,7 @@ public class Calc6 extends javax.swing.JFrame {
 
     private void btnCalculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalculateMouseClicked
         
-        double principal = Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
+        double remainingBalance = Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
         double currentMonthlyPayment = Helper.getInput(txtCurrentMonthlyPayment,"Invalid input. Please enter a positive numeric value for current monthly payment.");
         double currentInterestRate = Helper.getInput(txtCurrentInterestRate,"Invalid input. Please enter a positive numeric value for the current interest rate.");
         double newLoanTerm = Math.floor(Helper.getInput(txtNewLoanTerm,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
@@ -385,16 +385,25 @@ public class Calc6 extends javax.swing.JFrame {
         double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.");
         double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
         double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a positive numeric value for the cash out amount.");
-
-        // Check if any input was invalid
-        if (principal < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanTerm < 0 || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
+        double interest = 0;
+        double accumulatedInterest = 0;
+        //validates
+        if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanTerm < 0 
+                || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
         {
-            return; // Exit if any input is invalid
+            return; //exits
         }
+        
 
-        double newMonthlyPayment = Helper.monthlyPayment(principal, newLoanTerm, newInterestRate);
+        double newMonthlyPayment = Helper.monthlyPayment(remainingBalance, newLoanTerm, newInterestRate);
+        for (int i = 1; i <= newLoanTerm; i++) 
+        {
+            interest = remainingBalance * newInterestRate;
+            remainingBalance = remainingBalance - (newMonthlyPayment - interest);
+            accumulatedInterest += interest;
+        }
         System.out.println(newMonthlyPayment);
-    
+        System.out.println(accumulatedInterest);
 
 
 
