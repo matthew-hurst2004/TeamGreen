@@ -384,11 +384,10 @@ public class Calc6 extends javax.swing.JFrame {
         double newInterestRate = Helper.getInput(txtNewInterestRate,"Invalid input. Please enter a positive numeric value for the new interest rate.") / 1200.0;
         double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.");
         double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
-        double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a positive numeric value for the cash out amount.");
-       
+        double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a numeric value for the cash out amount.");
         double accumulatedInterestCurrent = 0;
         double accumulatedInterestNew = 0;
-        double months = 0;
+        
         //validates
         if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanTerm < 0 
                 || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
@@ -396,15 +395,20 @@ public class Calc6 extends javax.swing.JFrame {
             return; //exits
         }
         
-        
-        double newMonthlyPayment = Helper.monthlyPayment(remainingBalance, newLoanTerm, newInterestRate);
+        double newRemainingBalance = remainingBalance + cashOutAmount;
+        double newMonthlyPayment = Helper.monthlyPayment(newRemainingBalance, newLoanTerm, newInterestRate);
         accumulatedInterestCurrent = Helper.accumulatedInterest(remainingBalance, currentMonthlyPayment, currentInterestRate);
         accumulatedInterestNew = Helper.accumulatedInterest(remainingBalance, newMonthlyPayment, newInterestRate);
-        System.out.println(newMonthlyPayment);
-        System.out.println(accumulatedInterestCurrent);
-        System.out.println(accumulatedInterestNew);
-        System.out.println(months);
-
+        double currentLoanMonths = Helper.months(remainingBalance, currentMonthlyPayment, currentInterestRate);
+        double newLoanMonths = Helper.months(remainingBalance, newMonthlyPayment, newInterestRate);
+        
+        System.out.println("new remaining balance: " + newRemainingBalance);
+        System.out.println("new monthly payment: " + newMonthlyPayment);
+        System.out.println("accumulated interest current: " + accumulatedInterestCurrent);
+        System.out.println("accumulated interest new: " + accumulatedInterestNew);
+        System.out.println("cash out amount: " + cashOutAmount);
+        System.out.println("current loan months: " + currentLoanMonths);
+        System.out.println("new loan months: " + newLoanMonths);
 
 
 

@@ -221,7 +221,7 @@ public class Helper {
     public static double accumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
     {
         double accumulatedInterest = 0;
-        double months = 0;
+        
         
         if (monthlyPayment <= remainingBalance * iRate) 
         {
@@ -235,13 +235,24 @@ public class Helper {
             remainingBalance += interest; // Add interest to the balance
             remainingBalance -= monthlyPayment; // Subtract the monthly payment
             accumulatedInterest += interest;
-            months++;
             
         }
-      return accumulatedInterest;  
-        
+      return accumulatedInterest;     
     }
 
+    public static double months(double remainingBalance, double monthlyPayment, double iRate)
+    {
+        double months = 0;
+        
+        while (remainingBalance > 0) 
+        {
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest; // Add interest to the balance
+            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+            months++;            
+        }
+        return months;     
+    }
 
     
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
@@ -258,21 +269,21 @@ public class Helper {
             evt.consume();
     }
     public static void consumeNotNumbersAllowDecimalAndNeg (JTextField textField, KeyEvent evt) {// It has an issue where if numbers are already in the text field a negative cannot be added
-    char c = evt.getKeyChar();
-    String userInput = textField.getText();
-    int userLength = userInput.length();
-    if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE || c == '-')) {
-        evt.consume();
-    } else if (c == '.' && textField.getText().contains(".")) {
-        evt.consume();
-    } else if (c == '-' && textField.getText().length() > 0) {
-        evt.consume();
+        char c = evt.getKeyChar();
+        String userInput = textField.getText();
+        int userLength = userInput.length();
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE || c == '-')) {
+            evt.consume();
+        } else if (c == '.' && textField.getText().contains(".")) {
+            evt.consume();
+        } else if (c == '-' && textField.getText().length() > 0) {
+            evt.consume();
+        }
+
+        if (userLength >= 12) {
+            evt.consume();
+        }
     }
-    
-    if (userLength >= 12) {
-        evt.consume();
-    }
-}
     
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();
