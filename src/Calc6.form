@@ -97,7 +97,7 @@
                       <EmptySpace min="21" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="txtNewLoanTerm" max="32767" attributes="0"/>
+                              <Component id="txtNewLoanMonths" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblYear" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
@@ -133,7 +133,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblNewLoanTerm" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewLoanTerm" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="txtNewLoanMonths" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="lblYear" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -241,7 +241,7 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCurrentInterestRateKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNewLoanTerm">
+    <Component class="javax.swing.JTextField" name="txtNewLoanMonths">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -250,7 +250,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNewLoanTermKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNewLoanMonthsKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNewInterestRate">

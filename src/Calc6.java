@@ -32,7 +32,7 @@ public class Calc6 extends javax.swing.JFrame {
         txtRemainingBalance = new javax.swing.JTextField();
         txtCurrentMonthlyPayment = new javax.swing.JTextField();
         txtCurrentInterestRate = new javax.swing.JTextField();
-        txtNewLoanTerm = new javax.swing.JTextField();
+        txtNewLoanMonths = new javax.swing.JTextField();
         txtNewInterestRate = new javax.swing.JTextField();
         txtPoints = new javax.swing.JTextField();
         txtCostFees = new javax.swing.JTextField();
@@ -86,10 +86,10 @@ public class Calc6 extends javax.swing.JFrame {
             }
         });
 
-        txtNewLoanTerm.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtNewLoanTerm.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNewLoanMonths.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtNewLoanMonths.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNewLoanTermKeyTyped(evt);
+                txtNewLoanMonthsKeyTyped(evt);
             }
         });
 
@@ -261,7 +261,7 @@ public class Calc6 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtNewLoanTerm)
+                                .addComponent(txtNewLoanMonths)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -288,7 +288,7 @@ public class Calc6 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNewLoanTerm)
-                            .addComponent(txtNewLoanTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNewLoanMonths, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -355,9 +355,9 @@ public class Calc6 extends javax.swing.JFrame {
         Helper.consumeNotNumbersAllowDecimal(txtCurrentInterestRate, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtCurrentInterestRateKeyTyped
 
-    private void txtNewLoanTermKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewLoanTermKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtNewLoanTerm, evt);        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewLoanTermKeyTyped
+    private void txtNewLoanMonthsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewLoanMonthsKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtNewLoanMonths, evt);        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNewLoanMonthsKeyTyped
 
     private void txtNewInterestRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewInterestRateKeyTyped
         Helper.consumeNotNumbersAllowDecimal(txtNewInterestRate, evt);        // TODO add your handling code here:
@@ -380,36 +380,48 @@ public class Calc6 extends javax.swing.JFrame {
         double remainingBalance = Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
         double currentMonthlyPayment = Helper.getInput(txtCurrentMonthlyPayment,"Invalid input. Please enter a positive numeric value for current monthly payment.");
         double currentInterestRate = Helper.getInput(txtCurrentInterestRate,"Invalid input. Please enter a positive numeric value for the current interest rate.") /1200.0;
-        double newLoanTerm = Math.floor(Helper.getInput(txtNewLoanTerm,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
+        double newLoanMonths = Math.floor(Helper.getInput(txtNewLoanMonths,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
         double newInterestRate = Helper.getInput(txtNewInterestRate,"Invalid input. Please enter a positive numeric value for the new interest rate.") / 1200.0;
-        double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.");
+        double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.") / 100.0;
         double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
         double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a numeric value for the cash out amount.");
-        double accumulatedInterestCurrent = 0;
-        double accumulatedInterestNew = 0;
-        
+        double currentAccumulatedInterest = 0;
+        double newAccumulatedInterest = 0;
+        double pointsCost = 0;
+        double totalCurrentMonthlyPayments = 0;
+        double totalNewMonthlyPayments = 0;
         //validates
-        if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanTerm < 0 
+        if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanMonths < 0 
                 || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
         {
             return; //exits
         }
         
-        double newRemainingBalance = remainingBalance + cashOutAmount;
-        double newMonthlyPayment = Helper.monthlyPayment(newRemainingBalance, newLoanTerm, newInterestRate);
-        accumulatedInterestCurrent = Helper.accumulatedInterest(remainingBalance, currentMonthlyPayment, currentInterestRate);
-        accumulatedInterestNew = Helper.accumulatedInterest(remainingBalance, newMonthlyPayment, newInterestRate);
+        double newRemainingBalance = remainingBalance + cashOutAmount; // updated remaining balance 
+        double newMonthlyPayment = Helper.monthlyPayment(newRemainingBalance, newLoanMonths, newInterestRate); //new monthly payment
+        //accumulated interest for current loan
+        currentAccumulatedInterest = Helper.accumulatedInterest(remainingBalance, currentMonthlyPayment, currentInterestRate); 
+        //accumualted interest for new loan
+        newAccumulatedInterest = Helper.accumulatedInterest(remainingBalance, newMonthlyPayment, newInterestRate);
+        //months
         double currentLoanMonths = Helper.months(remainingBalance, currentMonthlyPayment, currentInterestRate);
-        double newLoanMonths = Helper.months(remainingBalance, newMonthlyPayment, newInterestRate);
+        // cost of points on loan
+        pointsCost = newRemainingBalance * points;
+        // total amount of payments made on current loan
+        totalCurrentMonthlyPayments = currentMonthlyPayment * currentLoanMonths;
+        // total amount of payments made on new loan
+        totalNewMonthlyPayments = newMonthlyPayment * newLoanMonths;
         
         System.out.println("new remaining balance: " + newRemainingBalance);
         System.out.println("new monthly payment: " + newMonthlyPayment);
-        System.out.println("accumulated interest current: " + accumulatedInterestCurrent);
-        System.out.println("accumulated interest new: " + accumulatedInterestNew);
+        System.out.println("accumulated interest current: " + currentAccumulatedInterest);
+        System.out.println("accumulated interest new: " + newAccumulatedInterest);
         System.out.println("cash out amount: " + cashOutAmount);
         System.out.println("current loan months: " + currentLoanMonths);
         System.out.println("new loan months: " + newLoanMonths);
-
+        System.out.println("cost of points: " + pointsCost);
+        System.out.println("total of current loan payments: " + totalCurrentMonthlyPayments);
+        System.out.println("total of current loan payments: " + totalNewMonthlyPayments);
 
 
 
@@ -421,7 +433,7 @@ public class Calc6 extends javax.swing.JFrame {
         txtRemainingBalance.setText("");
         txtCurrentMonthlyPayment.setText("");
         txtCurrentInterestRate.setText("");
-        txtNewLoanTerm.setText("");
+        txtNewLoanMonths.setText("");
         txtNewInterestRate.setText("");
         txtPoints.setText("");
         txtCostFees.setText("");
@@ -489,7 +501,7 @@ public class Calc6 extends javax.swing.JFrame {
     private javax.swing.JTextField txtCurrentInterestRate;
     private javax.swing.JTextField txtCurrentMonthlyPayment;
     private javax.swing.JTextField txtNewInterestRate;
-    private javax.swing.JTextField txtNewLoanTerm;
+    private javax.swing.JTextField txtNewLoanMonths;
     private javax.swing.JTextField txtPoints;
     private javax.swing.JTextField txtRemainingBalance;
     // End of variables declaration//GEN-END:variables
