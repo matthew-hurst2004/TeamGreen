@@ -301,10 +301,19 @@ public class Calc7 extends javax.swing.JFrame {
         //Making all the variables I need
         //current balance in Roth
         double PV = Double.parseDouble(jTextField1.getText());
+        // Annual contributition 
+        double C = Double.parseDouble(jTextField2.getText());
+        // Expected rate of return (into decimal)
+        double r = Double.parseDouble(jTextField3.getText())/100;
+        // Current age, Retirement age, and the difference between them
+        double A = Double.parseDouble(jTextField4.getText());
+        double R = Double.parseDouble(jTextField5.getText());
+        double N = R - A;
         // Making sure none of the fields are empty except Marginal Tax Rate
         if (jTextField1.getText().isBlank() || jTextField2.getText().isBlank() || jTextField3.getText().isBlank() || jTextField4.getText().isBlank() || jTextField5.getText().isBlank()) {
             jLabel12.setText("Make sure all fields are full");
         } else {
+            // Calculate the Roth
             jLabel12.setText("Good Job");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
