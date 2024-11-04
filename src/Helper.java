@@ -290,5 +290,10 @@ public class Helper {
         if (!(Character.isDigit(c) ))
             evt.consume();
     }
+    
+    // Calc fucuture value of current balance (roth IRA)
+    public static void futureCurrent (double current, double r, double years) {
+        
+    }
 }
 
