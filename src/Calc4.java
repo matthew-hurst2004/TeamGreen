@@ -809,7 +809,7 @@ public class Calc4 extends javax.swing.JFrame {
     {
         homeInterestRateDouble = 0;
     } else {
-        homeInterestRateDouble = (Double.parseDouble(interestRateTextField.getText()) / 100)/12;
+        homeInterestRateDouble = Double.parseDouble(interestRateTextField.getText()) ;
     }
             
 
@@ -835,8 +835,8 @@ public class Calc4 extends javax.swing.JFrame {
         downPaymentAmountDouble = 0;
     } else {
         downPaymentPercentageDouble = Double.parseDouble(downPaymentTextField.getText());
-        downPaymentPercentageDouble = downPaymentPercentageDouble / 100;
-        downPaymentAmountDouble = downPaymentPercentageDouble * homePriceDouble ;
+        downPaymentPercentageDouble = (downPaymentPercentageDouble / 100);
+        downPaymentAmountDouble = (1 + downPaymentPercentageDouble) * homePriceDouble ;
         }
     
     
@@ -849,34 +849,13 @@ public class Calc4 extends javax.swing.JFrame {
     double rentOverallRate = homeRentDouble + renterInsuranceDouble ; // Add more here as expanding 
     double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
     double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
-    double monthsUntillRentMoreBuy = 0;
-    if (homePropertyTaxDouble != 0){
-        homePropertyTaxDouble = (homePropertyTaxDouble / 100) * homePriceDouble  ; // Converting to a decimal and changes from yearly to monthly
-    }
-    else { 
-        homePropertyTaxDouble =0;
-        }
-    propertyTaxIncreaseDouble = propertyTaxIncreaseDouble / 100; // Converting to a decimal
-    double loanAmount = homePriceDouble - downPaymentAmountDouble; // This is the home price being subtracted by the down payment
-    double numberOfPayments = loanTermDouble * 12;
-    rentalFeeIncreaseDouble = (rentalFeeIncreaseDouble / 100) + 1;
+    double monthsUntillRentMoreBuy = loanTermDouble * 12;
+    int yearCounter = 0; // gives yearly increase
+
 
     
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
-        double monthlyPayment = (loanTermDouble * homeInterestRateDouble * Math.pow(1 + homeInterestRateDouble, numberOfPayments)) /(Math.pow(1 + homeInterestRateDouble, numberOfPayments) - 1);
 
-        if (numberOfPayments > 0){
-            homeBuildUp = ((homeBuildUp + (homePropertyTaxDouble)) + monthlyPayment + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
-        }
-        else {
-            homeBuildUp = ((homeBuildUp + (homePropertyTaxDouble)) + (hoaFeeDouble /12) + (homeInsuranceDouble / 12));
-            }
-        
-        rentBuildUp = rentBuildUp + rentOverallRate;
-        rentOverallRate = rentOverallRate * rentalFeeIncreaseDouble;
-        homePropertyTaxDouble = (homePropertyTaxDouble ) * ((propertyTaxIncreaseDouble / 12)+1); // property tax increasing over time
-        monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
-        numberOfPayments = numberOfPayments - 1;
     }
     
     BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);

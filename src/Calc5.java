@@ -243,6 +243,30 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel27.setText("Other Costs Increase\t");
 
+        propertyTaxIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                propertyTaxIncreaseTextFieldKeyTyped(evt);
+            }
+        });
+
+        homeInsuranceIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                homeInsuranceIncreaseTextFieldKeyTyped(evt);
+            }
+        });
+
+        hoaFeeIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                hoaFeeIncreaseTextFieldKeyTyped(evt);
+            }
+        });
+
+        otherCostIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                otherCostIncreaseTextFieldKeyTyped(evt);
+            }
+        });
+
         jLabel28.setText("% per year");
 
         jLabel29.setText("% per year");
@@ -697,6 +721,22 @@ public class Calc5 extends javax.swing.JFrame {
     private void otherCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_otherCostTextFieldKeyTyped
         Helper.consumeNotNumbersAllowDecimal(otherCostTextField, evt);
     }//GEN-LAST:event_otherCostTextFieldKeyTyped
+
+    private void propertyTaxIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_propertyTaxIncreaseTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(propertyTaxIncreaseTextField, evt);
+    }//GEN-LAST:event_propertyTaxIncreaseTextFieldKeyTyped
+
+    private void homeInsuranceIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeInsuranceIncreaseTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(homeInsuranceIncreaseTextField, evt);
+    }//GEN-LAST:event_homeInsuranceIncreaseTextFieldKeyTyped
+
+    private void hoaFeeIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hoaFeeIncreaseTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(hoaFeeIncreaseTextField, evt);
+    }//GEN-LAST:event_hoaFeeIncreaseTextFieldKeyTyped
+
+    private void otherCostIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_otherCostIncreaseTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(otherCostIncreaseTextField, evt);
+    }//GEN-LAST:event_otherCostIncreaseTextFieldKeyTyped
 
     
     /**
