@@ -292,8 +292,9 @@ public class Helper {
     }
     
     // Calc fucuture value of current balance (roth IRA)
-    public static void futureCurrent (double current, double r, double years) {
-        
+    public static double futureCurrent (double current, double r, double years) {
+        double future = current * Math.pow((1 + r), years);
+        return future;
     }
 }
 
