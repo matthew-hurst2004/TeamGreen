@@ -249,7 +249,8 @@ public class Helper {
             double interest = remainingBalance * iRate;
             remainingBalance += interest; // Add interest to the balance
             remainingBalance -= monthlyPayment; // Subtract the monthly payment
-            months++;            
+            months++;
+            
         }
         return months;     
     }
