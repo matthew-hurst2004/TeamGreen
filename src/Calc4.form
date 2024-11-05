@@ -110,7 +110,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="sellingClosingCostsTextField" min="-2" pref="77" max="-2" attributes="0"/>
+                                      <Component id="houseOtherCostTextField" min="-2" pref="77" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel12" min="-2" pref="14" max="-2" attributes="0"/>
                                   </Group>
@@ -368,7 +368,7 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="sellingClosingCostsTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="houseOtherCostTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="sellingClosingCostsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -529,9 +529,9 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="InsuranceIncreaseTextFieldKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="sellingClosingCostsTextField">
+    <Component class="javax.swing.JTextField" name="houseOtherCostTextField">
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sellingClosingCostsTextFieldKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="houseOtherCostTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="outputLabel">
@@ -571,12 +571,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="propertyTaxLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Property theft"/>
+        <Property name="text" type="java.lang.String" value="Property tax"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="propertyTaxIncreaseLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Property theft increase&#x9;"/>
+        <Property name="text" type="java.lang.String" value="Property tax increase&#x9;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="homeInsuraceLabel">
@@ -692,7 +692,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="% per year"/>
+        <Property name="text" type="java.lang.String" value="$ per year"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">

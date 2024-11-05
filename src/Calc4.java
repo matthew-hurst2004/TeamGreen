@@ -56,7 +56,7 @@ public class Calc4 extends javax.swing.JFrame {
         maintenanceCostTextField = new javax.swing.JTextField();
         homeValueAppreciationTextField = new javax.swing.JTextField();
         InsuranceIncreaseTextField = new javax.swing.JTextField();
-        sellingClosingCostsTextField = new javax.swing.JTextField();
+        houseOtherCostTextField = new javax.swing.JTextField();
         outputLabel = new javax.swing.JLabel();
         testingHomeRentLabel = new javax.swing.JLabel();
         testingHomePurchaseLabel = new javax.swing.JLabel();
@@ -257,9 +257,9 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
-        sellingClosingCostsTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        houseOtherCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                sellingClosingCostsTextFieldKeyTyped(evt);
+                houseOtherCostTextFieldKeyTyped(evt);
             }
         });
 
@@ -277,9 +277,9 @@ public class Calc4 extends javax.swing.JFrame {
 
         buyingClosingCostsLabel.setText("Buying closing costs");
 
-        propertyTaxLabel.setText("Property theft");
+        propertyTaxLabel.setText("Property tax");
 
-        propertyTaxIncreaseLabel.setText("Property theft increase\t");
+        propertyTaxIncreaseLabel.setText("Property tax increase\t");
 
         homeInsuraceLabel.setText("Home insurance\t");
 
@@ -331,7 +331,7 @@ public class Calc4 extends javax.swing.JFrame {
 
         jLabel4.setText("%");
 
-        jLabel5.setText("% per year");
+        jLabel5.setText("$ per year");
 
         jLabel6.setText("% per year");
 
@@ -446,7 +446,7 @@ public class Calc4 extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(sellingClosingCostsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(houseOtherCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
@@ -652,7 +652,7 @@ public class Calc4 extends javax.swing.JFrame {
                                     .addComponent(jLabel19))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(sellingClosingCostsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(houseOtherCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(sellingClosingCostsLabel)
                                     .addComponent(jLabel12))
                                 .addGap(18, 18, 18)
@@ -684,7 +684,7 @@ public class Calc4 extends javax.swing.JFrame {
     double maintenanceCostDouble;
     double homeValueAppreciationDouble;
     double InsuranceIncreaseDouble; 
-    double sellingClosingCostsDouble; 
+    double houseOtherCostsDouble; 
     double rentalFeeIncreaseDouble; 
     double renterInsuranceDouble; // put in the calculations
     double securityDepositDouble; 
@@ -742,11 +742,11 @@ public class Calc4 extends javax.swing.JFrame {
         rentalFeeIncreaseDouble = Double.parseDouble(rentalFeeIncreaseTextField.getText());
     }        
         
-    if (sellingClosingCostsTextField.getText().equals("")) 
+    if (houseOtherCostTextField.getText().equals("")) 
     {
-        sellingClosingCostsDouble = 0;
+        houseOtherCostsDouble = 0;
     } else {
-        sellingClosingCostsDouble = Double.parseDouble(sellingClosingCostsTextField.getText());
+        houseOtherCostsDouble = Double.parseDouble(houseOtherCostTextField.getText());
     }        
     
     if (InsuranceIncreaseTextField.getText().equals("")) 
@@ -849,13 +849,18 @@ public class Calc4 extends javax.swing.JFrame {
     double rentOverallRate = homeRentDouble + renterInsuranceDouble ; // Add more here as expanding 
     double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
     double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
-    double monthsUntillRentMoreBuy = loanTermDouble * 12;
-    int yearCounter = 0; // gives yearly increase
+    double monthsUntillRentMoreBuy = 0; // a counter to stop a infinite loop
+    int yearCounter = 0; // gives yearly increase, once it reaches 12 the increase happens
 
 
     
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
-
+        if (yearCounter >= 12){
+            homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
+            double tim = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
+        }
+        yearCounter = yearCounter + 1;
+        monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
     }
     
     BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);
@@ -922,9 +927,9 @@ public class Calc4 extends javax.swing.JFrame {
         Helper.consumeNotNumbersAllowDecimalAndNeg(InsuranceIncreaseTextField, evt);
     }//GEN-LAST:event_InsuranceIncreaseTextFieldKeyTyped
 
-    private void sellingClosingCostsTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sellingClosingCostsTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(sellingClosingCostsTextField, evt);
-    }//GEN-LAST:event_sellingClosingCostsTextFieldKeyTyped
+    private void houseOtherCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_houseOtherCostTextFieldKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(houseOtherCostTextField, evt);
+    }//GEN-LAST:event_houseOtherCostTextFieldKeyTyped
 
     private void monthlyRentTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_monthlyRentTextFieldKeyTyped
         Helper.consumeNotNumbersAllowDecimal(monthlyRentTextField, evt);
@@ -1016,6 +1021,7 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JTextField homePurchasePriceTextField;
     private javax.swing.JLabel homeValueAppreciationLabel;
     private javax.swing.JTextField homeValueAppreciationTextField;
+    private javax.swing.JTextField houseOtherCostTextField;
     private javax.swing.JLabel insuranceIncreaseLabel;
     private javax.swing.JLabel interestRateLabel;
     private javax.swing.JTextField interestRateTextField;
@@ -1063,7 +1069,6 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel securityDepositLabel;
     private javax.swing.JTextField securityDepositTextField;
     private javax.swing.JLabel sellingClosingCostsLabel;
-    private javax.swing.JTextField sellingClosingCostsTextField;
     private javax.swing.JLabel testingHomePurchaseLabel;
     private javax.swing.JLabel testingHomeRentLabel;
     private javax.swing.JLabel titleLabel;
