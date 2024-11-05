@@ -628,10 +628,10 @@ public class Calc5 extends javax.swing.JFrame {
             
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy"); // not in use yet
             
-            BigDecimal bd = new BigDecimal(totalMonthyPayment); // rounding 
+            BigDecimal bd = new BigDecimal(totalMonthyPayment); // rounding to the hundredth place
             BigDecimal roundedmonthlyPayment = bd.setScale(2, RoundingMode.HALF_UP);
 
-            BigDecimal bd2 = new BigDecimal(monthlyPayment); // rounding 
+            BigDecimal bd2 = new BigDecimal(monthlyPayment);  
             BigDecimal roundedmonthlyPaymentBeforeExtra = bd2.setScale(2, RoundingMode.HALF_UP);
             
             monthlyPayBeforeExtraLabel.setText("Monthly Payment before additional expenses: " + String.valueOf(roundedmonthlyPaymentBeforeExtra));
@@ -640,8 +640,8 @@ public class Calc5 extends javax.swing.JFrame {
             fullAmountPaid = downPaymentDouble; 
             
             int counterForWhile = 0; // counts the number of months
-            int counterForPercentIncrease = 0;
-            double otherCostsDiv12 = otherCostsDouble / 12; // Div 12 = divided by 12 
+            int counterForPercentIncrease = 0; // counter the number of months untill I increase things like property tax
+            double otherCostsDiv12 = otherCostsDouble / 12; // Div 12 = divided by 12 I am just using slang
             double hoaFeeDiv12 = hoaFeeDouble / 12;
             double PropertyTaxDiv12 = propertyTaxDouble / 12;
             double homeInsuranceDiv12 = homeInsuranceDouble / 12;
@@ -650,9 +650,9 @@ public class Calc5 extends javax.swing.JFrame {
                 fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
                 
                 
-                if (counterForPercentIncrease == 12)
+                if (counterForPercentIncrease >= 12)
                 {
-                    otherCostsDiv12 = otherCostsDiv12 * ((otherCostsIncreasePercentage / 100) + 1);
+                    otherCostsDiv12 = otherCostsDiv12 * ((otherCostsIncreasePercentage / 100) + 1); // everything gets their percent increase
                     PropertyTaxDiv12 = PropertyTaxDiv12 * ((propertyTaxIncreasePercentage / 100) + 1);
                     hoaFeeDiv12 = hoaFeeDiv12 * ((hoaFeeIncreasePercentage / 100) + 1);
                     homeInsuranceDiv12 = homeInsuranceDiv12 * ((homeInsuranceIncreasePercentage / 100) + 1);

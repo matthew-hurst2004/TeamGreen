@@ -292,7 +292,7 @@ public class Calc4 extends javax.swing.JFrame {
 
         insuranceIncreaseLabel.setText("Cost/insurance increase");
 
-        sellingClosingCostsLabel.setText("Selling closing costs");
+        sellingClosingCostsLabel.setText("Other Costs");
 
         rentalFeeIncreaseLabel.setText("Rental fee increase");
 
@@ -345,7 +345,7 @@ public class Calc4 extends javax.swing.JFrame {
 
         jLabel11.setText("% per year");
 
-        jLabel12.setText("%");
+        jLabel12.setText("$ per year");
 
         jLabel19.setText("% per year");
 
@@ -444,11 +444,12 @@ public class Calc4 extends javax.swing.JFrame {
                                     .addComponent(insuranceIncreaseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(sellingClosingCostsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(houseOtherCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(10, 10, 10))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(InsuranceIncreaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -836,7 +837,7 @@ public class Calc4 extends javax.swing.JFrame {
     } else {
         downPaymentPercentageDouble = Double.parseDouble(downPaymentTextField.getText());
         downPaymentPercentageDouble = (downPaymentPercentageDouble / 100);
-        downPaymentAmountDouble = (1 + downPaymentPercentageDouble) * homePriceDouble ;
+        downPaymentAmountDouble = (downPaymentPercentageDouble) * homePriceDouble ;
         }
     
     
@@ -847,20 +848,29 @@ public class Calc4 extends javax.swing.JFrame {
     
     
     double rentOverallRate = homeRentDouble + renterInsuranceDouble ; // Add more here as expanding 
-    double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent
+    double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent. 
     double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0; // a counter to stop a infinite loop
-    int yearCounter = 0; // gives yearly increase, once it reaches 12 the increase happens
-
+    int counterForYearlyIncrease = 0; // gives yearly increase, once it reaches 12 the increase happens
+    
+    if (downPaymentAmountDouble >= homePriceDouble) {
+        
+    }
 
     
     while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
-        if (yearCounter >= 12){
+        if (counterForYearlyIncrease >= 12){
             homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
-            double tim = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
+            homeRentDouble = homeRentDouble * ((rentalFeeIncreaseDouble / 100) + 1);
         }
-        yearCounter = yearCounter + 1;
+        double houseMortgageMonthly = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
+        
+        homeBuildUp = homeBuildUp + houseMortgageMonthly; // not done yet
+        rentBuildUp = rentBuildUp + homeRentDouble + renterInsuranceDouble; // not done yet
+        
+        counterForYearlyIncrease = counterForYearlyIncrease + 1;
         monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
+        
     }
     
     BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);
