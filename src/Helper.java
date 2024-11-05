@@ -296,5 +296,14 @@ public class Helper {
         double future = current * Math.pow((1 + r), years);
         return future;
     }
+    public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble,
+            double interestRate, double otherCostsDouble, double hoaFeeDouble, double propertyTaxDouble, double homeInsuranceDouble) {
+            double loanTermNumberOfMonths = loanTermDouble * 12;
+            double principal = homePriceDouble - downPaymentDouble;
+            double monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, - loanTermNumberOfMonths));
+            double totalMonthyPayment = monthlyPayment + (otherCostsDouble / 12) + (hoaFeeDouble / 12) + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
+
+        return totalMonthyPayment;
+    }
 }
 
