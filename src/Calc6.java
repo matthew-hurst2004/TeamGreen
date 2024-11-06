@@ -1,5 +1,7 @@
 
 import javax.swing.JOptionPane;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -208,16 +210,32 @@ public class Calc6 extends javax.swing.JFrame {
 
         lblPercent1.setText("%");
 
-        txtOriginalLoanAmount.setText("jTextField1");
+        txtOriginalLoanAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtOriginalLoanAmountKeyTyped(evt);
+            }
+        });
 
-        txtOriginalLoanTerm.setText("jTextField2");
+        txtOriginalLoanTerm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtOriginalLoanTermKeyTyped(evt);
+            }
+        });
 
         lblOriginalLoanAmount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOriginalLoanAmount.setText("Original loan amount: ");
 
-        txtTimeRemainingYears.setText("jTextField3");
+        txtTimeRemainingYears.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTimeRemainingYearsKeyTyped(evt);
+            }
+        });
 
-        txtTimeRemainingMonths.setText("jTextField4");
+        txtTimeRemainingMonths.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTimeRemainingMonthsKeyTyped(evt);
+            }
+        });
 
         lblCurrentLoanTerm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblCurrentLoanTerm.setText("Loan Term:");
@@ -419,28 +437,134 @@ public class Calc6 extends javax.swing.JFrame {
 
     private void btnCalculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalculateMouseClicked
         
-        double remainingBalance = Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
-        double currentMonthlyPayment = Helper.getInput(txtCurrentMonthlyPayment,"Invalid input. Please enter a positive numeric value for current monthly payment.");
-        double currentInterestRate = Helper.getInput(txtCurrentInterestRate,"Invalid input. Please enter a positive numeric value for the current interest rate.") /1200.0;
-        double newLoanMonths = Math.floor(Helper.getInput(txtNewLoanMonths,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
-        double newInterestRate = Helper.getInput(txtNewInterestRate,"Invalid input. Please enter a positive numeric value for the new interest rate.") / 1200.0;
-        double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.") / 100.0;
-        double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
-        double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a numeric value for the cash out amount.");
-        double originalLoanTerm = Helper.getInput(txtOriginalLoanTerm,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
-        double originalLoanRemainingMonths = Helper.getInput(txtTimeRemainingMonths,"Invalid input. Please enter a numeric value for the original loan term.");
-        double originalLoanRemainingYears = Helper.getInput(txtTimeRemainingYears,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
+        double remainingBalance = 0; //= Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
+        double currentMonthlyPayment = 0; //= Helper.getInput(txtCurrentMonthlyPayment,"Invalid input. Please enter a positive numeric value for current monthly payment.");
+        double originalLoanAmount;
+        double originalLoanTerm = 0; //= Helper.getInput(txtOriginalLoanTerm,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
+        double originalLoanRemainingMonths = 0; //= Helper.getInput(txtTimeRemainingMonths,"Invalid input. Please enter a numeric value for the original loan term.");
+        double originalLoanRemainingYears = 0; //= Helper.getInput(txtTimeRemainingYears,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
+        double currentInterestRate; //= Helper.getInput(txtCurrentInterestRate,"Invalid input. Please enter a positive numeric value for the current interest rate.") /1200.0;
+        double newLoanMonths; //= Math.floor(Helper.getInput(txtNewLoanMonths,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
+        double newInterestRate; //= Helper.getInput(txtNewInterestRate,"Invalid input. Please enter a positive numeric value for the new interest rate.") / 1200.0;
+        double points; //= Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.") / 100.0;
+        double costFees; //= Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
+        double cashOutAmount; //= Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a numeric value for the cash out amount.");
         double currentAccumulatedInterest = 0;
         double newAccumulatedInterest = 0;
         double pointsCost = 0;
         double totalCurrentMonthlyPayments = 0;
         double totalNewMonthlyPayments = 0;
-        //validates
-        if (remainingBalance < 0 || currentMonthlyPayment < 0 || currentInterestRate < 0 || newLoanMonths < 0 
-                || newInterestRate < 0 || points < 0 || costFees < 0 || cashOutAmount < 0) 
+        int option = cboxOptions.getSelectedIndex();
+        
+        if (option == 0)
         {
-            return; //exits
+           // remaining balance
+            if (txtRemainingBalance.getText().equals("")) 
+            {
+                remainingBalance = 0;
+            } else {
+                remainingBalance  = Double.parseDouble(txtRemainingBalance.getText());
+            }                 
+            // current monthly payment
+            if (txtCurrentMonthlyPayment.getText().equals("")) 
+            {
+                currentMonthlyPayment = 0;
+            } else {
+                currentMonthlyPayment = Double.parseDouble(txtCurrentMonthlyPayment.getText());
+            } 
         }
+        else
+        {
+            // original loan amount
+            if (txtOriginalLoanAmount.getText().equals("")) 
+            {
+                originalLoanAmount = 0;
+            } else {
+                originalLoanAmount = Double.parseDouble(txtOriginalLoanAmount.getText());
+            }                  
+            // original loan term - in months
+            if (txtOriginalLoanTerm.getText().equals("")) 
+            {
+                originalLoanTerm = 0;
+            } else {
+                originalLoanTerm = Math.floor(Double.parseDouble(txtOriginalLoanTerm.getText()) * 12) ;
+            }                  
+            // original loan remaining years - in months
+            if (txtTimeRemainingYears.getText().equals("")) 
+            {
+                originalLoanRemainingYears = 0;
+            } else {
+                originalLoanRemainingYears = Math.floor(Double.parseDouble(txtTimeRemainingYears.getText()) * 12);
+            }                       
+            // original loan remaining months
+            if (txtTimeRemainingMonths.getText().equals("")) 
+            {
+                originalLoanRemainingMonths = 0;
+            } else {
+                originalLoanRemainingMonths = Math.floor(Double.parseDouble(txtTimeRemainingMonths.getText()));
+            }
+        }
+        
+        
+        
+        
+        
+                             
+                            
+        // current interest rate
+        if (txtCurrentInterestRate.getText().equals("")) 
+        {
+            newInterestRate = 0;
+        } else {
+            newInterestRate = Double.parseDouble(txtCurrentInterestRate.getText()) / 1200.0;
+        }        
+        // new loan term - in months
+        if (txtNewLoanMonths.getText().equals("")) 
+        {
+            newLoanMonths = 0;
+        } else {
+            newLoanMonths = Math.floor(Double.parseDouble(txtNewLoanMonths.getText()) * 12);
+        }        
+        // new loan interest rate
+        if (txtNewInterestRate.getText().equals("")) 
+        {
+            currentInterestRate = 0;
+        } else {
+            currentInterestRate = Double.parseDouble(txtNewInterestRate.getText()) / 1200.0;
+        }    
+        // points
+        if (txtPoints.getText().equals("")) 
+        {
+            points = 0;
+        } else {
+            points = Double.parseDouble(txtPoints.getText()) / 100.0;
+        }
+        // cost and fees
+        if (txtCostFees.getText().equals("")) 
+        {
+            costFees = 0;
+        } else {
+            costFees = Double.parseDouble(txtCostFees.getText());
+        }
+        // cash out amount
+        if (txtCashOutAmount.getText().equals("")) 
+        {
+            cashOutAmount = 0;
+        } else {
+            cashOutAmount = Double.parseDouble(txtCashOutAmount.getText());
+        }
+
+      
+    
+        
+        
+          
+        
+        
+        
+        
+        
+      
         
         double remainingTime = originalLoanTerm - (originalLoanRemainingYears + originalLoanRemainingMonths);
         
@@ -504,6 +628,7 @@ public class Calc6 extends javax.swing.JFrame {
             txtTimeRemainingYears.setVisible(false);
             txtTimeRemainingMonths.setVisible(false);
             System.out.println("First choice");
+
         }
         else
         {
@@ -517,6 +642,22 @@ public class Calc6 extends javax.swing.JFrame {
             System.out.println("Second choice");
         }
     }//GEN-LAST:event_cboxOptionsActionPerformed
+
+    private void txtOriginalLoanAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOriginalLoanAmountKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtOriginalLoanAmount, evt);
+    }//GEN-LAST:event_txtOriginalLoanAmountKeyTyped
+
+    private void txtOriginalLoanTermKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOriginalLoanTermKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtOriginalLoanTerm, evt);
+    }//GEN-LAST:event_txtOriginalLoanTermKeyTyped
+
+    private void txtTimeRemainingYearsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimeRemainingYearsKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtTimeRemainingYears, evt);
+    }//GEN-LAST:event_txtTimeRemainingYearsKeyTyped
+
+    private void txtTimeRemainingMonthsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimeRemainingMonthsKeyTyped
+        Helper.consumeNotNumbersAllowDecimal(txtTimeRemainingMonths, evt);
+    }//GEN-LAST:event_txtTimeRemainingMonthsKeyTyped
 
     /**
      * @param args the command line arguments

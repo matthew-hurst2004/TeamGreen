@@ -476,14 +476,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtOriginalLoanAmount">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtOriginalLoanAmountKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtOriginalLoanTerm">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtOriginalLoanTermKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblOriginalLoanAmount">
       <Properties>
@@ -494,14 +494,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTimeRemainingYears">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimeRemainingYearsKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTimeRemainingMonths">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimeRemainingMonthsKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCurrentLoanTerm">
       <Properties>
