@@ -254,6 +254,34 @@ public class Helper {
         }
         return months;     
     }
+    public static double remainingAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
+    {
+        double remainingAccumulatedInterest = 0;
+        double noncurrentInterest = 0;
+        int  counter = 0;
+        
+        if (monthlyPayment <= remainingBalance * iRate) 
+        {
+            System.out.println("Monthly payment is too low to pay off the balance.");
+            return -1;
+        }
+
+        while (remainingBalance > 0) 
+        {
+            
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest; // Add interest to the balance
+            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+            remainingAccumulatedInterest += interest;
+            counter++;
+            if (counter <= time)
+            {
+                noncurrentInterest += interest;
+            }
+            
+        }
+      return remainingAccumulatedInterest - noncurrentInterest;     
+    }
 
     
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)

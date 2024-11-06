@@ -18,13 +18,13 @@ public class Calc6 extends javax.swing.JFrame {
     public Calc6() 
     {
         initComponents();
-        lblOriginalLoanAmount.setVisible(false);
-        lblCurrentLoanTerm.setVisible(false);
-        lblTimeRemaining.setVisible(false);
-        txtOriginalLoanAmount.setVisible(false);
-        txtCurrentLoanTerm.setVisible(false);
-        txtTimeRemainingYears.setVisible(false);
-        txtTimeRemaningMonths.setVisible(false);
+//        lblOriginalLoanAmount.setVisible(false);
+//        lblCurrentLoanTerm.setVisible(false);
+//        lblTimeRemaining.setVisible(false);
+//        txtOriginalLoanAmount.setVisible(false);
+//        txtOriginalLoanTerm.setVisible(false);
+//        txtTimeRemainingYears.setVisible(false);
+//        txtTimeRemainingMonths.setVisible(false);
                 
     }
 
@@ -64,10 +64,10 @@ public class Calc6 extends javax.swing.JFrame {
         lblPercent2 = new javax.swing.JLabel();
         lblPercent1 = new javax.swing.JLabel();
         txtOriginalLoanAmount = new javax.swing.JTextField();
-        txtCurrentLoanTerm = new javax.swing.JTextField();
+        txtOriginalLoanTerm = new javax.swing.JTextField();
         lblOriginalLoanAmount = new javax.swing.JLabel();
         txtTimeRemainingYears = new javax.swing.JTextField();
-        txtTimeRemaningMonths = new javax.swing.JTextField();
+        txtTimeRemainingMonths = new javax.swing.JTextField();
         lblCurrentLoanTerm = new javax.swing.JLabel();
         lblTimeRemaining = new javax.swing.JLabel();
 
@@ -210,14 +210,14 @@ public class Calc6 extends javax.swing.JFrame {
 
         txtOriginalLoanAmount.setText("jTextField1");
 
-        txtCurrentLoanTerm.setText("jTextField2");
+        txtOriginalLoanTerm.setText("jTextField2");
 
         lblOriginalLoanAmount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOriginalLoanAmount.setText("Original loan amount: ");
 
         txtTimeRemainingYears.setText("jTextField3");
 
-        txtTimeRemaningMonths.setText("jTextField4");
+        txtTimeRemainingMonths.setText("jTextField4");
 
         lblCurrentLoanTerm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblCurrentLoanTerm.setText("Loan Term:");
@@ -255,12 +255,12 @@ public class Calc6 extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(txtOriginalLoanAmount, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtCurrentMonthlyPayment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
-                                        .addComponent(txtCurrentLoanTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtOriginalLoanTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(txtTimeRemainingYears, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(txtCurrentInterestRate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                                                .addComponent(txtTimeRemaningMonths))
+                                                .addComponent(txtTimeRemainingMonths))
                                             .addGap(18, 18, 18)
                                             .addComponent(lblPercent1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -354,14 +354,14 @@ public class Calc6 extends javax.swing.JFrame {
                             .addComponent(lblOriginalLoanAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCurrentLoanTerm, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(txtOriginalLoanTerm, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                             .addComponent(lblCurrentLoanTerm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblTimeRemaining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtTimeRemainingYears, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(txtTimeRemaningMonths, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(txtTimeRemainingMonths, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -427,6 +427,9 @@ public class Calc6 extends javax.swing.JFrame {
         double points = Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.") / 100.0;
         double costFees = Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
         double cashOutAmount = Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a numeric value for the cash out amount.");
+        double originalLoanTerm = Helper.getInput(txtOriginalLoanTerm,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
+        double originalLoanRemainingMonths = Helper.getInput(txtTimeRemainingMonths,"Invalid input. Please enter a numeric value for the original loan term.");
+        double originalLoanRemainingYears = Helper.getInput(txtTimeRemainingYears,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
         double currentAccumulatedInterest = 0;
         double newAccumulatedInterest = 0;
         double pointsCost = 0;
@@ -438,6 +441,8 @@ public class Calc6 extends javax.swing.JFrame {
         {
             return; //exits
         }
+        
+        double remainingTime = originalLoanTerm - (originalLoanRemainingYears + originalLoanRemainingMonths);
         
         double newRemainingBalance = remainingBalance + cashOutAmount; // updated remaining balance 
         double newMonthlyPayment = Helper.monthlyPayment(newRemainingBalance, newLoanMonths, newInterestRate); //new monthly payment
@@ -453,7 +458,10 @@ public class Calc6 extends javax.swing.JFrame {
         totalCurrentMonthlyPayments = currentMonthlyPayment * currentLoanMonths;
         // total amount of payments made on new loan
         totalNewMonthlyPayments = newMonthlyPayment * newLoanMonths;
-        
+        //interest for original loan option
+        double origLoanInterest = Helper.remainingAccumulatedInterest(remainingBalance, newMonthlyPayment, currentInterestRate,
+                remainingTime);
+        //ouput testing
         System.out.println("new remaining balance: " + newRemainingBalance);
         System.out.println("new monthly payment: " + newMonthlyPayment);
         System.out.println("accumulated interest current: " + currentAccumulatedInterest);
@@ -464,6 +472,7 @@ public class Calc6 extends javax.swing.JFrame {
         System.out.println("cost of points: " + pointsCost);
         System.out.println("total of current loan payments: " + totalCurrentMonthlyPayments);
         System.out.println("total of current loan payments: " + totalNewMonthlyPayments);
+        System.out.println("original loan interest: "  + origLoanInterest);
 
 
 
@@ -491,9 +500,9 @@ public class Calc6 extends javax.swing.JFrame {
             lblCurrentLoanTerm.setVisible(false);
             lblTimeRemaining.setVisible(false);
             txtOriginalLoanAmount.setVisible(false);
-            txtCurrentLoanTerm.setVisible(false);
+            txtOriginalLoanTerm.setVisible(false);
             txtTimeRemainingYears.setVisible(false);
-            txtTimeRemaningMonths.setVisible(false);
+            txtTimeRemainingMonths.setVisible(false);
             System.out.println("First choice");
         }
         else
@@ -502,9 +511,9 @@ public class Calc6 extends javax.swing.JFrame {
             lblCurrentLoanTerm.setVisible(true);
             lblTimeRemaining.setVisible(true);
             txtOriginalLoanAmount.setVisible(true);
-            txtCurrentLoanTerm.setVisible(true);
+            txtOriginalLoanTerm.setVisible(true);
             txtTimeRemainingYears.setVisible(true);
-            txtTimeRemaningMonths.setVisible(true);
+            txtTimeRemainingMonths.setVisible(true);
             System.out.println("Second choice");
         }
     }//GEN-LAST:event_cboxOptionsActionPerformed
@@ -569,14 +578,14 @@ public class Calc6 extends javax.swing.JFrame {
     private javax.swing.JTextField txtCashOutAmount;
     private javax.swing.JTextField txtCostFees;
     private javax.swing.JTextField txtCurrentInterestRate;
-    private javax.swing.JTextField txtCurrentLoanTerm;
     private javax.swing.JTextField txtCurrentMonthlyPayment;
     private javax.swing.JTextField txtNewInterestRate;
     private javax.swing.JTextField txtNewLoanMonths;
     private javax.swing.JTextField txtOriginalLoanAmount;
+    private javax.swing.JTextField txtOriginalLoanTerm;
     private javax.swing.JTextField txtPoints;
     private javax.swing.JTextField txtRemainingBalance;
+    private javax.swing.JTextField txtTimeRemainingMonths;
     private javax.swing.JTextField txtTimeRemainingYears;
-    private javax.swing.JTextField txtTimeRemaningMonths;
     // End of variables declaration//GEN-END:variables
 }

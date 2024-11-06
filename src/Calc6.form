@@ -54,12 +54,12 @@
                                           <Component id="txtOriginalLoanAmount" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtCurrentMonthlyPayment" alignment="0" pref="109" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="txtCurrentLoanTerm" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <Component id="txtOriginalLoanTerm" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="txtTimeRemainingYears" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtCurrentInterestRate" alignment="0" pref="109" max="32767" attributes="0"/>
-                                              <Component id="txtTimeRemaningMonths" max="32767" attributes="0"/>
+                                              <Component id="txtTimeRemainingMonths" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="lblPercent1" min="-2" pref="21" max="-2" attributes="0"/>
@@ -184,7 +184,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtCurrentLoanTerm" pref="30" max="32767" attributes="0"/>
+                          <Component id="txtOriginalLoanTerm" pref="30" max="32767" attributes="0"/>
                           <Component id="lblCurrentLoanTerm" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -195,7 +195,7 @@
                   <Component id="txtTimeRemainingYears" pref="38" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="txtTimeRemaningMonths" pref="34" max="32767" attributes="0"/>
+              <Component id="txtTimeRemainingMonths" pref="34" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
@@ -480,7 +480,7 @@
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCurrentLoanTerm">
+    <Component class="javax.swing.JTextField" name="txtOriginalLoanTerm">
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField2"/>
       </Properties>
@@ -498,7 +498,7 @@
         <Property name="text" type="java.lang.String" value="jTextField3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtTimeRemaningMonths">
+    <Component class="javax.swing.JTextField" name="txtTimeRemainingMonths">
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField4"/>
       </Properties>
