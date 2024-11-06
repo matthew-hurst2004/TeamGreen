@@ -319,5 +319,27 @@ public class Helper {
         if (!(Character.isDigit(c) ))
             evt.consume();
     }
+    
+    // Calc fucuture value of current balance (roth IRA)
+    public static double futureCurrent (double current, double r, double years) {
+        double future = current * Math.pow(1 + r, years);
+        return future;
+    }
+    // Calc the contributions over N years
+    public static double futureContributionsCalculator (double C, double r, double N) {
+        double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
+        return FVC;
+    }
+
+
+    public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble,
+            double interestRate, double otherCostsDouble, double hoaFeeDouble, double propertyTaxDouble, double homeInsuranceDouble) {
+            double loanTermNumberOfMonths = loanTermDouble * 12;
+            double principal = homePriceDouble - downPaymentDouble;
+            double monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, - loanTermNumberOfMonths));
+            double totalMonthyPayment = monthlyPayment + (otherCostsDouble / 12) + (hoaFeeDouble / 12) + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
+
+        return totalMonthyPayment;
+    }
 }
 

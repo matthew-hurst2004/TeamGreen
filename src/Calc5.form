@@ -574,12 +574,24 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="propertyTaxIncreaseTextField">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="propertyTaxIncreaseTextFieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="homeInsuranceIncreaseTextField">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homeInsuranceIncreaseTextFieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="hoaFeeIncreaseTextField">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="hoaFeeIncreaseTextFieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="otherCostIncreaseTextField">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="otherCostIncreaseTextFieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel28">
       <Properties>
