@@ -218,7 +218,7 @@ public class Helper {
     }
     
     // Accumulated interest
-    public static double accumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
+    public static double remainingAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
     {
         double accumulatedInterest = 0;
         
@@ -237,7 +237,7 @@ public class Helper {
             accumulatedInterest += interest;
             
         }
-      return accumulatedInterest;     
+        return accumulatedInterest;     
     }
 
     public static double months(double remainingBalance, double monthlyPayment, double iRate)
@@ -254,7 +254,7 @@ public class Helper {
         }
         return months;     
     }
-    public static double remainingAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
+    public static double originalAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
     {
         double remainingAccumulatedInterest = 0;
         double noncurrentInterest = 0;
