@@ -9,8 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -171,6 +169,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel14.setText("Home Insurance");
 
+        homeInsurance.setText("0");
         homeInsurance.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 homeInsuranceKeyTyped(evt);
@@ -181,6 +180,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel16.setText("PMI Insurance");
 
+        pmiInsurance.setText("0");
         pmiInsurance.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 pmiInsuranceKeyTyped(evt);
@@ -191,6 +191,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel18.setText("HOA Fee");
 
+        hoaFeeTextField.setText("0");
         hoaFeeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 hoaFeeTextFieldKeyTyped(evt);
@@ -201,6 +202,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel20.setText("Other Costs");
 
+        otherCostTextField.setText("0");
         otherCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 otherCostTextFieldKeyTyped(evt);
@@ -221,24 +223,29 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel27.setText("Other Costs Increase\t");
 
+        propertyTaxIncreaseTextField.setText("0");
         propertyTaxIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 propertyTaxIncreaseTextFieldKeyTyped(evt);
             }
         });
 
+        homeInsuranceIncreaseTextField.setText("0");
         homeInsuranceIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 homeInsuranceIncreaseTextFieldKeyTyped(evt);
             }
         });
 
+        hoaFeeIncreaseTextField.setText("0");
         hoaFeeIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 hoaFeeIncreaseTextFieldKeyTyped(evt);
             }
         });
 
+        otherCostIncreaseTextField.setText("0");
+        otherCostIncreaseTextField.setToolTipText("");
         otherCostIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 otherCostIncreaseTextFieldKeyTyped(evt);
@@ -295,8 +302,8 @@ public class Calc5 extends javax.swing.JFrame {
                                                         .addComponent(loanTermTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(jLabel7)))
-                                                .addGap(42, 42, 42)
-                                                .addComponent(errorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(errorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 58, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
@@ -579,19 +586,14 @@ public class Calc5 extends javax.swing.JFrame {
             double principal = homePriceDouble - downPaymentDouble;
             double monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, - loanTermNumberOfMonths));
             double totalMonthyPayment = monthlyPayment + (pmiInsuranceDouble / 12) + (otherCostsDouble / 12) + (hoaFeeDouble / 12) + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
+            
+            String roundedmonthlyPaymentBeforeExtra = Helper.formatDouble(monthlyPayment); // rounding and formatting
+            
+            String roundedmonthlyPaymentAfterExtra = Helper.formatDouble(totalMonthyPayment);
 
-            
-            
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy"); // not in use yet
-            
-            BigDecimal bd = new BigDecimal(totalMonthyPayment); // rounding to the hundredth place
-            BigDecimal roundedmonthlyPayment = bd.setScale(2, RoundingMode.HALF_UP);
-
-            BigDecimal bd2 = new BigDecimal(monthlyPayment);  
-            BigDecimal roundedmonthlyPaymentBeforeExtra = bd2.setScale(2, RoundingMode.HALF_UP);
             
             monthlyPayBeforeExtraLabel.setText("Monthly Payment before additional expenses: " + String.valueOf(roundedmonthlyPaymentBeforeExtra));
-            monthlyPaymentOutputLabel.setText("Monthly Payment after additional expenses: " + String.valueOf(roundedmonthlyPayment));
+            monthlyPaymentOutputLabel.setText("Monthly Payment after additional expenses: " + String.valueOf(roundedmonthlyPaymentAfterExtra));
             
             fullAmountPaid = downPaymentDouble; 
             
@@ -618,10 +620,10 @@ public class Calc5 extends javax.swing.JFrame {
                 counterForPercentIncrease = counterForPercentIncrease + 1;
             }
             
-            BigDecimal bd3 = new BigDecimal(fullAmountPaid); // rounding 
-            BigDecimal fullAmountPaidRounded = bd3.setScale(2, RoundingMode.HALF_UP);
             
-            fullAmountPaidLabel.setText("Once paid off you would spend: " + String.valueOf(fullAmountPaidRounded));
+            String fullAmountOutputString = Helper.formatDouble(fullAmountPaid);
+            
+            fullAmountPaidLabel.setText("Once paid off you would spend: " + String.valueOf(fullAmountOutputString));
             
         } catch (NumberFormatException e) {
             //making sure the necessary boxes have numbers

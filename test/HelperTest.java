@@ -206,6 +206,7 @@ public class HelperTest {
         /**
      * Test of calculateDownPaymentReturnString method, of class Helper.
      */
+    // TESTER IS NOT DONE, NOT EVEN CLOSE!!!!!!!!!!!
     @Test
     public void testRentVsBuyCalc() {
         System.out.println("calculateDownPaymentReturnString");

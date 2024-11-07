@@ -70,8 +70,8 @@
                                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                              <Component id="errorTextField" min="-2" pref="453" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="errorTextField" min="-2" pref="477" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -437,6 +437,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="homeInsurance">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homeInsuranceKeyTyped"/>
       </Events>
@@ -452,6 +455,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="pmiInsurance">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pmiInsuranceKeyTyped"/>
       </Events>
@@ -467,6 +473,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="hoaFeeTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="hoaFeeTextFieldKeyTyped"/>
       </Events>
@@ -482,6 +491,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="otherCostTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="otherCostTextFieldKeyTyped"/>
       </Events>
@@ -522,21 +534,34 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="propertyTaxIncreaseTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="propertyTaxIncreaseTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="homeInsuranceIncreaseTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homeInsuranceIncreaseTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="hoaFeeIncreaseTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="hoaFeeIncreaseTextFieldKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="otherCostIncreaseTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="otherCostIncreaseTextFieldKeyTyped"/>
       </Events>

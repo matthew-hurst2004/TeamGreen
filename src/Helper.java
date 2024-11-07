@@ -324,7 +324,7 @@ public class Helper {
             evt.consume();
         }
 
-        if (userLength >= 12) {
+        if (userLength >= 18) {
             evt.consume();
         }
     }
@@ -345,7 +345,6 @@ public class Helper {
         double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
         return FVC;
     }
-
 
     public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble,
             double interestRate, double otherCostsDouble, double hoaFeeDouble, double propertyTaxDouble, double homeInsuranceDouble) {
