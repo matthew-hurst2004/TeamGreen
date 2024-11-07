@@ -217,6 +217,9 @@ public class Helper {
         }
     }
     
+    
+    
+    
     // Accumulated interest
     public static double remainingAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
     {
@@ -225,18 +228,23 @@ public class Helper {
         
         if (monthlyPayment <= remainingBalance * iRate) 
         {
-            System.out.println("Monthly payment is too low to pay off the balance.");
+            System.out.println(monthlyPayment);
+            System.out.println("Monthly payment is too low to pay off the balance."  + (remainingBalance * iRate));
             return -1;
         }
-
-        while (remainingBalance > 0) 
+        else
         {
-            double interest = remainingBalance * iRate;
-            remainingBalance += interest; // Add interest to the balance
-            remainingBalance -= monthlyPayment; // Subtract the monthly payment
-            accumulatedInterest += interest;
-            
+            while (remainingBalance > 0) 
+            {
+                double interest = remainingBalance * iRate;
+                remainingBalance += interest; // Add interest to the balance
+                remainingBalance -= monthlyPayment; // Subtract the monthly payment
+                accumulatedInterest += interest;
+
+            }
         }
+
+        
         return accumulatedInterest;     
     }
 
@@ -244,14 +252,26 @@ public class Helper {
     {
         double months = 0;
         
-        while (remainingBalance > 0) 
+        
+        if (monthlyPayment <= remainingBalance * iRate) 
         {
-            double interest = remainingBalance * iRate;
-            remainingBalance += interest; // Add interest to the balance
-            remainingBalance -= monthlyPayment; // Subtract the monthly payment
-            months++;
-            
+            System.out.println(monthlyPayment);
+            System.out.println("Monthly payment is too low to pay off the balance."  + (remainingBalance * iRate));
+            return -1;
         }
+        else
+        {
+            while (remainingBalance > 0) 
+            {
+                double interest = remainingBalance * iRate;
+                remainingBalance += interest; // Add interest to the balance
+                remainingBalance -= monthlyPayment; // Subtract the monthly payment
+                months++;
+                
+
+            }
+        }
+ 
         return months;     
     }
     public static double originalAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
@@ -260,11 +280,6 @@ public class Helper {
         double noncurrentInterest = 0;
         int  counter = 0;
         
-        if (monthlyPayment <= remainingBalance * iRate) 
-        {
-            System.out.println("Monthly payment is too low to pay off the balance.");
-            return -1;
-        }
 
         while (remainingBalance > 0) 
         {
