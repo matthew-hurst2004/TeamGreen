@@ -202,4 +202,25 @@ public class HelperTest {
 //        fail("The test case is a prototype.");
 //    }
     
+    
+        /**
+     * Test of calculateDownPaymentReturnString method, of class Helper.
+     */
+    @Test
+    public void testRentVsBuyCalc() {
+        System.out.println("calculateDownPaymentReturnString");
+        double homePrice = 500000;
+        double percentageDownPayment = 20;
+        double closingCosts = 15000;
+        String expResult = "115,000.00";
+        String result = Helper.calculateDownPaymentReturnString(homePrice, percentageDownPayment, closingCosts);
+        assertEquals(expResult, result);
+        homePrice = 400000;
+        percentageDownPayment = 20;
+        closingCosts = 25000;
+        expResult = "105,000.00";
+        result = Helper.calculateDownPaymentReturnString(homePrice, percentageDownPayment, closingCosts);
+        assertEquals(expResult, result);
+    }
+    
 }
