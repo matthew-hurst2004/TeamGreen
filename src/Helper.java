@@ -225,26 +225,15 @@ public class Helper {
     {
         double accumulatedInterest = 0;
         
-        
-        if (monthlyPayment <= remainingBalance * iRate) 
+        while (remainingBalance > 0) 
         {
-            System.out.println(monthlyPayment);
-            System.out.println("Monthly payment is too low to pay off the balance."  + (remainingBalance * iRate));
-            return -1;
-        }
-        else
-        {
-            while (remainingBalance > 0) 
-            {
-                double interest = remainingBalance * iRate;
-                remainingBalance += interest; // Add interest to the balance
-                remainingBalance -= monthlyPayment; // Subtract the monthly payment
-                accumulatedInterest += interest;
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest; // Add interest to the balance
+            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+            accumulatedInterest += interest;
 
-            }
         }
 
-        
         return accumulatedInterest;     
     }
 
@@ -252,25 +241,16 @@ public class Helper {
     {
         double months = 0;
         
-        
-        if (monthlyPayment <= remainingBalance * iRate) 
+        while (remainingBalance > 0) 
         {
-            System.out.println(monthlyPayment);
-            System.out.println("Monthly payment is too low to pay off the balance."  + (remainingBalance * iRate));
-            return -1;
-        }
-        else
-        {
-            while (remainingBalance > 0) 
-            {
-                double interest = remainingBalance * iRate;
-                remainingBalance += interest; // Add interest to the balance
-                remainingBalance -= monthlyPayment; // Subtract the monthly payment
-                months++;
-                
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest; // Add interest to the balance
+            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+            months++;
 
-            }
+
         }
+  
  
         return months;     
     }

@@ -562,7 +562,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (option == 0) // remaining balance option
         {
             newPrincipalFinal = remainingBalance + cashOutAmount; // updated remaining balance for new loan
-            if (currentMonthlyPayment <= remainingBalance * currentInterestRate) 
+            while (currentMonthlyPayment <= remainingBalance * currentInterestRate) 
             {
                 JOptionPane.showMessageDialog(this, "Monthly payment is too low to pay off the balance. Please enter a higher monthly payment",
                "Error", JOptionPane.ERROR_MESSAGE);
