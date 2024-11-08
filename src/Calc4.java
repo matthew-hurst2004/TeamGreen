@@ -105,6 +105,7 @@ public class Calc4 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         closeButton.setText("Close");
         closeButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,48 +186,57 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
+        homePurchasePriceTextField.setText("0");
         homePurchasePriceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 homePurchasePriceTextFieldKeyTyped(evt);
             }
         });
 
+        downPaymentTextField.setText("0");
         downPaymentTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 downPaymentTextFieldKeyTyped(evt);
             }
         });
 
+        loanTermTextField.setText("0");
         loanTermTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 loanTermTextFieldKeyTyped(evt);
             }
         });
 
+        propertyTaxTextField.setText("0");
         propertyTaxTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 propertyTaxTextFieldKeyTyped(evt);
             }
         });
 
+        buyingClosingCosts.setText("0");
         buyingClosingCosts.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 buyingClosingCostsKeyTyped(evt);
             }
         });
 
+        propertyTaxIncreaseTextField.setText("0");
         propertyTaxIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 propertyTaxIncreaseTextFieldKeyTyped(evt);
             }
         });
 
+        interestRateTextField.setText("0");
+        interestRateTextField.setToolTipText("");
         interestRateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 interestRateTextFieldKeyTyped(evt);
             }
         });
 
+        homeInsuranceTextField.setText("0");
         homeInsuranceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 homeInsuranceTextFieldKeyTyped(evt);
@@ -671,6 +681,9 @@ public class Calc4 extends javax.swing.JFrame {
 
     private void caclulateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caclulateButtonMouseClicked
     // The doubles without comments are not put into the calculations
+    if (monthlyRentTextField.getText().equals("")){
+        JOptionPane.showMessageDialog(null,"Make sure Monthly Rent has a number");
+    }
     double homeRentDouble = Double.parseDouble(monthlyRentTextField.getText());   // put into the calculations, not done
     double homePriceDouble; // put in to the calculations, not done. shouln't be used all at once not done
     double downPaymentPercentageDouble; // put in but not done

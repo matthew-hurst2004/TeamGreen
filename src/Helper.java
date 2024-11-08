@@ -304,7 +304,7 @@ public class Helper {
             evt.consume();
         }
 
-        if (userLength >= 12) {
+        if (userLength >= 18) {
             evt.consume();
         }
     }
@@ -325,7 +325,16 @@ public class Helper {
         double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
         return FVC;
     }
-
+    // Calc the after tax return
+    public static double afterTaxReturn (double r, double tr) {
+        double atr = r * (1 - tr);
+        return atr;
+    }
+    // Calc value of taxable account
+    public static double taxableValue (double pv, double atr, double N) {
+        double VT = pv * (Math.pow((1 + atr), N));
+        return VT;
+    }
 
     public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble,
             double interestRate, double otherCostsDouble, double hoaFeeDouble, double propertyTaxDouble, double homeInsuranceDouble) {
