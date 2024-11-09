@@ -428,7 +428,9 @@ public class Calc7 extends javax.swing.JFrame {
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 // taxable account 
                 Double ATR = Helper.afterTaxReturn(r, tr);
-                Double VT = Helper.taxableValue(PV, ATR, i);
+                // ammount of contribution
+                Double pvr = (C * i);
+                Double VT = Helper.taxableValue(PV, ATR, i) + pvr;
                 String VTs = Helper.formatDouble(VT);
                 model.addRow(new Object[] {Ar,rothrs,VTs});
             }
