@@ -356,7 +356,8 @@ public class Helper {
                 homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
                 homeRentDouble = homeRentDouble * ((rentalFeeIncreaseDouble / 100) + 1);
             }
-            double houseMortgageMonthly = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
+            double houseMortgageMonthly = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble,
+                    homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
 
             homeBuildUp = homeBuildUp + houseMortgageMonthly; // not done yet
             rentBuildUp = rentBuildUp + homeRentDouble + renterInsuranceDouble; // not done yet
