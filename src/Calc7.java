@@ -413,6 +413,8 @@ public class Calc7 extends javax.swing.JFrame {
         int N = R - A;
         // Getting Marginal Tax rate
         double tr = Double.parseDouble(jTextField6.getText())/100;
+        // Tracker to iterate the taxable account
+        double track = Double.parseDouble(jTextField1.getText());
         
         // Making sure none of the fields are empty except Marginal Tax Rate
         if (jTextField1.getText().isBlank() || jTextField2.getText().isBlank() || jTextField3.getText().isBlank() || jTextField4.getText().isBlank() || jTextField5.getText().isBlank()) {
@@ -426,13 +428,11 @@ public class Calc7 extends javax.swing.JFrame {
                 Double rothr = futurer + pvcr;
                 String rothrs = Helper.formatDouble(rothr);
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account 
+                // taxable account
                 Double ATR = Helper.afterTaxReturn(r, tr);
-                // ammount of contribution
-                Double pvr = (C * i);
-                Double VT = Helper.taxableValue(PV, ATR, i) + pvr;
-                String VTs = Helper.formatDouble(VT);
-                model.addRow(new Object[] {Ar,rothrs,VTs});
+                track = (track *(1+ATR)) + C;
+                String tracks = Helper.formatDouble(track);
+                model.addRow(new Object[] {Ar,rothrs,tracks});
             }
             // Calculate the Roth
             Double future = Helper.futureCurrent(PV, r, N);

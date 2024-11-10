@@ -332,8 +332,8 @@ public class Helper {
     }
     // Calc value of taxable account
     public static double taxableValue (double pv, double atr, double N) {
-        double VT = pv * (Math.pow((1 + atr), N));
-        return VT;
+        pv = pv * (Math.pow((1 + atr), N));
+        return pv;
     }
 
     public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble,
