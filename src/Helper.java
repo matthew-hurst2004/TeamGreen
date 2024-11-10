@@ -335,15 +335,37 @@ public class Helper {
         pv = pv * (Math.pow((1 + atr), N));
         return pv;
     }
-
-    public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble,
-            double interestRate, double otherCostsDouble, double hoaFeeDouble, double propertyTaxDouble, double homeInsuranceDouble) {
-            double loanTermNumberOfMonths = loanTermDouble * 12;
-            double principal = homePriceDouble - downPaymentDouble;
-            double monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, - loanTermNumberOfMonths));
-            double totalMonthyPayment = monthlyPayment + (otherCostsDouble / 12) + (hoaFeeDouble / 12) + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
+    
+    public static double landonMortgagePerMonth (double loanTermDouble, double homePriceDouble, double downPaymentDouble, // This might not work for others so I put my name on it
+        double interestRate, double otherCostsDouble, double hoaFeeDouble, double propertyTaxDouble, double homeInsuranceDouble) {
+        double loanTermNumberOfMonths = loanTermDouble * 12;
+        double principal = homePriceDouble - downPaymentDouble;
+        double monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, - loanTermNumberOfMonths));
+        double totalMonthyPayment = monthlyPayment + (otherCostsDouble / 12) + (hoaFeeDouble / 12) + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
 
         return totalMonthyPayment;
     }
-}
+    // not to self the number of variables could probably be decreased
+    public static double rentVsBuyCalculations (double homeBuildUp, double rentBuildUp, double monthsUntillRentMoreBuy, 
+            double counterForYearlyIncrease, double homePropertyTaxDouble, double propertyTaxIncreaseDouble,
+            double homeRentDouble, double rentalFeeIncreaseDouble, double loanTermDouble, double homePriceDouble,
+            double downPaymentAmountDouble, double homeInterestRateDouble, double houseOtherCostsDouble, double hoaFeeDouble, 
+            double homeInsuranceDouble, double renterInsuranceDouble) {
+        while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
+            if (counterForYearlyIncrease >= 12){
+                homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
+                homeRentDouble = homeRentDouble * ((rentalFeeIncreaseDouble / 100) + 1);
+            }
+            double houseMortgageMonthly = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
 
+            homeBuildUp = homeBuildUp + houseMortgageMonthly; // not done yet
+            rentBuildUp = rentBuildUp + homeRentDouble + renterInsuranceDouble; // not done yet
+
+            counterForYearlyIncrease = counterForYearlyIncrease + 1;
+            monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
+
+        }        
+        return monthsUntillRentMoreBuy;
+    }   
+    
+}
