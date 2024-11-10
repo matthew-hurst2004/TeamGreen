@@ -866,11 +866,13 @@ public class Calc4 extends javax.swing.JFrame {
     
     
     if (homePriceDouble <= homeRentDouble){ // Checks for an edge case of a home purchase being cheaper from the first day
+        outputLabel.setText("");
         outputLabel.setText("Purchasing the home is cheaper from the very first month");
         return;}
     
-    if (downPaymentAmountDouble >= homePriceDouble) {
+    if (downPaymentAmountDouble > homePriceDouble) {
         downPaymentTextField.setText("");
+        outputLabel.setText("");
         JOptionPane.showMessageDialog(null,"The down payment cannot be more than the home's price");
         return;}
     
@@ -880,7 +882,6 @@ public class Calc4 extends javax.swing.JFrame {
     double monthsUntillRentMoreBuy = 0; // a counter to stop a infinite loop
     int counterForYearlyIncrease = 0; // gives yearly increase, once it reaches 12 the increase happens
     
-
     monthsUntillRentMoreBuy = Helper.rentVsBuyCalculations (homeBuildUp, rentBuildUp,  monthsUntillRentMoreBuy, 
              counterForYearlyIncrease,  homePropertyTaxDouble,  propertyTaxIncreaseDouble,
              homeRentDouble,  rentalFeeIncreaseDouble,  loanTermDouble,  homePriceDouble,
@@ -895,7 +896,6 @@ public class Calc4 extends javax.swing.JFrame {
     }
     else {outputLabel.setText("Renting is cheaper for over 200 years and maybe indefinitely. ");
     }
-    
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
 
     }//GEN-LAST:event_caclulateButtonMouseClicked
