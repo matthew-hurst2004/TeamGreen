@@ -370,14 +370,18 @@ public class Helper {
             double homeRentDouble, double rentalFeeIncreaseDouble, double loanTermDouble, double homePriceDouble,
             double downPaymentAmountDouble, double homeInterestRateDouble, double houseOtherCostsDouble, double hoaFeeDouble, 
             double homeInsuranceDouble, double renterInsuranceDouble) {
+        double houseMortgageMonthly = 0; // Maybe not needed
         while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
             if (counterForYearlyIncrease >= 12){
                 homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
                 homeRentDouble = homeRentDouble * ((rentalFeeIncreaseDouble / 100) + 1);
             }
-            double houseMortgageMonthly = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
+            double loanTermNumberOfMonths = loanTermDouble * 12;
+            double principal = homePriceDouble - downPaymentAmountDouble;
+            double monthlyPayment = (principal * homeInterestRateDouble) / (1 - Math.pow(1 + homeInterestRateDouble, - loanTermNumberOfMonths));
+            double totalMonthyPayment = monthlyPayment + (houseOtherCostsDouble / 12) + (hoaFeeDouble / 12) + (homePropertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
 
-            homeBuildUp = homeBuildUp + houseMortgageMonthly; // not done yet
+            homeBuildUp = homeBuildUp + totalMonthyPayment; // not done yet
             rentBuildUp = rentBuildUp + homeRentDouble + renterInsuranceDouble; // not done yet
 
             counterForYearlyIncrease = counterForYearlyIncrease + 1;

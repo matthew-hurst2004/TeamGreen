@@ -203,25 +203,38 @@ public class HelperTest {
 //    }
     
     
-        /**
-     * Test of calculateDownPaymentReturnString method, of class Helper.
-     */
-    // TESTER IS NOT DONE, NOT EVEN CLOSE!!!!!!!!!!!
+
+    // Tester is not done yet. I don't  know the expected result 
     @Test
     public void testRentVsBuyCalc() {
-        System.out.println("calculateDownPaymentReturnString");
-        double homePrice = 500000;
-        double percentageDownPayment = 20;
-        double closingCosts = 15000;
-        String expResult = "115,000.00";
-        String result = Helper.calculateDownPaymentReturnString(homePrice, percentageDownPayment, closingCosts);
+        System.out.println("rentVsBuyCalculations");
+        double homeBuildUp = 20000; // It is the down payment at the start of this public void
+        double rentBuildUp = 200; // This is the upfront cost at the start of this public void
+        double monthsUntillRentMoreBuy = 0; 
+        double counterForYearlyIncrease = 0;
+        double homePropertyTaxDouble = 1500;
+        double propertyTaxIncreaseDouble = 2;
+        double homeRentDouble = 3000;
+        double rentalFeeIncreaseDouble = 3;
+        double loanTermDouble = 30;
+        double homePriceDouble = 400000;
+        double downPaymentAmountDouble = 8000;
+        double homeInterestRateDouble = 5;
+        double houseOtherCostsDouble = 500;
+        double hoaFeeDouble = 150;
+        double homeInsuranceDouble = 300;
+        double renterInsuranceDouble = 400;
+        
+         
+        
+        String expResult = "115,000.00"; // not correct yet
+        double result;
+        result = Helper.rentVsBuyCalculations(homeBuildUp, rentBuildUp, monthsUntillRentMoreBuy, counterForYearlyIncrease, 
+                homePropertyTaxDouble, propertyTaxIncreaseDouble, homeRentDouble, rentalFeeIncreaseDouble, loanTermDouble, 
+                homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble,
+                homeInsuranceDouble, renterInsuranceDouble);
         assertEquals(expResult, result);
-        homePrice = 400000;
-        percentageDownPayment = 20;
-        closingCosts = 25000;
-        expResult = "105,000.00";
-        result = Helper.calculateDownPaymentReturnString(homePrice, percentageDownPayment, closingCosts);
-        assertEquals(expResult, result);
+
     }
     
 }

@@ -102,7 +102,6 @@ public class Calc4 extends javax.swing.JFrame {
         noteLabel = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -119,6 +118,7 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
+        rentalFeeIncreaseTextField.setText("0");
         rentalFeeIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 rentalFeeIncreaseTextFieldKeyTyped(evt);
@@ -137,42 +137,51 @@ public class Calc4 extends javax.swing.JFrame {
         yourInfoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         yourInfoLabel.setText("Your Information");
 
+        marginalStateTaxRateTextField.setText("0");
+        marginalStateTaxRateTextField.setToolTipText("");
         marginalStateTaxRateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 marginalStateTaxRateTextFieldKeyTyped(evt);
             }
         });
 
+        averageInvestmentReturnTextField.setText("0");
         averageInvestmentReturnTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 averageInvestmentReturnTextFieldKeyTyped(evt);
             }
         });
 
+        marginalFederalTaxRateTextField.setText("0");
+        marginalFederalTaxRateTextField.setToolTipText("");
         marginalFederalTaxRateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 marginalFederalTaxRateTextFieldKeyTyped(evt);
             }
         });
 
+        renterInsuranceTextField.setText("0");
         renterInsuranceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 renterInsuranceTextFieldKeyTyped(evt);
             }
         });
 
+        securityDepositTextField.setText("0");
         securityDepositTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 securityDepositTextFieldKeyTyped(evt);
             }
         });
 
+        upfrontCostTextField.setText("0");
         upfrontCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 upfrontCostTextFieldKeyTyped(evt);
             }
         });
 
+        monthlyRentTextField.setText("0");
         monthlyRentTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 monthlyRentTextFieldKeyTyped(evt);
@@ -243,30 +252,35 @@ public class Calc4 extends javax.swing.JFrame {
             }
         });
 
+        hoaFeeTextField.setText("0");
         hoaFeeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 hoaFeeTextFieldKeyTyped(evt);
             }
         });
 
+        maintenanceCostTextField.setText("0");
         maintenanceCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 maintenanceCostTextFieldKeyTyped(evt);
             }
         });
 
+        homeValueAppreciationTextField.setText("0");
         homeValueAppreciationTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 homeValueAppreciationTextFieldKeyTyped(evt);
             }
         });
 
+        InsuranceIncreaseTextField.setText("0");
         InsuranceIncreaseTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 InsuranceIncreaseTextFieldKeyTyped(evt);
             }
         });
 
+        houseOtherCostTextField.setText("0");
         houseOtherCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 houseOtherCostTextFieldKeyTyped(evt);
@@ -379,8 +393,6 @@ public class Calc4 extends javax.swing.JFrame {
         titleLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         titleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel13.setText("note to self some yearly might not be set to correctly");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -463,8 +475,7 @@ public class Calc4 extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(InsuranceIncreaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel13))
+                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -665,9 +676,7 @@ public class Calc4 extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(houseOtherCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(sellingClosingCostsLabel)
-                                    .addComponent(jLabel12))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel12)))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -683,6 +692,7 @@ public class Calc4 extends javax.swing.JFrame {
     // The doubles without comments are not put into the calculations
     if (monthlyRentTextField.getText().equals("")){
         JOptionPane.showMessageDialog(null,"Make sure Monthly Rent has a number");
+        return;
     }
     double homeRentDouble = Double.parseDouble(monthlyRentTextField.getText());   // put into the calculations, not done
     double homePriceDouble; // put in to the calculations, not done. shouln't be used all at once not done
@@ -856,45 +866,36 @@ public class Calc4 extends javax.swing.JFrame {
     
     
     if (homePriceDouble <= homeRentDouble){ // Checks for an edge case of a home purchase being cheaper from the first day
+        outputLabel.setText("");
         outputLabel.setText("Purchasing the home is cheaper from the very first month");
         return;}
     
+    if (downPaymentAmountDouble > homePriceDouble) {
+        downPaymentTextField.setText("");
+        outputLabel.setText("");
+        JOptionPane.showMessageDialog(null,"The down payment cannot be more than the home's price");
+        return;}
     
-    double rentOverallRate = homeRentDouble + renterInsuranceDouble ; // Add more here as expanding 
+    
     double rentBuildUp = upfrontCostDouble;  //This is a flag for the while statment to see when rent overtakes buy in overall money spent. 
     double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0; // a counter to stop a infinite loop
     int counterForYearlyIncrease = 0; // gives yearly increase, once it reaches 12 the increase happens
     
-    if (downPaymentAmountDouble >= homePriceDouble) {
-        
-    }
+    monthsUntillRentMoreBuy = Helper.rentVsBuyCalculations (homeBuildUp, rentBuildUp,  monthsUntillRentMoreBuy, 
+             counterForYearlyIncrease,  homePropertyTaxDouble,  propertyTaxIncreaseDouble,
+             homeRentDouble,  rentalFeeIncreaseDouble,  loanTermDouble,  homePriceDouble,
+             downPaymentAmountDouble,  homeInterestRateDouble,  houseOtherCostsDouble,  hoaFeeDouble, 
+             homeInsuranceDouble,  renterInsuranceDouble);
 
-    
-    while (homeBuildUp > rentBuildUp && monthsUntillRentMoreBuy < 2401) { // 2401 is to give a cut off point after 200 years
-        if (counterForYearlyIncrease >= 12){
-            homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
-            homeRentDouble = homeRentDouble * ((rentalFeeIncreaseDouble / 100) + 1);
-        }
-        double houseMortgageMonthly = Helper.landonMortgagePerMonth(loanTermDouble, homePriceDouble, downPaymentAmountDouble, homeInterestRateDouble, houseOtherCostsDouble, hoaFeeDouble, homePropertyTaxDouble, homeInsuranceDouble);
-        
-        homeBuildUp = homeBuildUp + houseMortgageMonthly; // not done yet
-        rentBuildUp = rentBuildUp + homeRentDouble + renterInsuranceDouble; // not done yet
-        
-        counterForYearlyIncrease = counterForYearlyIncrease + 1;
-        monthsUntillRentMoreBuy = monthsUntillRentMoreBuy + 1;
-        
-    }
-    
-    BigDecimal bd = new BigDecimal(monthsUntillRentMoreBuy/12);
-    BigDecimal roundedYears = bd.setScale(2, RoundingMode.HALF_UP); // round the years to the second decimal place
+    double yearsUntillBuyIsGreaterThan = monthsUntillRentMoreBuy / 12;
+    String roundedYears = Helper.formatDouble(yearsUntillBuyIsGreaterThan);
     
     if (monthsUntillRentMoreBuy <= 2400){
-        outputLabel.setText("Renting is cheaper for " + String.valueOf(monthsUntillRentMoreBuy) + " months or " + String.valueOf(roundedYears) + " years" );
+        outputLabel.setText("Renting is cheaper for " + String.valueOf(monthsUntillRentMoreBuy) + " months or " + roundedYears + " years" );
     }
     else {outputLabel.setText("Renting is cheaper for over 200 years and maybe indefinitely. ");
     }
-    
     JOptionPane.showMessageDialog(null,"A great journey to the end was compeleted!!!");
 
     }//GEN-LAST:event_caclulateButtonMouseClicked
@@ -1053,7 +1054,6 @@ public class Calc4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
