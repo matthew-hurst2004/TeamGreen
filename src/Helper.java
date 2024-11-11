@@ -201,25 +201,9 @@ public class Helper {
     {
         return (P * iRate * Math.pow(1 + iRate, n) / (Math.pow(1 + iRate, n) - 1));
     }
-    // Input validation Calc 6
-    public static double getInput(JTextField textField, String errorMessage) 
-    {
-        try 
-        {
-            return Double.parseDouble(textField.getText());
-        } 
-        catch (NumberFormatException e) 
-        {
-            JOptionPane.showMessageDialog(null, errorMessage, "ERROR", JOptionPane.ERROR_MESSAGE);
-            textField.setText("");
-            textField.requestFocusInWindow();
-            return -1; // Return an invalid value
-        }
-    }
+
     
-    
-    
-    
+        
     // Accumulated interest
     public static double remainingAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
     {
@@ -236,7 +220,7 @@ public class Helper {
 
         return accumulatedInterest;     
     }
-
+    //months
     public static double months(double remainingBalance, double monthlyPayment, double iRate)
     {
         double months = 0;
@@ -247,19 +231,17 @@ public class Helper {
             remainingBalance += interest; // Add interest to the balance
             remainingBalance -= monthlyPayment; // Subtract the monthly payment
             months++;
-
-
         }
   
  
         return months;     
     }
+    // original loan
     public static double originalAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
     {
         double remainingAccumulatedInterest = 0;
         double noncurrentInterest = 0;
         int  counter = 0;
-        
 
         while (remainingBalance > 0) 
         {
@@ -277,6 +259,43 @@ public class Helper {
         }
       return remainingAccumulatedInterest - noncurrentInterest;     
     }
+
+    public static double calculateInterestRate(double P, double M, double n, double tolerance) 
+    {
+        double i = 0.05; // Initial guess for monthly interest rate (5%)
+        double increment = 0.0001; // Increment for derivative calculation
+
+        while (true) {
+            double fValue = calculateFunction(P, M, n, i);
+            double fDerivative = calculateDerivative(P, M, n, i, increment);
+
+            // Update the interest rate using Newton-Raphson
+            double newRate = i - fValue / fDerivative;
+
+            // Check for convergence
+            if (Math.abs(newRate - i) < tolerance) {
+                break; // Close enough
+            }
+
+            // Update for the next iteration
+            i = newRate;
+        }
+
+        return i; // Return the monthly interest rate
+    }
+    
+    public static double calculateFunction(double P, double M, double n, double i) 
+    {
+        return (M - P * i * Math.pow(1 + i, n) / (Math.pow(1 + i, n) - 1));
+    }
+
+    public static double calculateDerivative(double P, double M, double n, double i, double increment) 
+    {
+        return (calculateFunction(P, M, n, i + increment) - calculateFunction(P, M, n, i)) / increment;
+    }
+
+    
+    
 
     
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)

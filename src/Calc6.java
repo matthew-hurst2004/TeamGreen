@@ -492,18 +492,18 @@ public class Calc6 extends javax.swing.JFrame {
 
     private void btnCalculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalculateMouseClicked
         
-        double remainingBalance = 0; //= Helper.getInput(txtRemainingBalance, "Invalid input. Please enter a positive numeric value for remaining balance.");
-        double currentMonthlyPayment = 0; //= Helper.getInput(txtCurrentMonthlyPayment,"Invalid input. Please enter a positive numeric value for current monthly payment.");
+        double remainingBalance = 0; 
+        double currentMonthlyPayment = 0; 
         double originalLoanAmount = 0;
-        double originalLoanTerm = 0; //= Helper.getInput(txtOriginalLoanTerm,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
-        double originalLoanRemainingMonths = 0; //= Helper.getInput(txtTimeRemainingMonths,"Invalid input. Please enter a numeric value for the original loan term.");
-        double originalLoanRemainingYears = 0; //= Helper.getInput(txtTimeRemainingYears,"Invalid input. Please enter a numeric value for the original loan term.") * 12;
-        double currentInterestRate; //= Helper.getInput(txtCurrentInterestRate,"Invalid input. Please enter a positive numeric value for the current interest rate.") /1200.0;
-        double newLoanMonths; //= Math.floor(Helper.getInput(txtNewLoanMonths,"Invalid input. Please enter a positive numeric value for new loan term.") * 12);
-        double newInterestRate; //= Helper.getInput(txtNewInterestRate,"Invalid input. Please enter a positive numeric value for the new interest rate.") / 1200.0;
-        double points; //= Helper.getInput(txtPoints,"Invalid input. Please enter a positive numeric value for points.") / 100.0;
-        double costFees; //= Helper.getInput(txtCostFees,"Invalid input. Please enter a positive numeric value for costs and fees.");
-        double cashOutAmount; //= Helper.getInput(txtCashOutAmount,"Invalid input. Please enter a numeric value for the cash out amount.");
+        double originalLoanTerm = 0; 
+        double originalLoanRemainingMonths = 0; 
+        double originalLoanRemainingYears = 0;
+        double currentInterestRate; 
+        double newLoanMonths; 
+        double newInterestRate; 
+        double points; 
+        double costFees; 
+        double cashOutAmount;
         double currentAccumulatedInterest = 0;
         double newAccumulatedInterest = 0;
         double pointsCost = 0;
@@ -512,10 +512,12 @@ public class Calc6 extends javax.swing.JFrame {
         double currentLoanMonths = 0;
         double newMonthlyPayment = 0;
         double originalLoanMonthlyPayment = 0;
-        double newPrincipalOriginal = 0; //placeholder var dependent on option choice for balance
-        double newPrincipalFinal = 0;
+        double newPrincipalOriginal = 0;
+        double newPrincipalFinal = 0;  //placeholder var dependent on option choice for balance
         double remainingTime = 0;
         double originalLoanInterest = 0;
+        double AprPrincipal = 0;
+        double tolerance = 0.000001; // Tolerance for accuracy
         int option = cboxOptions.getSelectedIndex();
         
         if (option == 0)
@@ -524,6 +526,7 @@ public class Calc6 extends javax.swing.JFrame {
             if (txtRemainingBalance.getText().equals("")) 
             {
                 remainingBalance = 0;
+                txtRemainingBalance.setText("0");
             } else {
                 remainingBalance  = Double.parseDouble(txtRemainingBalance.getText());
             }                 
@@ -531,6 +534,7 @@ public class Calc6 extends javax.swing.JFrame {
             if (txtCurrentMonthlyPayment.getText().equals("")) 
             {
                 currentMonthlyPayment = 0;
+                txtCurrentMonthlyPayment.setText("0");
             } else {
                 currentMonthlyPayment = Double.parseDouble(txtCurrentMonthlyPayment.getText());
             } 
@@ -541,6 +545,8 @@ public class Calc6 extends javax.swing.JFrame {
             if (txtOriginalLoanAmount.getText().equals("")) 
             {
                 originalLoanAmount = 0;
+                txtOriginalLoanAmount.setText("0");
+                
             } else {
                 originalLoanAmount = Double.parseDouble(txtOriginalLoanAmount.getText());
             }                  
@@ -548,6 +554,7 @@ public class Calc6 extends javax.swing.JFrame {
             if (txtOriginalLoanTerm.getText().equals("")) 
             {
                 originalLoanTerm = 0;
+                txtOriginalLoanTerm.setText("0");
             } else {
                 originalLoanTerm = Math.floor(Double.parseDouble(txtOriginalLoanTerm.getText()) * 12) ;
             }                  
@@ -555,6 +562,7 @@ public class Calc6 extends javax.swing.JFrame {
             if (txtTimeRemainingYears.getText().equals("")) 
             {
                 originalLoanRemainingYears = 0;
+                txtTimeRemainingYears.setText("0");
             } else {
                 originalLoanRemainingYears = Math.floor(Double.parseDouble(txtTimeRemainingYears.getText()) * 12);
             }                       
@@ -562,6 +570,7 @@ public class Calc6 extends javax.swing.JFrame {
             if (txtTimeRemainingMonths.getText().equals("")) 
             {
                 originalLoanRemainingMonths = 0;
+                txtTimeRemainingMonths.setText("0");
             } else {
                 originalLoanRemainingMonths = Math.floor(Double.parseDouble(txtTimeRemainingMonths.getText()));
             }
@@ -573,6 +582,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (txtCurrentInterestRate.getText().equals("")) 
         {
             currentInterestRate = 0;
+            txtCurrentInterestRate.setText("0");
         } else {
             currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText()) / 1200.0;
         }        
@@ -580,6 +590,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (txtNewLoanMonths.getText().equals("")) 
         {
             newLoanMonths = 0;
+            txtNewLoanMonths.setText("0");
         } else {
             newLoanMonths = Math.floor(Double.parseDouble(txtNewLoanMonths.getText()) * 12);
         }        
@@ -587,6 +598,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (txtNewInterestRate.getText().equals("")) 
         {
             newInterestRate = 0;
+            txtNewInterestRate.setText("0");
         } else {
             newInterestRate = Double.parseDouble(txtNewInterestRate.getText()) / 1200.0;
         }    
@@ -594,6 +606,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (txtPoints.getText().equals("")) 
         {
             points = 0;
+            txtPoints.setText("0");
         } else {
             points = Double.parseDouble(txtPoints.getText()) / 100.0;
         }
@@ -601,6 +614,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (txtCostFees.getText().equals("")) 
         {
             costFees = 0;
+            txtCostFees.setText("0");
         } else {
             costFees = Double.parseDouble(txtCostFees.getText());
         }
@@ -608,6 +622,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (txtCashOutAmount.getText().equals("")) 
         {
             cashOutAmount = 0;
+            txtCashOutAmount.setText("0");
         } else {
             cashOutAmount = Double.parseDouble(txtCashOutAmount.getText());
         }
@@ -617,7 +632,7 @@ public class Calc6 extends javax.swing.JFrame {
         if (option == 0) // remaining balance option
         {
             newPrincipalFinal = remainingBalance + cashOutAmount; // updated remaining balance for new loan
-            while (currentMonthlyPayment <= remainingBalance * currentInterestRate) 
+            if (currentMonthlyPayment <= remainingBalance * currentInterestRate) 
             {
                 JOptionPane.showMessageDialog(this, "Monthly payment is too low to pay off the balance. Please enter a higher monthly payment",
                "Error", JOptionPane.ERROR_MESSAGE);
@@ -651,16 +666,6 @@ public class Calc6 extends javax.swing.JFrame {
         }
         
         
-        
-          
-        
-        
-        
-        
-      
-        
-        
-        
         // new loan operations
         newMonthlyPayment = Helper.monthlyPayment(newPrincipalFinal, newLoanMonths, newInterestRate); //new loan monthly payment        
         //accumualted interest for new loan
@@ -669,21 +674,43 @@ public class Calc6 extends javax.swing.JFrame {
         pointsCost = newPrincipalFinal * points;
         // total amount of payments made on new loan
         totalNewMonthlyPayments = newPrincipalFinal + newAccumulatedInterest;
+        // finding new apr
+        AprPrincipal = newPrincipalFinal - (pointsCost + costFees);
+        double monthlyRate = Helper.calculateInterestRate(AprPrincipal, newMonthlyPayment, newLoanMonths, tolerance);
+        double apr = monthlyRate * 12 * 100; // Convert monthly rate to annual percentage rate
+
         
-        //ouput testing
-        System.out.println(option);
-        System.out.println("new principal amount: " + newPrincipalFinal);
-        System.out.println("original loan monthly payment: " + originalLoanMonthlyPayment);
+        // option dependent output
+        if (option == 0)
+        {
+            System.out.println(option);   
+            System.out.println("new principal amount: " + newPrincipalFinal);
+            System.out.println("current monthly payment: " + currentMonthlyPayment);
+            System.out.println("accumulated interest current: " + currentAccumulatedInterest);
+            System.out.println("current loan months: " + currentLoanMonths);
+            System.out.println("total of current loan payments: " + totalCurrentMonthlyPayments);
+        }
+        else
+        {
+            System.out.println(option);
+            System.out.println("new principal amount: " + newPrincipalFinal);
+            System.out.println("original loan monthly payment: " + originalLoanMonthlyPayment);
+            System.out.println("original loan interest: " + originalLoanInterest);
+            System.out.println("original loan months: " + originalLoanTerm);
+            System.out.println("total of original loan payments: " + totalCurrentMonthlyPayments);
+        }
+        
+        
+       
+        
+        // new loan ouput 
         System.out.println("new monthly payment: " + newMonthlyPayment);
-        System.out.println("accumulated interest current: " + currentAccumulatedInterest);
         System.out.println("accumulated interest new: " + newAccumulatedInterest);
         System.out.println("cash out amount: " + cashOutAmount);
-        System.out.println("current loan months: " + currentLoanMonths);
         System.out.println("new loan months: " + newLoanMonths);
         System.out.println("cost of points: " + pointsCost);
-        System.out.println("total of current loan payments: " + totalCurrentMonthlyPayments);
         System.out.println("total of new loan payments: " + totalNewMonthlyPayments);
-        System.out.println("original loan interest: "  + originalLoanInterest);
+        System.out.println("APR: " + apr);
 
 
 
