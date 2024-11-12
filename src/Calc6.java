@@ -334,7 +334,7 @@ public class Calc6 extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(18, 18, 18)
                                                 .addComponent(lblMonths)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(lblMonthlyPayment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -383,9 +383,7 @@ public class Calc6 extends javax.swing.JFrame {
                                 .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(closeButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -709,22 +707,24 @@ public class Calc6 extends javax.swing.JFrame {
         
         DefaultTableModel model = (DefaultTableModel) tblOutput.getModel();
         model.setRowCount(0);
-        //model.addRow(new Object[]{"Principal/loan amount", newPrincipalFinal, newPrincipalFinal, principalDifference});
         
         
         // option dependent output
         if (option == 0)
         {
-            model.addRow(new Object[]{"Principal/loan amount", remainingBalance, newPrincipalFinal, newPrincipalFinal - remainingBalance});
-            model.addRow(new Object[]{"Monthly Payment", currentMonthlyPayment, newMonthlyPayment, newMonthlyPayment - currentMonthlyPayment});
+            model.addRow(new Object[]{"Principal/loan amount", Helper.formatDouble(remainingBalance), Helper.formatDouble(newPrincipalFinal), 
+                Helper.formatDouble(newPrincipalFinal - remainingBalance)});
+            model.addRow(new Object[]{"Monthly Payment", Helper.formatDouble(currentMonthlyPayment), Helper.formatDouble(newMonthlyPayment), 
+                Helper.formatDouble(newMonthlyPayment - currentMonthlyPayment)});
             model.addRow(new Object[]{"Length", currentLoanMonths, newLoanMonths, newLoanMonths - currentLoanMonths});
-            model.addRow(new Object[]{"Interest Rate", currentInterestRate * 1200.0, Helper.formatDouble(apr), apr - (currentInterestRate * 1200)});
-            model.addRow(new Object[]{"Total Monthly Payment", totalCurrentMonthlyPayments, totalNewMonthlyPayments,
-                totalNewMonthlyPayments - totalCurrentMonthlyPayments});
-            model.addRow(new Object[]{"Total Interest", currentAccumulatedInterest, newAccumulatedInterest, 
-                newAccumulatedInterest - currentAccumulatedInterest});
-            model.addRow(new Object[]{"Cost + points (upfront)", 0, pointsCost + costFees});
-            model.addRow(new Object[]{"Cash out", 0, cashOutAmount});
+            model.addRow(new Object[]{"Interest Rate", Helper.formatDouble(currentInterestRate * 1200.0), Helper.formatDouble(apr), 
+                Helper.formatDouble(apr - (currentInterestRate * 1200))});
+            model.addRow(new Object[]{"Total Monthly Payment", Helper.formatDouble(totalCurrentMonthlyPayments), 
+                Helper.formatDouble(totalNewMonthlyPayments) ,Helper.formatDouble(totalNewMonthlyPayments - totalCurrentMonthlyPayments)});
+            model.addRow(new Object[]{"Total Interest", Helper.formatDouble(currentAccumulatedInterest),
+                Helper.formatDouble(newAccumulatedInterest), Helper.formatDouble(newAccumulatedInterest - currentAccumulatedInterest)});
+            model.addRow(new Object[]{"Cost + points (upfront)", 0, Helper.formatDouble(pointsCost + costFees)});
+            model.addRow(new Object[]{"Cash out", 0, Helper.formatDouble(cashOutAmount)});
             //console
 //            System.out.println(option);   
 //            System.out.println("new principal amount: " + newPrincipalFinal);
@@ -735,17 +735,20 @@ public class Calc6 extends javax.swing.JFrame {
         }
         else
         {
-            model.addRow(new Object[]{"Principal/loan amount", newPrincipalOriginal, newPrincipalFinal, newPrincipalFinal - newPrincipalOriginal});
-            model.addRow(new Object[]{"Monthly Payment", originalLoanMonthlyPayment, newMonthlyPayment - originalLoanMonthlyPayment});
+            model.addRow(new Object[]{"Principal/loan amount", Helper.formatDouble(newPrincipalOriginal),
+                Helper.formatDouble(newPrincipalFinal), Helper.formatDouble(newPrincipalFinal - newPrincipalOriginal)});
+            model.addRow(new Object[]{"Monthly Payment", Helper.formatDouble(originalLoanMonthlyPayment),
+                Helper.formatDouble(newMonthlyPayment - originalLoanMonthlyPayment)});
             model.addRow(new Object[]{"Length", originalLoanRemainingYears + originalLoanRemainingMonths, newLoanMonths, 
                 newLoanMonths - (originalLoanRemainingYears + originalLoanRemainingMonths)});
-            model.addRow(new Object[]{"Interest Rate", currentInterestRate * 1200.0, Helper.formatDouble(apr), apr - (currentInterestRate * 1200)});
-            model.addRow(new Object[]{"Total Monthly Payment", totalCurrentMonthlyPayments, totalNewMonthlyPayments,
-                totalNewMonthlyPayments - totalCurrentMonthlyPayments});
-            model.addRow(new Object[]{"Total Interest", originalLoanInterest, newAccumulatedInterest, 
-                newAccumulatedInterest - originalLoanInterest});
-            model.addRow(new Object[]{"Cost + points (upfront)", 0, pointsCost + costFees});
-            model.addRow(new Object[]{"Cash out", 0, cashOutAmount});
+            model.addRow(new Object[]{"Interest Rate", Helper.formatDouble(currentInterestRate * 1200.0),
+                Helper.formatDouble(apr), Helper.formatDouble(apr - (currentInterestRate * 1200))});
+            model.addRow(new Object[]{"Total Monthly Payment", Helper.formatDouble(totalCurrentMonthlyPayments), 
+                Helper.formatDouble(totalNewMonthlyPayments), Helper.formatDouble(totalNewMonthlyPayments - totalCurrentMonthlyPayments)});
+            model.addRow(new Object[]{"Total Interest", Helper.formatDouble(originalLoanInterest), 
+                Helper.formatDouble(newAccumulatedInterest), Helper.formatDouble(newAccumulatedInterest - originalLoanInterest)});
+            model.addRow(new Object[]{"Cost + points (upfront)", 0, Helper.formatDouble(pointsCost + costFees)});
+            model.addRow(new Object[]{"Cash out", 0, Helper.formatDouble(cashOutAmount)});
             //console
 //            System.out.println(option);
 //            System.out.println("new principal amount: " + newPrincipalFinal);
