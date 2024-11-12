@@ -175,6 +175,7 @@ public class Calc7 extends javax.swing.JFrame {
 
         buttonGroup3.add(jRadioButton4);
         jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton4.setSelected(true);
         jRadioButton4.setText("N");
 
         jButton1.setText("Calculate");
@@ -505,7 +506,7 @@ public class Calc7 extends javax.swing.JFrame {
         jTextField4.setText("");
         jTextField5.setText("");
         jTextField6.setText("");
-        buttonGroup3.clearSelection();
+        jRadioButton4.setSelected(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

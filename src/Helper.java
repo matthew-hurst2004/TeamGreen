@@ -376,10 +376,12 @@ public class Helper {
                 homePropertyTaxDouble = homePropertyTaxDouble * ((propertyTaxIncreaseDouble / 100) + 1);
                 homeRentDouble = homeRentDouble * ((rentalFeeIncreaseDouble / 100) + 1);
             }
+            double monthlyPayment = 0;
+            double totalMonthyPayment = 0;
             double loanTermNumberOfMonths = loanTermDouble * 12;
             double principal = homePriceDouble - downPaymentAmountDouble;
-            double monthlyPayment = (principal * homeInterestRateDouble) / (1 - Math.pow(1 + homeInterestRateDouble, - loanTermNumberOfMonths));
-            double totalMonthyPayment = monthlyPayment + (houseOtherCostsDouble / 12) + (hoaFeeDouble / 12) + (homePropertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
+            monthlyPayment = (principal * homeInterestRateDouble) / (1 - Math.pow(1 + homeInterestRateDouble, - loanTermNumberOfMonths));
+            totalMonthyPayment = monthlyPayment + (houseOtherCostsDouble / 12) + (hoaFeeDouble / 12) + (homePropertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
 
             homeBuildUp = homeBuildUp + totalMonthyPayment; // not done yet
             rentBuildUp = rentBuildUp + homeRentDouble + renterInsuranceDouble; // not done yet

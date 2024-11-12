@@ -349,7 +349,7 @@ public class Calc4 extends javax.swing.JFrame {
             .addGap(0, 607, Short.MAX_VALUE)
         );
 
-        jLabel2.setText("%");
+        jLabel2.setText("% per year");
 
         jLabel3.setText("Years");
 
@@ -417,7 +417,7 @@ public class Calc4 extends javax.swing.JFrame {
                                         .addComponent(propertyTaxIncreaseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(buyingClosingCostsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(homePurchasePriceTextField, javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,7 +443,7 @@ public class Calc4 extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(interestRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(homeValueAppreciationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -881,6 +881,7 @@ public class Calc4 extends javax.swing.JFrame {
     double homeBuildUp = downPaymentAmountDouble; //This is also a flag but for the home
     double monthsUntillRentMoreBuy = 0; // a counter to stop a infinite loop
     int counterForYearlyIncrease = 0; // gives yearly increase, once it reaches 12 the increase happens
+    homeInterestRateDouble = homeInterestRateDouble / 100 / 12; // testing this
     
     monthsUntillRentMoreBuy = Helper.rentVsBuyCalculations (homeBuildUp, rentBuildUp,  monthsUntillRentMoreBuy, 
              counterForYearlyIncrease,  homePropertyTaxDouble,  propertyTaxIncreaseDouble,
