@@ -37,6 +37,7 @@ public class parentInterface extends javax.swing.JFrame {
         calculator7 = new javax.swing.JButton();
         calculator8 = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
+        Calculator9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +106,13 @@ public class parentInterface extends javax.swing.JFrame {
             }
         });
 
+        Calculator9.setText("Mortgage payoff calculator");
+        Calculator9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Calculator9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,6 +136,10 @@ public class parentInterface extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(quitButton)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Calculator9)
+                .addGap(240, 240, 240))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +161,9 @@ public class parentInterface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rentVsBuyCalculator)
                     .addComponent(calculator8))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(Calculator9)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -197,6 +211,10 @@ public class parentInterface extends javax.swing.JFrame {
         new Calc8().setVisible(true);
     }//GEN-LAST:event_calculator8MouseClicked
 
+    private void Calculator9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Calculator9MouseClicked
+        new Calc9().setVisible(true);
+    }//GEN-LAST:event_Calculator9MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -233,6 +251,7 @@ public class parentInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Calculator9;
     private javax.swing.JButton calculator1;
     private javax.swing.JButton calculator2;
     private javax.swing.JButton calculator3;
