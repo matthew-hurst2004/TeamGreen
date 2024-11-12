@@ -533,10 +533,11 @@ public class Calc7 extends javax.swing.JFrame {
             jLabel12.setText("Try again");
         } else {
             //itterates through all  the ages and adds it to table 
-            for (int i = 0; i < N; i++) {
-                int Ar = A + i;
-                Double futurer = Helper.futureCurrent(PV, r, i);
-                Double pvcr = Helper.futureContributionsCalculator(C, r, i);
+            for (int i = A; i < R; i++) {
+                int j = i - A;
+                int Ar = A + j;
+                Double futurer = Helper.futureCurrent(PV, r, j);
+                Double pvcr = Helper.futureContributionsCalculator(C, r, j);
                 Double rothr = futurer + pvcr;
                 String rothrs = Helper.formatDouble(rothr);
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
