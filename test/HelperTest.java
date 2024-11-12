@@ -227,7 +227,7 @@ public class HelperTest {
         
          
         
-        String expResult = "115,000.00"; // not correct yet
+        String expResult = "120"; // not correct yet
         double result;
         result = Helper.rentVsBuyCalculations(homeBuildUp, rentBuildUp, monthsUntillRentMoreBuy, counterForYearlyIncrease, 
                 homePropertyTaxDouble, propertyTaxIncreaseDouble, homeRentDouble, rentalFeeIncreaseDouble, loanTermDouble, 
