@@ -537,7 +537,7 @@ public class Calc6 extends javax.swing.JFrame {
         double originalLoanMonthlyPayment = 0;
         double newPrincipalOriginal = 0;
         double newPrincipalFinal = 0;  //placeholder var dependent on option choice for balance
-        double remainingTime = 0;
+        double timeDifference = 0;
         double originalLoanInterest = 0;
         double AprPrincipal = 0;
         double principalDifference = 0;
@@ -670,25 +670,25 @@ public class Calc6 extends javax.swing.JFrame {
             totalCurrentMonthlyPayments = remainingBalance + currentAccumulatedInterest;
             //months
             currentLoanMonths = Helper.months(remainingBalance, currentMonthlyPayment, currentInterestRate);
-            principalDifference = newPrincipalFinal - remainingBalance;
+            
         }
         else // original amount option
         {
             
            // needed to find the remaining interest
-            remainingTime = originalLoanTerm - (originalLoanRemainingYears + originalLoanRemainingMonths);
+            timeDifference = originalLoanTerm - (originalLoanRemainingYears + originalLoanRemainingMonths);
            //original loan monthly payment
             originalLoanMonthlyPayment = Helper.monthlyPayment(originalLoanAmount, originalLoanTerm, currentInterestRate);
            //interest for original loan option
             originalLoanInterest = Helper.originalAccumulatedInterest(originalLoanAmount, originalLoanMonthlyPayment, 
-                currentInterestRate, remainingTime);
+                currentInterestRate, timeDifference);
             //original loan principal updated
             newPrincipalOriginal = (originalLoanMonthlyPayment * (originalLoanRemainingYears + originalLoanRemainingMonths))
                    - originalLoanInterest;
             // total amount of payments made on current loan
             totalCurrentMonthlyPayments = newPrincipalOriginal + originalLoanInterest;
             newPrincipalFinal = newPrincipalOriginal + cashOutAmount;
-            principalDifference = newPrincipalFinal - newPrincipalOriginal;
+ 
         }
         
         
@@ -708,63 +708,62 @@ public class Calc6 extends javax.swing.JFrame {
         
         
         DefaultTableModel model = (DefaultTableModel) tblOutput.getModel();
+        model.setRowCount(0);
         //model.addRow(new Object[]{"Principal/loan amount", newPrincipalFinal, newPrincipalFinal, principalDifference});
         
         
         // option dependent output
         if (option == 0)
         {
-            model.addRow(new Object[]{"Principal/loan amount", remainingBalance, newPrincipalFinal, principalDifference});
+            model.addRow(new Object[]{"Principal/loan amount", remainingBalance, newPrincipalFinal, newPrincipalFinal - remainingBalance});
             model.addRow(new Object[]{"Monthly Payment", currentMonthlyPayment, newMonthlyPayment, newMonthlyPayment - currentMonthlyPayment});
             model.addRow(new Object[]{"Length", currentLoanMonths, newLoanMonths, newLoanMonths - currentLoanMonths});
-            model.addRow(new Object[]{"Interest Rate", currentInterestRate * 1200.0, apr, apr - (currentInterestRate * 1200)});
+            model.addRow(new Object[]{"Interest Rate", currentInterestRate * 1200.0, Helper.formatDouble(apr), apr - (currentInterestRate * 1200)});
             model.addRow(new Object[]{"Total Monthly Payment", totalCurrentMonthlyPayments, totalNewMonthlyPayments,
                 totalNewMonthlyPayments - totalCurrentMonthlyPayments});
             model.addRow(new Object[]{"Total Interest", currentAccumulatedInterest, newAccumulatedInterest, 
                 newAccumulatedInterest - currentAccumulatedInterest});
             model.addRow(new Object[]{"Cost + points (upfront)", 0, pointsCost + costFees});
+            model.addRow(new Object[]{"Cash out", 0, cashOutAmount});
             //console
-            System.out.println(option);   
-            System.out.println("new principal amount: " + newPrincipalFinal);
-            System.out.println("current monthly payment: " + currentMonthlyPayment);
-            System.out.println("accumulated interest current: " + currentAccumulatedInterest);
-            System.out.println("current loan months: " + currentLoanMonths);
-            System.out.println("total of current loan payments: " + totalCurrentMonthlyPayments);
+//            System.out.println(option);   
+//            System.out.println("new principal amount: " + newPrincipalFinal);
+//            System.out.println("current monthly payment: " + currentMonthlyPayment);
+//            System.out.println("accumulated interest current: " + currentAccumulatedInterest);
+//            System.out.println("current loan months: " + currentLoanMonths);
+//            System.out.println("total of current loan payments: " + totalCurrentMonthlyPayments);
         }
         else
         {
-            model.addRow(new Object[]{"Principal/loan amount", newPrincipalOriginal, newPrincipalFinal,  principalDifference});
-            model.addRow(new Object[]{"Monthly Payment", 20});
-            model.addRow(new Object[]{"Length", 20});
-            model.addRow(new Object[]{"Interest Rate", 20});
-            model.addRow(new Object[]{"Total Monthly Payment", 20});
-            model.addRow(new Object[]{"Total Interest", 20});
-            model.addRow(new Object[]{"Cost + points (upfront)", 20});
+            model.addRow(new Object[]{"Principal/loan amount", newPrincipalOriginal, newPrincipalFinal, newPrincipalFinal - newPrincipalOriginal});
+            model.addRow(new Object[]{"Monthly Payment", originalLoanMonthlyPayment, newMonthlyPayment - originalLoanMonthlyPayment});
+            model.addRow(new Object[]{"Length", originalLoanRemainingYears + originalLoanRemainingMonths, newLoanMonths, 
+                newLoanMonths - (originalLoanRemainingYears + originalLoanRemainingMonths)});
+            model.addRow(new Object[]{"Interest Rate", currentInterestRate * 1200.0, Helper.formatDouble(apr), apr - (currentInterestRate * 1200)});
+            model.addRow(new Object[]{"Total Monthly Payment", totalCurrentMonthlyPayments, totalNewMonthlyPayments,
+                totalNewMonthlyPayments - totalCurrentMonthlyPayments});
+            model.addRow(new Object[]{"Total Interest", originalLoanInterest, newAccumulatedInterest, 
+                newAccumulatedInterest - originalLoanInterest});
+            model.addRow(new Object[]{"Cost + points (upfront)", 0, pointsCost + costFees});
+            model.addRow(new Object[]{"Cash out", 0, cashOutAmount});
             //console
-            System.out.println(option);
-            System.out.println("new principal amount: " + newPrincipalFinal);
-            System.out.println("original loan monthly payment: " + originalLoanMonthlyPayment);
-            System.out.println("original loan interest: " + originalLoanInterest);
-            System.out.println("original loan months: " + originalLoanTerm);
-            System.out.println("total of original loan payments: " + totalCurrentMonthlyPayments);
+//            System.out.println(option);
+//            System.out.println("new principal amount: " + newPrincipalFinal);
+//            System.out.println("original loan monthly payment: " + originalLoanMonthlyPayment);
+//            System.out.println("original loan interest: " + originalLoanInterest);
+//            System.out.println("original loan months: " + originalLoanTerm);
+//            System.out.println("total of original loan payments: " + totalCurrentMonthlyPayments);
         }
-        
-//        model.addRow(new Object[]{"Monthly Payment", 20});
-//        model.addRow(new Object[]{"Length", 20});
-//        model.addRow(new Object[]{"Interest Rate", 20});
-//        model.addRow(new Object[]{"Total Monthly Payment", 20});
-//        model.addRow(new Object[]{"Total Interest", 20});
-//        model.addRow(new Object[]{"Cost + points (upfront)", 20});
-       
+              
         
         // new loan ouput 
-        System.out.println("new monthly payment: " + newMonthlyPayment);
-        System.out.println("accumulated interest new: " + newAccumulatedInterest);
-        System.out.println("cash out amount: " + cashOutAmount);
-        System.out.println("new loan months: " + newLoanMonths);
-        System.out.println("cost of points: " + pointsCost);
-        System.out.println("total of new loan payments: " + totalNewMonthlyPayments);
-        System.out.println("APR: " + apr);
+//        System.out.println("new monthly payment: " + newMonthlyPayment);
+//        System.out.println("accumulated interest new: " + newAccumulatedInterest);
+//        System.out.println("cash out amount: " + cashOutAmount);
+//        System.out.println("new loan months: " + newLoanMonths);
+//        System.out.println("cost of points: " + pointsCost);
+//        System.out.println("total of new loan payments: " + totalNewMonthlyPayments);
+//        System.out.println("APR: " + apr);
         
        
         
@@ -797,6 +796,7 @@ public class Calc6 extends javax.swing.JFrame {
         {
             txtOriginalLoanAmount.requestFocusInWindow();
         }
+        
         
     }//GEN-LAST:event_btnClearMouseClicked
 
