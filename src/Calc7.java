@@ -1,4 +1,5 @@
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -455,17 +456,75 @@ public class Calc7 extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Making all the variables I need
         //current balance in Roth
-        double PV = Double.parseDouble(jTextField1.getText());
+        double PV;
+        if (Helper.isValidNumber(jTextField1.getText())) {
+            PV = Double.parseDouble(jTextField1.getText());
+        } else {
+            JOptionPane.showMessageDialog(this, "Current balance is empty or negative. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField1.requestFocus();
+            return;
+        }
         // Annual contributition 
-        double C = Double.parseDouble(jTextField2.getText());
+        double C;
+        if (Helper.isValidNumber(jTextField2.getText())) {
+            C = Double.parseDouble(jTextField2.getText());
+        } else {
+            JOptionPane.showMessageDialog(this, "Annual Contribution is empty or negative. If have no annual contribution enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField2.setText("");
+            jTextField2.requestFocus();
+            return;
+        }
         // Expected rate of return (into decimal)
-        double r = Double.parseDouble(jTextField3.getText())/100;
+        double r;
+        if (Helper.isValidNumber(jTextField3.getText())) {
+            r = Double.parseDouble(jTextField3.getText())/100;
+        } else {
+            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty or negative. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField3.setText("");
+            jTextField3.requestFocus();
+            return;
+        }
         // Current age, Retirement age, and the difference between them
-        int A = Integer.parseInt(jTextField4.getText());
-        int R = Integer.parseInt(jTextField5.getText());
+        int A;
+        if (Helper.isValidNumber(jTextField4.getText())) {
+            A = Integer.parseInt(jTextField4.getText());
+        } else {
+            JOptionPane.showMessageDialog(this, "Starting Age is empty or negative. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField4.setText("");
+            jTextField4.requestFocus();
+            return;
+        }
+        int R;
+        if (Helper.isValidNumber(jTextField5.getText())) {
+            R = Integer.parseInt(jTextField5.getText());
+        } else {
+            JOptionPane.showMessageDialog(this, "Retirement Age is empty or negative.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField5.setText("");
+            jTextField5.requestFocus();
+            return;
+        }
+        if (R < A) {
+            JOptionPane.showMessageDialog(this, "Retirement Agge is less than Starting Age. Make sure the value is greater than Starting Age.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField5.setText("");
+            jTextField5.requestFocus();
+            return;
+        }
         int N = R - A;
         // Getting Marginal Tax rate
-        double tr = Double.parseDouble(jTextField6.getText())/100;
+        // double tr = Double.parseDouble(jTextField6.getText())/100;
+        double tr;
+        if (Helper.isValidNumber(jTextField6.getText()))
+        {
+            tr = Double.parseDouble(jTextField6.getText())/100;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Marginal tax rate is empty. If you don't want to calculate taxable income enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField6.setText("");
+            jTextField6.requestFocus();
+            return;
+        }
         // Tracker to iterate the taxable account
         double track = Double.parseDouble(jTextField1.getText());
         
