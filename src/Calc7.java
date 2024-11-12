@@ -460,7 +460,7 @@ public class Calc7 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField1.getText())) {
             PV = Double.parseDouble(jTextField1.getText());
         } else {
-            JOptionPane.showMessageDialog(this, "Current balance is empty or negative. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Current balance is empty. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField1.setText("");
             jTextField1.requestFocus();
             return;
@@ -470,7 +470,7 @@ public class Calc7 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField2.getText())) {
             C = Double.parseDouble(jTextField2.getText());
         } else {
-            JOptionPane.showMessageDialog(this, "Annual Contribution is empty or negative. If have no annual contribution enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Annual Contribution is empty. If have no annual contribution enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField2.setText("");
             jTextField2.requestFocus();
             return;
@@ -480,7 +480,7 @@ public class Calc7 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField3.getText())) {
             r = Double.parseDouble(jTextField3.getText())/100;
         } else {
-            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty or negative. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField3.setText("");
             jTextField3.requestFocus();
             return;
@@ -490,7 +490,7 @@ public class Calc7 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField4.getText())) {
             A = Integer.parseInt(jTextField4.getText());
         } else {
-            JOptionPane.showMessageDialog(this, "Starting Age is empty or negative. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Starting Age is empty. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField4.setText("");
             jTextField4.requestFocus();
             return;
@@ -499,13 +499,13 @@ public class Calc7 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField5.getText())) {
             R = Integer.parseInt(jTextField5.getText());
         } else {
-            JOptionPane.showMessageDialog(this, "Retirement Age is empty or negative.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Retirement Age is empty.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField5.setText("");
             jTextField5.requestFocus();
             return;
         }
         if (R < A) {
-            JOptionPane.showMessageDialog(this, "Retirement Agge is less than Starting Age. Make sure the value is greater than Starting Age.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Retirement Age is less than Starting Age. Make sure the value is greater than Starting Age.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField5.setText("");
             jTextField5.requestFocus();
             return;
