@@ -208,15 +208,22 @@ public class Helper {
     public static double remainingAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate)
     {
         double accumulatedInterest = 0;
-        
-        while (remainingBalance > 0) 
+        if (remainingBalance < monthlyPayment)
         {
-            double interest = remainingBalance * iRate;
-            remainingBalance += interest; // Add interest to the balance
-            remainingBalance -= monthlyPayment; // Subtract the monthly payment
-            accumulatedInterest += interest;
-
+            return 0;
         }
+        else
+        {
+            while (remainingBalance > 0) 
+            {
+                double interest = remainingBalance * iRate;
+                remainingBalance += interest; // Add interest to the balance
+                remainingBalance -= monthlyPayment; // Subtract the monthly payment
+                accumulatedInterest += interest;
+
+            }
+        }
+        
 
         return accumulatedInterest;     
     }
@@ -224,16 +231,21 @@ public class Helper {
     public static double months(double remainingBalance, double monthlyPayment, double iRate)
     {
         double months = 0;
-        
-        while (remainingBalance > 0) 
+        if (remainingBalance < monthlyPayment)
         {
-            double interest = remainingBalance * iRate;
-            remainingBalance += interest; // Add interest to the balance
-            remainingBalance -= monthlyPayment; // Subtract the monthly payment
-            months++;
+            return 0;
         }
-  
- 
+        else
+        {
+            while (remainingBalance > 0) 
+            {
+                double interest = remainingBalance * iRate;
+                remainingBalance += interest; // Add interest to the balance
+                remainingBalance -= monthlyPayment; // Subtract the monthly payment
+                months++;
+            }
+        }
+
         return months;     
     }
     // original loan
@@ -242,46 +254,61 @@ public class Helper {
         double remainingAccumulatedInterest = 0;
         double noncurrentInterest = 0;
         int  counter = 0;
-
-        while (remainingBalance > 0) 
+        if (remainingBalance < monthlyPayment)
         {
-            
-            double interest = remainingBalance * iRate;
-            remainingBalance += interest; // Add interest to the balance
-            remainingBalance -= monthlyPayment; // Subtract the monthly payment
-            remainingAccumulatedInterest += interest;
-            counter++;
-            if (counter <= time)
-            {
-                noncurrentInterest += interest;
-            }
-            
+            return 0;
         }
+        else
+        {
+            while (remainingBalance > 0) 
+            {
+
+                double interest = remainingBalance * iRate;
+                remainingBalance += interest; // Add interest to the balance
+                remainingBalance -= monthlyPayment; // Subtract the monthly payment
+                remainingAccumulatedInterest += interest;
+                counter++;
+                if (counter <= time)
+                {
+                    noncurrentInterest += interest;
+                }
+
+            }
+        }
+        
       return remainingAccumulatedInterest - noncurrentInterest;     
     }
 
     public static double calculateInterestRate(double P, double M, double n, double tolerance) 
     {
-        double i = 0.05; // Initial guess for monthly interest rate (5%)
-        double increment = 0.0001; // Increment for derivative calculation
-
-        while (true) {
-            double fValue = calculateFunction(P, M, n, i);
-            double fDerivative = calculateDerivative(P, M, n, i, increment);
-
-            // Update the interest rate using Newton-Raphson
-            double newRate = i - fValue / fDerivative;
-
-            // Check for convergence
-            if (Math.abs(newRate - i) < tolerance) {
-                break; // Close enough
-            }
-
-            // Update for the next iteration
-            i = newRate;
+        if (P == 0)
+        {
+            return 0;
         }
+        else
+        {
+            double i = 0.05; // Initial guess for monthly interest rate (5%)
+            double increment = 0.0001; // Increment for derivative calculation
 
-        return i; // Return the monthly interest rate
+            while (true) 
+            {
+                double fValue = calculateFunction(P, M, n, i);
+                double fDerivative = calculateDerivative(P, M, n, i, increment);
+
+                // Update the interest rate using Newton-Raphson
+                double newRate = i - fValue / fDerivative;
+
+                // Check for convergence
+                if (Math.abs(newRate - i) < tolerance) {
+                    break; // Close enough
+                }
+
+                // Update for the next iteration
+                i = newRate;
+            }
+            return i; // Return the monthly interest rate
+        }
+         
     }
     
     public static double calculateFunction(double P, double M, double n, double i) 
