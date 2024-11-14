@@ -287,7 +287,7 @@ public class Helper {
         }
         else
         {
-            double i = 0.05; // Initial guess for monthly interest rate (5%)
+            double i = 0.05; // Initial guess for iRate (5%)
             double increment = 0.0001; // Increment for derivative calculation
 
             while (true) 
