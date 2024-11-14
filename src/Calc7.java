@@ -483,7 +483,7 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Annual contributition 
         double C;
-        if (Helper.isValidNumber(jTextField2.getText())) {
+        if (Helper.isValidNumber(jTextField2.getText()) && jRadioButton4.isSelected()) {
             C = Double.parseDouble(jTextField2.getText());
         } else {
             JOptionPane.showMessageDialog(this, "Annual Contribution is empty. If have no annual contribution enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
@@ -543,10 +543,39 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Tracker to iterate the taxable account
         double track = Double.parseDouble(jTextField1.getText());
+        // adds max limit
+        double Cm = 0;
         
         // Making sure none of the fields are empty except Marginal Tax Rate
         if (jRadioButton3.isSelected()) {
-            jLabel12.setText("ok");
+            //itterates through all  the ages and adds it to table 
+            for (int i = A; i < R; i++) {
+                if (A > 50) {
+                    Cm = 7000;
+                } else {
+                    Cm = 8000;
+                }
+                int j = i - A;
+                int Ar = A + j;
+                Double futurer = Helper.futureCurrent(PV, r, j);
+                Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
+                Double rothr = futurer + pvcr;
+                String rothrs = Helper.formatDouble(rothr);
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                // taxable account
+                Double ATR = Helper.afterTaxReturn(r, tr);
+                String trackrs = Helper.formatDouble(track);
+                model.addRow(new Object[] {Ar,rothrs,trackrs});
+                track = (track *(1+ATR)) + Cm;
+            }
+            // Calculate the Roth
+            Double future = Helper.futureCurrent(PV, r, N);
+            Double pvc = Helper.futureContributionsCalculator(Cm, r, N);
+            Double roth = future + pvc;
+            String roths = Helper.formatDouble(roth);
+            jLabel12.setText(roths);
+            String tracks = Helper.formatDouble(track);
+            jLabel13.setText(tracks);
         } else {
             // makes sure the limits for contribution are not exceeded
             if (A < 50 && C > 7000) {
