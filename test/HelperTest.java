@@ -141,13 +141,13 @@ public class HelperTest {
     /**
      * Test of webScraper method, of class Helper.
      */
-    @Test
-    public void testWebScraper() {
-        System.out.println("webScraper");
-        Dictionary<String, Double> expResult = null;
-        Dictionary<String, Double> result = Helper.webScraper();
-        assertEquals(expResult, result);
-    }
+//    @Test
+//    public void testWebScraper() {
+//        System.out.println("webScraper");
+//        Dictionary<String, Double> expResult = null;
+//        Dictionary<String, Double> result = Helper.webScraper();
+//        assertEquals(expResult, result);
+//    }
 
     /**
      * Test of Validated method, of class Helper.

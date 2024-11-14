@@ -335,7 +335,7 @@ public class Helper {
             evt.consume();
         }
 
-        if (userLength > 12)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+        if (userLength > 30)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
             evt.consume();
     }
     public static void consumeNotNumbersAllowDecimalAndNeg (JTextField textField, KeyEvent evt) {// It has an issue where if numbers are already in the text field a negative cannot be added
@@ -350,15 +350,22 @@ public class Helper {
             evt.consume();
         }
 
-        if (userLength >= 18) {
+        if (userLength >= 31) {
             evt.consume();
         }
     }
     
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();
+        String userInput = textField.getText();
+        int userLength = userInput.length();
+        
         if (!(Character.isDigit(c) ))
             evt.consume();
+        
+        if (userLength >= 18) {
+            evt.consume();
+        }
     }
     
     // Calc fucuture value of current balance (roth IRA)
