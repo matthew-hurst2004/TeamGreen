@@ -538,23 +538,29 @@ public class Calc6 extends javax.swing.JFrame {
         double originalLoanInterest = 0;
         double AprPrincipal = 0;
         double tolerance = 0.000001; // Tolerance for accuracy
-        int option = cboxOptions.getSelectedIndex();
         
-        if (option == 0)
+        
+        if (cboxOptions.getSelectedIndex() == 0)
         {
            // remaining balance
             if (txtRemainingBalance.getText().equals("")) 
             {
-                remainingBalance = 0;
-                txtRemainingBalance.setText("0");
+                JOptionPane.showMessageDialog(this, "Please provide a positive remaining balance of the current loan.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtRemainingBalance.setText("");
+                txtRemainingBalance.requestFocusInWindow();
+                return;
             } else {
                 remainingBalance  = Double.parseDouble(txtRemainingBalance.getText());
             }                 
             // current monthly payment
             if (txtCurrentMonthlyPayment.getText().equals("")) 
             {
-                currentMonthlyPayment = 0;
-                txtCurrentMonthlyPayment.setText("0");
+                JOptionPane.showMessageDialog(this, "Please provide a positive monthly payment amount of the current loan..",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtCurrentMonthlyPayment.setText("");
+                txtCurrentMonthlyPayment.requestFocusInWindow();
+                return;
             } else {
                 currentMonthlyPayment = Double.parseDouble(txtCurrentMonthlyPayment.getText());
             } 
@@ -564,17 +570,23 @@ public class Calc6 extends javax.swing.JFrame {
             // original loan amount
             if (txtOriginalLoanAmount.getText().equals("")) 
             {
-                originalLoanAmount = 0;
-                txtOriginalLoanAmount.setText("0");
+                JOptionPane.showMessageDialog(this, "Please provide a positive original loan amount of current loan value",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtOriginalLoanAmount.setText("");
+                txtOriginalLoanAmount.requestFocusInWindow();
+                return;
                 
             } else {
                 originalLoanAmount = Double.parseDouble(txtOriginalLoanAmount.getText());
             }                  
             // original loan term - in months
-            if (txtOriginalLoanTerm.getText().equals("")) 
+            if (txtOriginalLoanTerm.getText().equals("") || Double.parseDouble(txtOriginalLoanTerm.getText()) >= 51) 
             {
-                originalLoanTerm = 0;
-                txtOriginalLoanTerm.setText("0");
+                JOptionPane.showMessageDialog(this, "Please provide a positive loan term that is 50 years or less.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtRemainingBalance.setText("");
+                txtRemainingBalance.requestFocusInWindow();
+                return;
             } else {
                 originalLoanTerm = Math.floor(Double.parseDouble(txtOriginalLoanTerm.getText()) * 12) ;
             }                  
@@ -607,10 +619,13 @@ public class Calc6 extends javax.swing.JFrame {
             currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText()) / 1200.0;
         }        
         // new loan term - in months
-        if (txtNewLoanMonths.getText().equals("")) 
+        if (txtNewLoanMonths.getText().equals("") || txtNewLoanMonths.getText().equals("0")) 
         {
-            newLoanMonths = .1;
-            txtNewLoanMonths.setText(".1");
+            JOptionPane.showMessageDialog(this, "Please provide a reasonable new loan term value.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+            txtOriginalLoanTerm.setText("");
+            txtOriginalLoanTerm.requestFocusInWindow();
+            return;
         } else {
             newLoanMonths = Math.floor(Double.parseDouble(txtNewLoanMonths.getText()) * 12);
         }        
@@ -649,7 +664,7 @@ public class Calc6 extends javax.swing.JFrame {
         
         
         //option specific operations
-        if (option == 0) // remaining balance option
+        if (cboxOptions.getSelectedIndex() == 0) // remaining balance option
         {
             newPrincipalFinal = remainingBalance + cashOutAmount; // updated remaining balance for new loan
             if (currentMonthlyPayment <= remainingBalance * currentInterestRate) 
@@ -709,7 +724,7 @@ public class Calc6 extends javax.swing.JFrame {
         
         
         // option dependent output
-        if (option == 0)
+        if (cboxOptions.getSelectedIndex() == 0)
         {
             model.addRow(new Object[]{"Principal/loan amount", "$" + Helper.formatDouble(remainingBalance), "$" + Helper.formatDouble(newPrincipalFinal), 
                 "$" + Helper.formatDouble(newPrincipalFinal - remainingBalance)});
@@ -794,7 +809,6 @@ public class Calc6 extends javax.swing.JFrame {
             lblYears.setVisible(false);
             lblYears1.setVisible(false);
             lblMonths.setVisible(false);
-            System.out.println("First choice");
 
         }
         else
@@ -814,7 +828,6 @@ public class Calc6 extends javax.swing.JFrame {
             lblYears.setVisible(true);
             lblYears1.setVisible(true);
             lblMonths.setVisible(true);
-            System.out.println("Second choice");
         }
     }//GEN-LAST:event_cboxOptionsActionPerformed
 
