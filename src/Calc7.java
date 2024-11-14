@@ -548,6 +548,18 @@ public class Calc7 extends javax.swing.JFrame {
         if (jRadioButton3.isSelected()) {
             jLabel12.setText("ok");
         } else {
+            // makes sure the limits for contribution are not exceeded
+            if (A < 50 && C > 7000) {
+                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField2.setText("");
+                jTextField2.requestFocus();
+                return;
+            } else if (A >= 50 && C > 8000) {
+                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField2.setText("");
+                jTextField2.requestFocus();
+                return;
+            }
             //itterates through all  the ages and adds it to table 
             for (int i = A; i < R; i++) {
                 int j = i - A;
