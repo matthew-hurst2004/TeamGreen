@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -45,11 +49,12 @@ public class Calc9 extends javax.swing.JFrame {
         extraPaymentPerMonthTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         remainingTermMonthsTextField = new javax.swing.JTextField();
-        OutputWithLoanTermLabel = new javax.swing.JLabel();
+        outputWithLoanTermLabel = new javax.swing.JLabel();
         calculateLeftSideButton = new javax.swing.JButton();
         leftErrorLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        Close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -95,7 +100,7 @@ public class Calc9 extends javax.swing.JFrame {
         jLabel2.setText("   $");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        jLabel3.setText("%");
+        jLabel3.setText("% Per year");
 
         jLabel4.setText("Years");
 
@@ -136,7 +141,7 @@ public class Calc9 extends javax.swing.JFrame {
             }
         });
 
-        OutputWithLoanTermLabel.setText("Output label");
+        outputWithLoanTermLabel.setText("Output label");
 
         calculateLeftSideButton.setText("Calculate ");
         calculateLeftSideButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -158,42 +163,44 @@ public class Calc9 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(leftErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(remainingTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(interestRateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(originalLoanTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(originalLoanAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(remainingTermMonthsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addComponent(originalLoanAmountTextField)
-                            .addComponent(originalLoanTermTextField)
-                            .addComponent(interestRateTextField)
-                            .addComponent(remainingTermYearsTextField))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(OutputWithLoanTermLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(outputWithLoanTermLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(extraPaymentPerMonthTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE))
+                                .addContainerGap())
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(calculateLeftSideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(19, 19, 19))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(remainingTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(interestRateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(originalLoanTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(originalLoanAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(remainingTermMonthsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                    .addComponent(originalLoanAmountTextField)
+                                    .addComponent(originalLoanTermTextField)
+                                    .addComponent(interestRateTextField)
+                                    .addComponent(remainingTermYearsTextField))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +243,7 @@ public class Calc9 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(calculateLeftSideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(OutputWithLoanTermLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(outputWithLoanTermLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -259,26 +266,37 @@ public class Calc9 extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        Close.setText("Close");
+        Close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CloseMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Close)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(Close)
+                .addGap(2, 2, 2)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE))
@@ -314,26 +332,99 @@ public class Calc9 extends javax.swing.JFrame {
 
     private void calculateLeftSideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateLeftSideButtonMouseClicked
         // This is where the magic happens
-                
+        leftErrorLabel.setText("");
+        
         try {
             double originalLoanAmountDouble = Double.parseDouble(originalLoanAmountTextField.getText());
             double originalLoanTermDouble = Double.parseDouble(originalLoanTermTextField.getText());
-            double interestRateDouble = Double.parseDouble(interestRateTextField.getText());
+            double interestRateDouble;
             double remainingTermYearsDouble;
-            
+            double remainingTermMonthsDouble;
+            double extraPaymentPerMonthDouble;
+            double amountAlreadyPaid;
+
+            if (extraPaymentPerMonthTextField.getText().equals("")) 
+            {
+                extraPaymentPerMonthDouble = 0;
+            } else {
+                extraPaymentPerMonthDouble = Double.parseDouble(extraPaymentPerMonthTextField.getText());
+            }                       
+                         
+                    
             if (remainingTermYearsTextField.getText().equals("")) 
             {
                 remainingTermYearsDouble = 0;
             } else {
                 remainingTermYearsDouble = Double.parseDouble(remainingTermYearsTextField.getText());
-            }          
+            }        
             
+            if (remainingTermMonthsTextField.getText().equals("")) 
+            {
+                remainingTermMonthsDouble = 0;
+            } else {
+                remainingTermMonthsDouble = Double.parseDouble(remainingTermMonthsTextField.getText());
+            }
+            
+            if (interestRateTextField.getText().equals("")) 
+            {
+                interestRateDouble = 0;
+            } else {
+                interestRateDouble = Double.parseDouble(interestRateTextField.getText());
+            }            
+            
+            
+            if (interestRateDouble == 0){
+                leftErrorLabel.setText("Your interest rate box is empty and will be seen as a zero");
+            }            
+                        
+            if (originalLoanAmountDouble == 0 || originalLoanTermDouble == 0){
+                leftErrorLabel.setText("Make sure the first two boxes are more than zero");
+                JOptionPane.showMessageDialog(this, "The first two boxes need a number above zero.");
+                return;
+            }
+            
+            if (remainingTermMonthsDouble + remainingTermYearsDouble == 0){ // I am making sure the remaining loan term is not zero
+                leftErrorLabel.setText("Make sure the remaining loan term is more than zero");
+                JOptionPane.showMessageDialog(this, "The remaing term needs to be above zero.");
+                return;
+            }
+            
+            // testing ends and logic starts
+            
+            interestRateDouble = interestRateDouble / 12 / 100;
+            double totalMonths = (remainingTermYearsDouble * 12) + remainingTermMonthsDouble;  
+            
+            // test this
+            double monthlyPayment = originalLoanAmountDouble * (interestRateDouble * 
+                    Math.pow(1 + interestRateDouble, totalMonths)) / (Math.pow(1 + interestRateDouble, totalMonths) - 1);
+            
+            
+            double originalRemainingDif = (originalLoanTermDouble * 12) - totalMonths;
+            double buildUp = 0;
+            
+            while (originalRemainingDif > 0){
+                buildUp = monthlyPayment * (1 + interestRateDouble) + monthlyPayment; // extra payment might not be correct
+                originalRemainingDif = originalRemainingDif - 1;
+            }
+            
+
+            double totalPayment = monthlyPayment + extraPaymentPerMonthDouble;
+            int months = 0;
+            double balance = originalLoanAmountDouble - buildUp; // subtract the amount already paid here
+
+            while (balance > 0) {
+                balance = balance * (1 + interestRateDouble) - totalPayment;
+                months++;
+
+            }
+        outputWithLoanTermLabel.setText(String.valueOf(months));
             
         } catch (NumberFormatException e) {
            
             if (originalLoanAmountTextField.getText().equals("") || originalLoanTermTextField.getText().equals("") ||
                     interestRateTextField.getText().equals("")){
-                leftErrorLabel.setText("Make sure the first four boxes have a number");
+                leftErrorLabel.setText("Make sure the first five boxes have the correct number");
+                JOptionPane.showMessageDialog(this, "Make sure the first five boxes have the correct number");
 
             } else {
                 leftErrorLabel.setText("Please look over the numbers entered.");
@@ -341,6 +432,10 @@ public class Calc9 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_calculateLeftSideButtonMouseClicked
+
+    private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_CloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -378,7 +473,7 @@ public class Calc9 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel OutputWithLoanTermLabel;
+    private javax.swing.JButton Close;
     private javax.swing.JButton calculateLeftSideButton;
     private javax.swing.JTextField extraPaymentPerMonthTextField;
     private javax.swing.JLabel interestRateLabel;
@@ -400,6 +495,7 @@ public class Calc9 extends javax.swing.JFrame {
     private javax.swing.JTextField originalLoanAmountTextField;
     private javax.swing.JLabel originalLoanTermLabel;
     private javax.swing.JTextField originalLoanTermTextField;
+    private javax.swing.JLabel outputWithLoanTermLabel;
     private javax.swing.JLabel remainingTermLabel;
     private javax.swing.JTextField remainingTermMonthsTextField;
     private javax.swing.JTextField remainingTermYearsTextField;
