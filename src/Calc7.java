@@ -483,13 +483,17 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Annual contributition 
         double C;
-        if (Helper.isValidNumber(jTextField2.getText()) && jRadioButton4.isSelected()) {
-            C = Double.parseDouble(jTextField2.getText());
+        if (jRadioButton3.isSelected()) {
+            C = 0;
         } else {
-            JOptionPane.showMessageDialog(this, "Annual Contribution is empty. If have no annual contribution enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
-            jTextField2.setText("");
-            jTextField2.requestFocus();
-            return;
+            if (Helper.isValidNumber(jTextField2.getText())) {
+                C = Double.parseDouble(jTextField2.getText());
+            } else {
+                JOptionPane.showMessageDialog(this, "Annual Contribution is empty. If have no annual contribution enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField2.setText("");
+                jTextField2.requestFocus();
+                return;
+            }
         }
         // Expected rate of return (into decimal)
         double r;
@@ -550,7 +554,7 @@ public class Calc7 extends javax.swing.JFrame {
         if (jRadioButton3.isSelected()) {
             //itterates through all  the ages and adds it to table 
             for (int i = A; i < R; i++) {
-                if (A > 50) {
+                if (i <= 50) {
                     Cm = 7000;
                 } else {
                     Cm = 8000;
@@ -602,7 +606,7 @@ public class Calc7 extends javax.swing.JFrame {
                 Double ATR = Helper.afterTaxReturn(r, tr);
                 String trackrs = Helper.formatDouble(track);
                 model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + C;
+                track = (track *(1+ATR)) + Cm;
             }
             // Calculate the Roth
             Double future = Helper.futureCurrent(PV, r, N);
