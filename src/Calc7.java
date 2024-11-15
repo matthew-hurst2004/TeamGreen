@@ -554,7 +554,7 @@ public class Calc7 extends javax.swing.JFrame {
         if (jRadioButton3.isSelected()) {
             //itterates through all  the ages and adds it to table 
             for (int i = A; i < R; i++) {
-                if (i <= 50) {
+                if (i < 50) {
                     Cm = 7000;
                 } else {
                     Cm = 8000;
@@ -606,7 +606,7 @@ public class Calc7 extends javax.swing.JFrame {
                 Double ATR = Helper.afterTaxReturn(r, tr);
                 String trackrs = Helper.formatDouble(track);
                 model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + Cm;
+                track = (track *(1+ATR)) + C;
             }
             // Calculate the Roth
             Double future = Helper.futureCurrent(PV, r, N);
