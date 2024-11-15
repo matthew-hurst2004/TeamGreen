@@ -549,6 +549,8 @@ public class Calc7 extends javax.swing.JFrame {
         double track = Double.parseDouble(jTextField1.getText());
         // adds max limit
         double Cm = 0;
+        // clears the table if previous calculation was made
+        jTable1.setModel(new DefaultTableModel(null, new String[]{"Age", "Roth IRA", "Taxable account"}));
         
         // Making sure none of the fields are empty except Marginal Tax Rate
         if (jRadioButton3.isSelected()) {
