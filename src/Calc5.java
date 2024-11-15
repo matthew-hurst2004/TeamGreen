@@ -640,7 +640,6 @@ public class Calc5 extends javax.swing.JFrame {
         }
         }
     
-        // TODO add your handling code here:
     }//GEN-LAST:event_calculateButtonMouseClicked
 
     private void downPaymentTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_downPaymentTextFieldKeyTyped
