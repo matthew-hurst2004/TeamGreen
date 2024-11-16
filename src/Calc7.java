@@ -552,7 +552,7 @@ public class Calc7 extends javax.swing.JFrame {
         // clears the table if previous calculation was made
         jTable1.setModel(new DefaultTableModel(null, new String[]{"Age", "Roth IRA", "Taxable account"}));
         
-        // Making sure none of the fields are empty except Marginal Tax Rate
+        // Checking to see if max out is selected
         if (jRadioButton3.isSelected()) {
             //itterates through all  the ages and adds it to table 
             for (int i = A; i < R; i++) {
