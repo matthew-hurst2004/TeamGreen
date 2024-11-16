@@ -139,6 +139,7 @@ public class Helper {
                 Double rate2 = Double.valueOf(tds.get(2).text());
                 System.out.printf("Currency: %s, rate1: %s, rate2: %s%n", currency, rate1, rate2);
                 dict.put(currency, rate1);
+//                dict.put(currency + "_rate2", rate2);
             }
             System.out.println(dict.get("Chilean Peso"));
         }
