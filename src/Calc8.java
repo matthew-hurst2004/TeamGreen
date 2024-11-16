@@ -215,6 +215,7 @@ public class Calc8 extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "You must enter a valid numerical amount!", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField1.setText("");
+            jTextField2.setText("");
             jTextField1.requestFocus();
         }
     }//GEN-LAST:event_jButton1MouseClicked
