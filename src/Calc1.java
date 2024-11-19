@@ -17,6 +17,7 @@ public class Calc1 extends javax.swing.JFrame {
      * Creates new form Calc1
      */
     public Calc1() {
+        this.setUndecorated(true);
         initComponents();
         jLabel5.setVisible(false);
         this.setResizable(false);
@@ -52,6 +53,9 @@ public class Calc1 extends javax.swing.JFrame {
         closeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setForeground(new java.awt.Color(51, 0, 255));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(255, 101, 0));
 
@@ -171,7 +175,7 @@ public class Calc1 extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
-                        .addContainerGap(105, Short.MAX_VALUE))
+                        .addContainerGap(151, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
