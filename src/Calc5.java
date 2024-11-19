@@ -107,8 +107,9 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel2.setText("Home Price");
 
-        errorTextField.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        errorTextField.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         errorTextField.setForeground(new java.awt.Color(255, 0, 51));
+        errorTextField.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         errorTextField.setText("Error Label");
 
         monthlyPaymentOutputLabel.setText("Monthly Payment Label");
@@ -569,12 +570,29 @@ public class Calc5 extends javax.swing.JFrame {
             double homePriceDouble = Double.parseDouble(homePriceTextField.getText());
             double downPaymentDouble = Double.parseDouble(downPaymentTextField.getText());
             double loanTermDouble = Double.parseDouble(loanTermTextField.getText());
-            double interestRate = Double.parseDouble(interestRateTextField.getText()) / 100 / 12; // Monthly interest rate
+            double interestRate = Double.parseDouble(interestRateTextField.getText());
+            
+            if (interestRate <= 0)
+            {
+                errorTextField.setText("Make sure the interst is greater than zero.");
+                loanTermTextField.setText("");
+                loanTermTextField.requestFocusInWindow();
+                return;
+            }
+        
+            if (loanTermDouble <= 0)
+            {
+                errorTextField.setText("The Loan Term cannot be over 200");
+                loanTermTextField.setText("");
+                loanTermTextField.requestFocusInWindow();
+                return;
+            }
             
             if (loanTermDouble > 200)
             {
                 errorTextField.setText("The Loan Term cannot be over 200");
                 loanTermTextField.setText("");
+                loanTermTextField.requestFocusInWindow();
                 return;
             }
             
@@ -588,7 +606,8 @@ public class Calc5 extends javax.swing.JFrame {
 
             double principal = homePriceDouble - downPaymentDouble;
             double monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, - loanTermNumberOfMonths));
-            double totalMonthyPayment = monthlyPayment + (pmiInsuranceDouble / 12) + (otherCostsDouble / 12) + (hoaFeeDouble / 12) + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
+            double totalMonthyPayment = monthlyPayment + (pmiInsuranceDouble / 12) + (otherCostsDouble / 12) + (hoaFeeDouble / 12)
+                    + (propertyTaxDouble / 12) + (homeInsuranceDouble / 12); // adding the extra things to the monthly payment
             
             String roundedmonthlyPaymentBeforeExtra = Helper.formatDouble(monthlyPayment); // rounding and formatting
             
@@ -651,7 +670,7 @@ public class Calc5 extends javax.swing.JFrame {
     }//GEN-LAST:event_loanTermTextFieldKeyTyped
 
     private void interestRateTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_interestRateTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(interestRateTextField, evt);
+        Helper.consumeNotNumbersAllowDecimalShortLength(interestRateTextField, evt);
     }//GEN-LAST:event_interestRateTextFieldKeyTyped
 
     private void propertyTaxTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_propertyTaxTextFieldKeyTyped
@@ -675,19 +694,19 @@ public class Calc5 extends javax.swing.JFrame {
     }//GEN-LAST:event_otherCostTextFieldKeyTyped
 
     private void propertyTaxIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_propertyTaxIncreaseTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(propertyTaxIncreaseTextField, evt);
+        Helper.consumeNotNumbersAllowDecimalShortLength(propertyTaxIncreaseTextField, evt);
     }//GEN-LAST:event_propertyTaxIncreaseTextFieldKeyTyped
 
     private void homeInsuranceIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeInsuranceIncreaseTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(homeInsuranceIncreaseTextField, evt);
+        Helper.consumeNotNumbersAllowDecimalShortLength(homeInsuranceIncreaseTextField, evt);
     }//GEN-LAST:event_homeInsuranceIncreaseTextFieldKeyTyped
 
     private void hoaFeeIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hoaFeeIncreaseTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(hoaFeeIncreaseTextField, evt);
+        Helper.consumeNotNumbersAllowDecimalShortLength(hoaFeeIncreaseTextField, evt);
     }//GEN-LAST:event_hoaFeeIncreaseTextFieldKeyTyped
 
     private void otherCostIncreaseTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_otherCostIncreaseTextFieldKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(otherCostIncreaseTextField, evt);
+        Helper.consumeNotNumbersAllowDecimalShortLength(otherCostIncreaseTextField, evt);
     }//GEN-LAST:event_otherCostIncreaseTextFieldKeyTyped
 
     

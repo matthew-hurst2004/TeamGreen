@@ -352,6 +352,24 @@ public class Helper {
         }
     }
     
+    
+    public static void consumeNotNumbersAllowDecimalShortLength (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
+        char c = evt.getKeyChar();
+        String userInput = textField.getText();
+        int userLength = userInput.length();        
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
+            evt.consume();
+        else if (c == '.' && textField.getText().contains("."))   {    
+            evt.consume();
+        }
+
+        if (userLength > 6)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+            evt.consume();
+        
+        
+    }    
+        
+    
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();
         String userInput = textField.getText();
