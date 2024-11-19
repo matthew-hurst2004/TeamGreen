@@ -363,7 +363,7 @@ public class Helper {
             evt.consume();
         }
 
-        if (userLength > 6)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+        if (userLength > 8)    //8 char max
             evt.consume();
         
         
