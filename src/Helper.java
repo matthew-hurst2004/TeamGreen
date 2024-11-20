@@ -143,30 +143,7 @@ public class Helper {
         }
         return dict;
     }
-    //Tristan's Validated 
-    public static boolean Validated(String testVal, String testVal2, String testVal3)
-    {
-        //list
-        List<String> input = new ArrayList<>();
-        input.add(testVal);
-        input.add(testVal2);
-        input.add(testVal3);
-        boolean isValidated = true;
-        //loop      
-        for (int i = 0; i < 3; i++)
-        {
-            if (isNumber(input.get(i)))
-            {
-                isValidated = isPos(input.get(i));
-            }
-            else
-            {
-                isValidated = false;
-            }
-            
-        }
-            return isValidated;
-    }
+    
     //isNumber
     public static boolean isNumber(String testNum)
     {
@@ -369,6 +346,22 @@ public class Helper {
         
     }    
         
+    
+    public static void consumeNotNumbersAllowDecimalLongLength (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
+        char c = evt.getKeyChar();
+        String userInput = textField.getText();
+        int userLength = userInput.length();        
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
+            evt.consume();
+        else if (c == '.' && textField.getText().contains("."))   {    
+            evt.consume();
+        }
+
+        if (userLength > 20)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+            evt.consume();
+        
+        
+    }    
     
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();

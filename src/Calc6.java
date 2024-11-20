@@ -478,11 +478,11 @@ public class Calc6 extends javax.swing.JFrame {
     }//GEN-LAST:event_closeButtonMouseClicked
 
     private void txtRemainingBalanceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRemainingBalanceKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtRemainingBalance, evt);        // TODO add your handling code here:
+        Helper.consumeNotNumbersAllowDecimalLongLength(txtRemainingBalance, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtRemainingBalanceKeyTyped
 
     private void txtCurrentMonthlyPaymentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCurrentMonthlyPaymentKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtCurrentMonthlyPayment, evt);        // TODO add your handling code here:
+        Helper.consumeNotNumbersAllowDecimalLongLength(txtCurrentMonthlyPayment, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtCurrentMonthlyPaymentKeyTyped
 
     private void txtCurrentInterestRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCurrentInterestRateKeyTyped
@@ -502,7 +502,7 @@ public class Calc6 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPointsKeyTyped
 
     private void txtCostFeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostFeesKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtCostFees, evt);        // TODO add your handling code here:
+        Helper.consumeNotNumbersAllowDecimalLongLength(txtCostFees, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtCostFeesKeyTyped
 
     private void txtCashOutAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCashOutAmountKeyTyped
@@ -637,12 +637,13 @@ public class Calc6 extends javax.swing.JFrame {
             currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText()) / 1200.0;
         }        
         // new loan term - in months
-        if (txtNewLoanMonths.getText().equals("") || txtNewLoanMonths.getText().equals("0")) 
+        if (txtNewLoanMonths.getText().equals("") || Double.parseDouble(txtNewLoanMonths.getText()) < 1 
+                || Double.parseDouble(txtNewLoanMonths.getText()) > 1000) 
         {
             JOptionPane.showMessageDialog(this, "Please provide a reasonable new loan term value.",
                "Error", JOptionPane.ERROR_MESSAGE);
-            txtOriginalLoanTerm.setText("");
-            txtOriginalLoanTerm.requestFocusInWindow();
+            txtNewLoanMonths.setText("");
+            txtNewLoanMonths.requestFocusInWindow();
             return;
         } else {
             newLoanMonths = Math.floor(Double.parseDouble(txtNewLoanMonths.getText()) * 12);
