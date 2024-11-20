@@ -623,36 +623,24 @@ public class Calc9 extends javax.swing.JFrame {
             double totalMonths = (remainingTermYearsDouble * 12) + remainingTermMonthsDouble;  
             
             double monthlyPayment = originalLoanAmountDouble * (interestRateDouble * 
-                    Math.pow(1 + interestRateDouble, totalMonths)) / (Math.pow(1 + interestRateDouble, totalMonths) - 1);
+                    Math.pow(1 + interestRateDouble, (originalLoanTermDouble * 12))) / (Math.pow(1 + interestRateDouble, (originalLoanTermDouble * 12)) - 1);
             
             
             double originalRemainingDif = (originalLoanTermDouble * 12) - totalMonths;
-            double buildUp = 0;
             
-            
-            
-            //the problem zone
-            ///////////////////////////////////
-            
-            
+
             while (originalRemainingDif > 0){
-                double interestPayment = originalLoanAmountDouble + interestRateDouble;
-                buildUp = monthlyPayment * (1 + interestRateDouble) + monthlyPayment; // This might not be correct. extra payment might not be correct
+                originalLoanAmountDouble = originalLoanAmountDouble * (1 + interestRateDouble) - monthlyPayment;
                 originalRemainingDif = originalRemainingDif - 1;
             }
-            
-            
-            
-            ////////////////////////
-            
-            
+
             
 
             double totalPayment = monthlyPayment + extraPaymentPerMonthDouble;
             int monthsLeft = 0;
-            double moneyLeft = originalLoanAmountDouble - buildUp; // subtract the amount already paid here
+            double moneyLeft = originalLoanAmountDouble; // subtract the amount already paid here
 
-            while (moneyLeft >= 0) {
+            while (moneyLeft > 0) {
                 moneyLeft = moneyLeft * (1 + interestRateDouble) - totalPayment;
                 monthsLeft = monthsLeft + 1;
                 if (monthsLeft > 2400){
