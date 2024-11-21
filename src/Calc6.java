@@ -632,7 +632,7 @@ public class Calc6 extends javax.swing.JFrame {
             currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText()) / 1200.0;
         }        
         // new loan term - in months
-        if (txtNewLoanMonths.getText().equals("") || Double.parseDouble(txtNewLoanMonths.getText()) < 1 
+        if (txtNewLoanMonths.getText().equals("") || Double.parseDouble(txtNewLoanMonths.getText()) == 0 
                 || Double.parseDouble(txtNewLoanMonths.getText()) > 1000) 
         {
             JOptionPane.showMessageDialog(this, "Please provide a reasonable new loan term value.",
@@ -701,15 +701,14 @@ public class Calc6 extends javax.swing.JFrame {
                 txtCurrentMonthlyPayment.requestFocusInWindow();
                 return;
             }
-            //accumulated interest for current loan
-            currentAccumulatedInterest = Helper.remainingAccumulatedInterest(remainingBalance, currentMonthlyPayment, 
-                    currentInterestRate);
-            // total amount of payments made on current loan
-            totalCurrentMonthlyPayments = remainingBalance + currentAccumulatedInterest;
-            //months
-            currentLoanMonths = Helper.months(remainingBalance, currentMonthlyPayment, currentInterestRate);
+       
+            
+            
+            currentLoanMonths = Helper.months(remainingBalance, currentMonthlyPayment, currentInterestRate); //months
+            totalCurrentMonthlyPayments = currentMonthlyPayment * currentLoanMonths; // total amount of payments made on current loan
+            currentAccumulatedInterest = totalCurrentMonthlyPayments - remainingBalance; //accumulated interest for current loan
             newPrincipalFinal = remainingBalance + cashOutAmount; // updated remaining balance for new loan
-            pointsCost = newPrincipalFinal * points;
+            pointsCost = newPrincipalFinal * points; // cost of points on loan
             AprPrincipal = newPrincipalFinal - (pointsCost + costFees);
             System.out.println(AprPrincipal);
         }
@@ -729,7 +728,8 @@ public class Calc6 extends javax.swing.JFrame {
             // total amount of payments made on current loan
             totalCurrentMonthlyPayments = newPrincipalOriginal + originalLoanInterest;
             newPrincipalFinal = newPrincipalOriginal + cashOutAmount;
-            AprPrincipal = newPrincipalFinal;
+            pointsCost = newPrincipalFinal * points; // cost of points on loan
+            AprPrincipal = newPrincipalFinal - (pointsCost + costFees);
         }
         
         
@@ -737,10 +737,7 @@ public class Calc6 extends javax.swing.JFrame {
         newMonthlyPayment = Helper.monthlyPayment(newPrincipalFinal, newLoanMonths, newInterestRate); //new loan monthly payment        
         //accumualted interest for new loan
         newAccumulatedInterest = Helper.remainingAccumulatedInterest(newPrincipalFinal, newMonthlyPayment, newInterestRate);
-        // cost of points on loan
-        //double pointsCost = newPrincipalFinal * points;
-        // total amount of payments made on new loan
-        totalNewMonthlyPayments = newPrincipalFinal + newAccumulatedInterest;
+        totalNewMonthlyPayments = newPrincipalFinal + newAccumulatedInterest; // total amount of payments made on new loan
         // finding new apr
         double monthlyRate = Helper.calculateInterestRate(AprPrincipal, newMonthlyPayment, newLoanMonths, tolerance);
         double apr = monthlyRate * 12 * 100; // Convert monthly rate to annual percentage rate
