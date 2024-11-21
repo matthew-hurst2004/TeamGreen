@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -450,4 +452,11 @@ public class Helper {
         return monthsUntillRentMoreBuy;
     }   
     
+    // need this for chart
+    public static CategoryDataset convertDataset (DefaultCategoryDataset d)
+    {
+        return d;
+    }
+
+
 }
