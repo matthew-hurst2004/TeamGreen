@@ -1,7 +1,5 @@
 
 import javax.swing.JOptionPane;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -321,18 +319,13 @@ public class Calc6 extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(18, 18, 18)
-                                                .addComponent(lblYears1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(lblYears1, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
                                             .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGap(34, 34, 34)
-                                                        .addComponent(lblPercent1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(lblYears, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(lblMonths)))
+                                                    .addComponent(lblMonths)
+                                                    .addComponent(lblPercent1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(lblYears, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(18, 18, 18))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -352,7 +345,12 @@ public class Calc6 extends javax.swing.JFrame {
                                 .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(closeButton))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
@@ -375,14 +373,12 @@ public class Calc6 extends javax.swing.JFrame {
                                     .addComponent(txtCashOutAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(lblPercent2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(closeButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblPercent2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -427,19 +423,16 @@ public class Calc6 extends javax.swing.JFrame {
                             .addComponent(lblYears)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNewLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblNewLoanTerm)
-                                    .addComponent(txtNewLoanMonths, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblNewInterestRate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtNewInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNewLoanTerm)
+                            .addComponent(txtNewLoanMonths, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblNewInterestRate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtNewInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblPercent2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -480,11 +473,11 @@ public class Calc6 extends javax.swing.JFrame {
     }//GEN-LAST:event_closeButtonMouseClicked
 
     private void txtRemainingBalanceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRemainingBalanceKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtRemainingBalance, evt);        // TODO add your handling code here:
+        Helper.consumeNotNumbersAllowDecimalLongLength(txtRemainingBalance, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtRemainingBalanceKeyTyped
 
     private void txtCurrentMonthlyPaymentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCurrentMonthlyPaymentKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtCurrentMonthlyPayment, evt);        // TODO add your handling code here:
+        Helper.consumeNotNumbersAllowDecimalLongLength(txtCurrentMonthlyPayment, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtCurrentMonthlyPaymentKeyTyped
 
     private void txtCurrentInterestRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCurrentInterestRateKeyTyped
@@ -504,7 +497,7 @@ public class Calc6 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPointsKeyTyped
 
     private void txtCostFeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostFeesKeyTyped
-        Helper.consumeNotNumbersAllowDecimal(txtCostFees, evt);        // TODO add your handling code here:
+        Helper.consumeNotNumbersAllowDecimalLongLength(txtCostFees, evt);        // TODO add your handling code here:
     }//GEN-LAST:event_txtCostFeesKeyTyped
 
     private void txtCashOutAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCashOutAmountKeyTyped
@@ -522,7 +515,8 @@ public class Calc6 extends javax.swing.JFrame {
         double currentInterestRate; 
         double newLoanMonths; 
         double newInterestRate; 
-        double points; 
+        double points;
+        double pointsCost = 0;
         double costFees; 
         double cashOutAmount;
         double currentAccumulatedInterest = 0;
@@ -580,12 +574,12 @@ public class Calc6 extends javax.swing.JFrame {
                 originalLoanAmount = Double.parseDouble(txtOriginalLoanAmount.getText());
             }                  
             // original loan term - in months
-            if (txtOriginalLoanTerm.getText().equals("") || Double.parseDouble(txtOriginalLoanTerm.getText()) >= 51) 
+            if (txtOriginalLoanTerm.getText().equals("") || Double.parseDouble(txtOriginalLoanTerm.getText()) > 51) 
             {
                 JOptionPane.showMessageDialog(this, "Please provide a positive loan term that is 50 years or less.",
                "Error", JOptionPane.ERROR_MESSAGE);
-                txtRemainingBalance.setText("");
-                txtRemainingBalance.requestFocusInWindow();
+                txtOriginalLoanTerm.setText("");
+                txtOriginalLoanTerm.requestFocusInWindow();
                 return;
             } else {
                 originalLoanTerm = Math.floor(Double.parseDouble(txtOriginalLoanTerm.getText()) * 12) ;
@@ -593,71 +587,103 @@ public class Calc6 extends javax.swing.JFrame {
             // original loan remaining years - in months
             if (txtTimeRemainingYears.getText().equals("")) 
             {
-                originalLoanRemainingYears = 0;
-                txtTimeRemainingYears.setText("0");
+                JOptionPane.showMessageDialog(this, "Please provide a positive remaining year and month value.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtTimeRemainingYears.setText("");
+                txtTimeRemainingYears.requestFocusInWindow();
+                return;
             } else {
                 originalLoanRemainingYears = Math.floor(Double.parseDouble(txtTimeRemainingYears.getText()) * 12);
             }                       
             // original loan remaining months
             if (txtTimeRemainingMonths.getText().equals("")) 
             {
-                originalLoanRemainingMonths = 0;
-                txtTimeRemainingMonths.setText("0");
+                JOptionPane.showMessageDialog(this, "Please provide a positive remaining year and month value.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtTimeRemainingMonths.setText("");
+                txtTimeRemainingMonths.requestFocusInWindow();
+                return;
             } else {
                 originalLoanRemainingMonths = Math.floor(Double.parseDouble(txtTimeRemainingMonths.getText()));
             }
         } // end else
         
+        if ((originalLoanRemainingYears + originalLoanRemainingMonths) > originalLoanTerm)
+        {
+            JOptionPane.showMessageDialog(this, "Please provide a positive remaining year and month value.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtTimeRemainingYears.setText("");
+                txtTimeRemainingMonths.setText("");
+                txtTimeRemainingYears.requestFocusInWindow();
+                return;
+        }
+        
         
                      
         // current interest rate
-        if (txtCurrentInterestRate.getText().equals("")) 
+        if (txtCurrentInterestRate.getText().equals("") || Double.parseDouble(txtCurrentInterestRate.getText()) > 200) 
         {
-            currentInterestRate = 0;
-            txtCurrentInterestRate.setText("0");
+            JOptionPane.showMessageDialog(this, "Please provide a positive interest rate that is 200% or less.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtCurrentInterestRate.setText("");
+                txtCurrentInterestRate.requestFocusInWindow();
+                return;
         } else {
             currentInterestRate = Double.parseDouble(txtCurrentInterestRate.getText()) / 1200.0;
         }        
         // new loan term - in months
-        if (txtNewLoanMonths.getText().equals("") || txtNewLoanMonths.getText().equals("0")) 
+        if (txtNewLoanMonths.getText().equals("") || Double.parseDouble(txtNewLoanMonths.getText()) < 1 
+                || Double.parseDouble(txtNewLoanMonths.getText()) > 1000) 
         {
             JOptionPane.showMessageDialog(this, "Please provide a reasonable new loan term value.",
                "Error", JOptionPane.ERROR_MESSAGE);
-            txtOriginalLoanTerm.setText("");
-            txtOriginalLoanTerm.requestFocusInWindow();
+            txtNewLoanMonths.setText("");
+            txtNewLoanMonths.requestFocusInWindow();
             return;
         } else {
             newLoanMonths = Math.floor(Double.parseDouble(txtNewLoanMonths.getText()) * 12);
         }        
         // new loan interest rate
-        if (txtNewInterestRate.getText().equals("")) 
+        if (txtNewInterestRate.getText().equals("") || Double.parseDouble(txtNewInterestRate.getText()) > 200) 
         {
-            newInterestRate = 0;
-            txtNewInterestRate.setText("0");
+            JOptionPane.showMessageDialog(this, "Please provide a positive interest rate that is 200% or less.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtNewInterestRate.setText("");
+                txtNewInterestRate.requestFocusInWindow();
+                return;
         } else {
             newInterestRate = Double.parseDouble(txtNewInterestRate.getText()) / 1200.0;
         }    
         // points
-        if (txtPoints.getText().equals("")) 
+        if (txtPoints.getText().equals("") || Double.parseDouble(txtPoints.getText()) > 100) 
         {
-            points = 0;
-            txtPoints.setText("0");
+            JOptionPane.showMessageDialog(this, "Please provide a point from 0 to 100.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtPoints.setText("");
+                txtPoints.requestFocusInWindow();
+                return;
         } else {
             points = Double.parseDouble(txtPoints.getText()) / 100.0;
         }
         // cost and fees
         if (txtCostFees.getText().equals("")) 
         {
-            costFees = 0;
-            txtCostFees.setText("0");
+            JOptionPane.showMessageDialog(this, "Please provide a positive cost value.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtCostFees.setText("");
+                txtCostFees.requestFocusInWindow();
+                return;
         } else {
             costFees = Double.parseDouble(txtCostFees.getText());
         }
         // cash out amount
         if (txtCashOutAmount.getText().equals("")) 
         {
-            cashOutAmount = 0;
-            txtCashOutAmount.setText("0");
+            JOptionPane.showMessageDialog(this, "Please provide a numeric cash out amount.",
+               "Error", JOptionPane.ERROR_MESSAGE);
+                txtCashOutAmount.setText("");
+                txtCashOutAmount.requestFocusInWindow();
+                return;
         } else {
             cashOutAmount = Double.parseDouble(txtCashOutAmount.getText());
         }
@@ -666,7 +692,7 @@ public class Calc6 extends javax.swing.JFrame {
         //option specific operations
         if (cboxOptions.getSelectedIndex() == 0) // remaining balance option
         {
-            newPrincipalFinal = remainingBalance + cashOutAmount; // updated remaining balance for new loan
+            
             if (currentMonthlyPayment <= remainingBalance * currentInterestRate) 
             {
                 JOptionPane.showMessageDialog(this, "Monthly payment is too low to pay off the balance. Please enter a higher monthly payment",
@@ -682,7 +708,10 @@ public class Calc6 extends javax.swing.JFrame {
             totalCurrentMonthlyPayments = remainingBalance + currentAccumulatedInterest;
             //months
             currentLoanMonths = Helper.months(remainingBalance, currentMonthlyPayment, currentInterestRate);
-            
+            newPrincipalFinal = remainingBalance + cashOutAmount; // updated remaining balance for new loan
+            pointsCost = newPrincipalFinal * points;
+            AprPrincipal = newPrincipalFinal - (pointsCost + costFees);
+            System.out.println(AprPrincipal);
         }
         else // original amount option
         {
@@ -700,7 +729,7 @@ public class Calc6 extends javax.swing.JFrame {
             // total amount of payments made on current loan
             totalCurrentMonthlyPayments = newPrincipalOriginal + originalLoanInterest;
             newPrincipalFinal = newPrincipalOriginal + cashOutAmount;
- 
+            AprPrincipal = newPrincipalFinal;
         }
         
         
@@ -709,11 +738,10 @@ public class Calc6 extends javax.swing.JFrame {
         //accumualted interest for new loan
         newAccumulatedInterest = Helper.remainingAccumulatedInterest(newPrincipalFinal, newMonthlyPayment, newInterestRate);
         // cost of points on loan
-        double pointsCost = newPrincipalFinal * points;
+        //double pointsCost = newPrincipalFinal * points;
         // total amount of payments made on new loan
         totalNewMonthlyPayments = newPrincipalFinal + newAccumulatedInterest;
         // finding new apr
-        AprPrincipal = newPrincipalFinal - (pointsCost + costFees);
         double monthlyRate = Helper.calculateInterestRate(AprPrincipal, newMonthlyPayment, newLoanMonths, tolerance);
         double apr = monthlyRate * 12 * 100; // Convert monthly rate to annual percentage rate
 
@@ -752,8 +780,8 @@ public class Calc6 extends javax.swing.JFrame {
                 Helper.formatDouble(apr) + "%", Helper.formatDouble(apr - (currentInterestRate * 1200)) + "%"});
             model.addRow(new Object[]{"Total Monthly Payment", "$" + Helper.formatDouble(totalCurrentMonthlyPayments), 
                 "$" + Helper.formatDouble(totalNewMonthlyPayments), "$" + Helper.formatDouble(totalNewMonthlyPayments - totalCurrentMonthlyPayments)});
-            model.addRow(new Object[]{"Total Interest", Helper.formatDouble(originalLoanInterest) + "%", 
-                Helper.formatDouble(newAccumulatedInterest) + "%", Helper.formatDouble(newAccumulatedInterest - originalLoanInterest) + "%"});
+            model.addRow(new Object[]{"Total Interest", Helper.formatDouble(originalLoanInterest) + "$", 
+                "$" + Helper.formatDouble(newAccumulatedInterest), "$" + Helper.formatDouble(newAccumulatedInterest - originalLoanInterest) + "%"});
             model.addRow(new Object[]{"Cost + points (upfront)", "$" + 0, "$" + Helper.formatDouble(pointsCost + costFees)});
             model.addRow(new Object[]{"Cash out", "$" + 0, "$" + Helper.formatDouble(cashOutAmount)});
 
@@ -797,7 +825,7 @@ public class Calc6 extends javax.swing.JFrame {
             txtCurrentMonthlyPayment.setVisible(true);
             lblRemainingBalance.setVisible(true);
             lblMonthlyPayment.setVisible(true);
-            
+            txtCurrentInterestRate.setText("");
             // original loan
             lblOriginalLoanAmount.setVisible(false);
             lblCurrentLoanTerm.setVisible(false);
@@ -817,6 +845,7 @@ public class Calc6 extends javax.swing.JFrame {
             txtCurrentMonthlyPayment.setVisible(false);
             lblRemainingBalance.setVisible(false);
             lblMonthlyPayment.setVisible(false);
+            txtCurrentInterestRate.setText("");
             // original loan
             lblOriginalLoanAmount.setVisible(true);
             lblCurrentLoanTerm.setVisible(true);

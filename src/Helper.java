@@ -143,30 +143,7 @@ public class Helper {
         }
         return dict;
     }
-    //Tristan's Validated 
-    public static boolean Validated(String testVal, String testVal2, String testVal3)
-    {
-        //list
-        List<String> input = new ArrayList<>();
-        input.add(testVal);
-        input.add(testVal2);
-        input.add(testVal3);
-        boolean isValidated = true;
-        //loop      
-        for (int i = 0; i < 3; i++)
-        {
-            if (isNumber(input.get(i)))
-            {
-                isValidated = isPos(input.get(i));
-            }
-            else
-            {
-                isValidated = false;
-            }
-            
-        }
-            return isValidated;
-    }
+    
     //isNumber
     public static boolean isNumber(String testNum)
     {
@@ -232,18 +209,33 @@ public class Helper {
         {
             return 0;
         }
-        else
+        while (remainingBalance > 0) 
         {
-            while (remainingBalance > 0) 
-            {
-                double interest = remainingBalance * iRate;
-                remainingBalance += interest; // Add interest to the balance
-                remainingBalance -= monthlyPayment; // Subtract the monthly payment
-                months++;
-            }
-        }
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest;  // Add interest to the balance
 
-        return months;     
+            // Check if the remaining balance can be reduced by the full monthly payment
+            if (remainingBalance >= monthlyPayment) 
+            {
+                remainingBalance -= monthlyPayment;  // Subtract the monthly payment
+                months++;  // Count this as a full month
+            } 
+            else 
+            {
+                // If the balance after interest is less than the monthly payment, exit the loop
+                break;
+            }
+        } // end while
+
+        return months;
+//        while (remainingBalance > 0) 
+//        {
+//            double interest = remainingBalance * iRate;
+//            remainingBalance += interest; // Add interest to the balance
+//            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+//            months++;
+//        }
+             
     }
     // original loan
     public static double originalAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
@@ -351,6 +343,40 @@ public class Helper {
             evt.consume();
         }
     }
+    
+    
+    public static void consumeNotNumbersAllowDecimalShortLength (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
+        char c = evt.getKeyChar();
+        String userInput = textField.getText();
+        int userLength = userInput.length();        
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
+            evt.consume();
+        else if (c == '.' && textField.getText().contains("."))   {    
+            evt.consume();
+        }
+
+        if (userLength > 8)    //8 char max
+            evt.consume();
+        
+        
+    }    
+        
+    
+    public static void consumeNotNumbersAllowDecimalLongLength (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
+        char c = evt.getKeyChar();
+        String userInput = textField.getText();
+        int userLength = userInput.length();        
+        if (!(Character.isDigit(c) || c == '.' || c == KeyEvent.VK_BACK_SPACE || c == KeyEvent.VK_DELETE))     //Only accepts one . 
+            evt.consume();
+        else if (c == '.' && textField.getText().contains("."))   {    
+            evt.consume();
+        }
+
+        if (userLength > 20)    //This makes text fields only accept up to 12 charactes. If you want to change this simply make a new void
+            evt.consume();
+        
+        
+    }    
     
     public static void consumeNotNumbers (JTextField textField, KeyEvent evt) {// Big thanks to *insert name later* (I forgot) 
         char c = evt.getKeyChar();
