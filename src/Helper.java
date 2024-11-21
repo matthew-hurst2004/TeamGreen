@@ -218,7 +218,7 @@ public class Helper {
             if (remainingBalance >= monthlyPayment) 
             {
                 remainingBalance -= monthlyPayment;  // Subtract the monthly payment
-                months++;  // Count this as a full month
+                months++;   //full month
             } 
             else 
             {
@@ -228,7 +228,7 @@ public class Helper {
         } // end while
 
         return months;
-//        while (remainingBalance > 0) 
+//        while (remainingBalance > 0) // old month method (includes month even if payment is partial
 //        {
 //            double interest = remainingBalance * iRate;
 //            remainingBalance += interest; // Add interest to the balance
