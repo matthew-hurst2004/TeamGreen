@@ -209,18 +209,33 @@ public class Helper {
         {
             return 0;
         }
-        else
+        while (remainingBalance > 0) 
         {
-            while (remainingBalance > 0) 
-            {
-                double interest = remainingBalance * iRate;
-                remainingBalance += interest; // Add interest to the balance
-                remainingBalance -= monthlyPayment; // Subtract the monthly payment
-                months++;
-            }
-        }
+            double interest = remainingBalance * iRate;
+            remainingBalance += interest;  // Add interest to the balance
 
-        return months;     
+            // Check if the remaining balance can be reduced by the full monthly payment
+            if (remainingBalance >= monthlyPayment) 
+            {
+                remainingBalance -= monthlyPayment;  // Subtract the monthly payment
+                months++;  // Count this as a full month
+            } 
+            else 
+            {
+                // If the balance after interest is less than the monthly payment, exit the loop
+                break;
+            }
+        } // end while
+
+        return months;
+//        while (remainingBalance > 0) 
+//        {
+//            double interest = remainingBalance * iRate;
+//            remainingBalance += interest; // Add interest to the balance
+//            remainingBalance -= monthlyPayment; // Subtract the monthly payment
+//            months++;
+//        }
+             
     }
     // original loan
     public static double originalAccumulatedInterest(double remainingBalance, double monthlyPayment, double iRate, double time)
