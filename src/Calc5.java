@@ -167,7 +167,8 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel9.setText("% per year");
 
-        jLabel11.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("The values below this line are optional");
 
         jLabel12.setText("Property Tax");

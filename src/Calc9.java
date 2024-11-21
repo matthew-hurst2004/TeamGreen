@@ -676,6 +676,8 @@ public class Calc9 extends javax.swing.JFrame {
             if (remainingTermMonthsDouble + (remainingTermYearsDouble * 12) > (originalLoanTermDouble * 12)){
                 
                 JOptionPane.showMessageDialog(this, "The remaining loan term cannot be bigger than the orginal term.");
+                leftErrorLabel.setText("The remaining loan term cannot be bigger than the orginal term.");
+                return;
 
             }
             
@@ -721,10 +723,13 @@ public class Calc9 extends javax.swing.JFrame {
                 if (monthsLeft > 2400){
                 outputWithLoanTermLabel.setText("With the numbers provided it will take over 200 years to pay off this mortgage.");
                         }
-
             }
-            //////////////////////////////////
-        outputWithLoanTermLabel.setText("You have " + monthsLeft + " months left with the current numbers");
+            
+            int years = monthsLeft / 12; 
+            int remainingMonths = monthsLeft % 12; 
+
+            
+        outputWithLoanTermLabel.setText("You have " + years + " years and " + remainingMonths + " months remaining");
             
         } catch (NumberFormatException e) {
            
@@ -762,6 +767,7 @@ public class Calc9 extends javax.swing.JFrame {
 
     private void calculateRightButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateRightButtonMouseClicked
         rightOutputLabel.setText("");
+        errorRightLabel.setText("");
         double extraPaymentMonthlyRightDouble;
         
         
@@ -836,8 +842,13 @@ public class Calc9 extends javax.swing.JFrame {
                     return;
                 }                         
             }            
+            
+            
+            int years = monthsLeft / 12; 
+            int remainingMonths = monthsLeft % 12; 
+            
 
-            rightOutputLabel.setText("You have " + monthsLeft + " months left with the current numbers");
+            rightOutputLabel.setText("You have " + years + " years and " + remainingMonths + " months remaining");
         } catch (NumberFormatException e) {
             if (unpaidPrincipalBalanceTextField.getText().equals("") || monthlyPaymentTextField.getText().equals("") ||
                     rightInterestRateTextField.getText().equals("")){
