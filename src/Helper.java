@@ -48,6 +48,12 @@ public class Helper {
         return df.format(value);
     }
     
+    public static String formatDoubleSwapped(double value)
+    {
+        DecimalFormat df = new DecimalFormat("#.##0,00");
+        return df.format(value);
+    }
+    
     public static String calculateDownPaymentReturnString(double homePrice, double percentageDownPayment, double closingCosts)
     {
         return formatDouble((homePrice * (percentageDownPayment / 100)) + closingCosts);

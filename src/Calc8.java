@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.util.Dictionary;
 import java.util.Enumeration;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import org.jsoup.nodes.Element;
 
@@ -62,7 +63,7 @@ public class Calc8 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(405, 500));
+        setPreferredSize(new java.awt.Dimension(392, 500));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 101, 0));
@@ -161,9 +162,7 @@ public class Calc8 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,21 +176,26 @@ public class Calc8 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_closeButtonMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-        if (Helper.isValidNumber(jTextField1.getText()))
+    private void doWork()
+    {
+        String toConvertFrom = jTextField1.getText();
+        char thirdFromLast = toConvertFrom.charAt(toConvertFrom.length() - 3);
+        if (thirdFromLast == ',')
         {
-            double result = Double.parseDouble(jTextField1.getText());
-            if ("United States Dollar".equals(jComboBox1.getSelectedItem()))
+            toConvertFrom = toConvertFrom.replace(',', '.');
+        }
+        
+         double result = Double.parseDouble(toConvertFrom);
+         if ("United States Dollar".equals(jComboBox1.getSelectedItem()))
+         {
+            if ("United States Dollar".equals(jComboBox2.getSelectedItem()))
             {
-                if ("United States Dollar".equals(jComboBox2.getSelectedItem()))
-                {
-                    jTextField2.setText(Helper.formatDouble(result));
-                    return;
-                }
-                result = result * dict.get(jComboBox2.getSelectedItem());
                 jTextField2.setText(Helper.formatDouble(result));
-            }
+                return;
+             }
+             result = result * dict.get(jComboBox2.getSelectedItem());
+             jTextField2.setText(Helper.formatDouble(result));
+         }
 
             else if ("United States Dollar".equals(jComboBox2.getSelectedItem()))
             {
@@ -204,11 +208,51 @@ public class Calc8 extends javax.swing.JFrame {
                 result = result / dict.get(jComboBox1.getSelectedItem());
                 result = result * dict.get(jComboBox2.getSelectedItem());
                 jTextField2.setText(Helper.formatDouble(result));
+            }       
+    }
+    
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        
+        String[] swapped = {"Brazilian Real" , "Icelandic Krona", "Swedish Krona", "Polish Zloty", "Hungarian Forint", "Indonesian Rupiah", "Venezuelan Boliver", "Euro", "Bulgarian Lev", "Argentine Peso", "Colombian Peso", "Russian Ruble", "Romanian New Leu", "Norwegian Krone", "Danish Krone", "Kazakhstani Tenge", "Turkish Lira", "Chilean Peso", "South African Rand"};
+          
+        if (Helper.isValidNumber(jTextField1.getText()))
+        {
+            doWork();
+        }
+        
+        else if (Arrays.stream(swapped).anyMatch(jComboBox1.getSelectedItem()::equals))
+        {
+            System.out.println("swapped currency");
+            char thirdFromLast = jTextField1.getText().charAt(jTextField1.getText().length() - 3);
+            if (thirdFromLast == ',')
+            {
+                if (jTextField1.getText().indexOf('.') != -1)
+                {
+                    JOptionPane.showMessageDialog(this, "You must enter a valid numerical amount!", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+                    jTextField1.requestFocus();
+                }
+                
+                else
+                {
+                    doWork();
+                }
+            }
+            
+            else
+            {
+                JOptionPane.showMessageDialog(this, "You must enter a valid numerical amount!", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField1.setText("");
+                jTextField2.setText("");
+                jTextField1.requestFocus();
             }
         }
         
         else
         {
+            System.out.println("Not a swapped currency");
             JOptionPane.showMessageDialog(this, "You must enter a valid numerical amount!", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField1.setText("");
             jTextField2.setText("");
