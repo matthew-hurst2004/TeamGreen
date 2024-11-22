@@ -613,17 +613,23 @@ public class Calc9 extends javax.swing.JFrame {
         try {
             double originalLoanAmountDouble = Double.parseDouble(originalLoanAmountTextField.getText());
             double originalLoanTermDouble = Double.parseDouble(originalLoanTermTextField.getText());
-            double interestRateDouble;
+            double interestRateDouble = Double.parseDouble(interestRateTextField.getText());
             double remainingTermYearsDouble;
             double remainingTermMonthsDouble;
             double extraPaymentPerMonthDouble;
             double amountAlreadyPaid;
             double leftYearlyExtradouble;
+            
+            if (interestRateDouble <= 0){
+                leftErrorLabel.setText("The interest cannot be zero.");
+                JOptionPane.showMessageDialog(this, "Please enter a positive nonzero number for the interest rate.");
+                return;
+            }
                                 
             if (leftYearlyExtraTextField.getText().equals("")) 
             {
                 leftYearlyExtradouble = 0;
-                leftErrorLabel.setText("The empty box will be read as zero.");
+                leftYearlyExtraTextField.setText("0");
             } else {
                 leftYearlyExtradouble = Double.parseDouble(leftYearlyExtraTextField.getText());
             }                         
@@ -631,7 +637,7 @@ public class Calc9 extends javax.swing.JFrame {
             if (extraPaymentPerMonthTextField.getText().equals("")) 
             {
                 extraPaymentPerMonthDouble = 0;
-                leftErrorLabel.setText("The empty box will be read as zero.");
+                extraPaymentPerMonthTextField.setText("0");
             } else {
                 extraPaymentPerMonthDouble = Double.parseDouble(extraPaymentPerMonthTextField.getText());
             }                       
@@ -651,14 +657,7 @@ public class Calc9 extends javax.swing.JFrame {
                 remainingTermMonthsDouble = Double.parseDouble(remainingTermMonthsTextField.getText());
             }
             
-            if (interestRateTextField.getText().equals("")) 
-            {
-                interestRateDouble = 0;
-                leftErrorLabel.setText("The empty box will be read as zero.");
-            } else {
-                interestRateDouble = Double.parseDouble(interestRateTextField.getText());
-            }            
-            
+
             
                         
             if (originalLoanAmountDouble == 0 || originalLoanTermDouble == 0){
@@ -768,7 +767,7 @@ public class Calc9 extends javax.swing.JFrame {
         try {
             double unpaidPrincipalBalanceDouble = Double.parseDouble(unpaidPrincipalBalanceTextField.getText());
             double monthlyPaymentDouble = Double.parseDouble(monthlyPaymentTextField.getText());
-            double rightInterestRateDouble; // given a number it the if statment below
+            double rightInterestRateDouble = Double.parseDouble(rightInterestRateTextField.getText());
             double rightYearlyExtradouble;
             
             
@@ -780,13 +779,13 @@ public class Calc9 extends javax.swing.JFrame {
                 rightYearlyExtradouble = Double.parseDouble(rightYearlyExtraTextField.getText());
             }                 
             
-            if (rightInterestRateTextField.getText().equals("")) 
-            {
-                rightInterestRateDouble = 0;
-                rightInterestRateTextField.setText("0");
-            } else {
-                rightInterestRateDouble = Double.parseDouble(rightInterestRateTextField.getText());
+            if (rightInterestRateDouble <= 0) {
+                errorRightLabel.setText("The interest cannot be zero.");
+                JOptionPane.showMessageDialog(this, "Please enter a positive nonzero number for the interest rate.");
+                return;
+
             }
+
             
             if (extraPaymentMonthlyRightTextField.getText().equals("")) 
             {

@@ -86,6 +86,7 @@ public class Calc5 extends javax.swing.JFrame {
         calculateButton = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         calc5HelpButton = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("sgef");
@@ -345,6 +346,8 @@ public class Calc5 extends javax.swing.JFrame {
             }
         });
 
+        jLabel23.setText("note: commas won't be accepted");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -451,6 +454,8 @@ public class Calc5 extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(calc5HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -460,7 +465,9 @@ public class Calc5 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)
-                        .addComponent(calc5HelpButton)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(calc5HelpButton)
+                            .addComponent(jLabel23))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -588,13 +595,16 @@ public class Calc5 extends javax.swing.JFrame {
         if (otherCostIncreaseTextField.getText().equals("")) 
         {
             otherCostsIncreasePercentage = 0;
+            otherCostIncreaseTextField.setText("0");
         } else {
             otherCostsIncreasePercentage = Double.parseDouble(otherCostIncreaseTextField.getText());
+            
         }                 
         
         if (hoaFeeIncreaseTextField.getText().equals("")) 
         {
             hoaFeeIncreasePercentage = 0;
+            hoaFeeIncreaseTextField.setText("0");
         } else {
             hoaFeeIncreasePercentage = Double.parseDouble(hoaFeeIncreaseTextField.getText());
         }            
@@ -602,6 +612,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (homeInsuranceIncreaseTextField.getText().equals("")) 
         {
             homeInsuranceIncreasePercentage = 0;
+            homeInsuranceIncreaseTextField.setText("0");
         } else {
             homeInsuranceIncreasePercentage = Double.parseDouble(homeInsuranceIncreaseTextField.getText());
         }          
@@ -609,6 +620,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (propertyTaxIncreaseTextField.getText().equals("")) 
         {
             propertyTaxIncreasePercentage = 0;
+            propertyTaxIncreaseTextField.setText("0");
         } else {
             propertyTaxIncreasePercentage = Double.parseDouble(propertyTaxIncreaseTextField.getText());
         }  
@@ -616,6 +628,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (pmiInsurance.getText().equals("")) 
         {
             pmiInsuranceDouble = 0;
+            pmiInsurance.setText("0");
         } else {
             pmiInsuranceDouble = Double.parseDouble(pmiInsurance.getText());
         }              
@@ -623,6 +636,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (otherCostTextField.getText().equals("")) 
         {
             otherCostsDouble = 0;
+            otherCostTextField.setText("0");
         } else {
             otherCostsDouble = Double.parseDouble(otherCostTextField.getText());
         }                            
@@ -630,6 +644,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (homeInsurance.getText().equals("")) 
         {
             homeInsuranceDouble = 0;
+            homeInsurance.setText("0");
         } else {
             homeInsuranceDouble = Double.parseDouble(homeInsurance.getText());
         }                     
@@ -637,6 +652,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (propertyTaxTextField.getText().equals("")) 
         {
             propertyTaxDouble = 0;
+            propertyTaxTextField.setText("0");
         } else {
             propertyTaxDouble = Double.parseDouble(propertyTaxTextField.getText());
         }             
@@ -644,6 +660,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (hoaFeeTextField.getText().equals("")) 
         {
             hoaFeeDouble = 0;
+            hoaFeeTextField.setText("0");
         } else {
             hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
         }                
@@ -859,6 +876,7 @@ public class Calc5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
