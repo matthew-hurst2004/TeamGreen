@@ -135,6 +135,7 @@ public class Helper {
                 String currency = tds.get(0).text();
                 Double rate1 = Double.valueOf(tds.get(1).text());
                 dict.put(currency, rate1);
+                System.out.println("dsf");
             }
         }
         
