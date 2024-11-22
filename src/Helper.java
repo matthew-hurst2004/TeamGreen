@@ -402,17 +402,17 @@ public class Helper {
     
     // Calc fucuture value of current balance (roth IRA)
     public static double futureCurrent (double current, double r, double years) {
-        double future = current * Math.pow(1 + r, years);
+        Double future = current * Math.pow(1 + r, years);
         return future;
     }
     // Calc the contributions over N years
     public static double futureContributionsCalculator (double C, double r, double N) {
-        double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
+        Double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
         return FVC;
     }
     // Calc the after tax return
     public static double afterTaxReturn (double r, double tr) {
-        double atr = r * (1 - tr);
+        Double atr = r * (1 - tr);
         return atr;
     }
     // Calc value of taxable account

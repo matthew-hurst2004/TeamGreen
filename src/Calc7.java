@@ -624,7 +624,7 @@ public class Calc7 extends javax.swing.JFrame {
                 Double futurer = Helper.futureCurrent(PV, r, j);
                 Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
                 Double rothr = futurer + pvcr;
-                if (Double.isNaN(pvcr)) {
+                if (Double.isNaN(futurer)) {
                     JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
                     jTextField1.setText("");
                     jTextField1.requestFocus();
