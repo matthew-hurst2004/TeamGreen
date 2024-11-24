@@ -749,10 +749,10 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Expected rate of return (into decimal)
         double r;
-        if (Helper.isValidNumber(jTextField3.getText())) {
+        if (Helper.isValidNumber(jTextField3.getText()) && Double.parseDouble(jTextField3.getText()) != 0) {
             r = Double.parseDouble(jTextField3.getText())/100;
         } else {
-            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid Expected Rate of Return. Enter a percentage greater than (0).", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField3.setText("");
             jTextField3.requestFocus();
             return;
@@ -792,7 +792,7 @@ public class Calc7 extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Marginal tax rate is empty. If you don't want to calculate taxable income enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid marginal tax rate. Enter (0) if no taxable income should be calculated.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField6.setText("");
             jTextField6.requestFocus();
             return;
@@ -809,6 +809,11 @@ public class Calc7 extends javax.swing.JFrame {
         if (PV == 0 && C == 0 && r == 0 && A == 0 && R == 0 && tr == 0) {
             JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
             jTextField1.requestFocus();
         } else {
             // Checking to see if max out is selected
