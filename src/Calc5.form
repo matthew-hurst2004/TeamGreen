@@ -719,7 +719,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="calc5HelpButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Need help?"/>
+            <Property name="text" type="java.lang.String" value="Need Help?"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calc5HelpButtonMouseClicked"/>

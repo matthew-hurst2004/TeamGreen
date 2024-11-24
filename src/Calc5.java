@@ -339,7 +339,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mortgage.jpg"))); // NOI18N
 
-        calc5HelpButton.setText("Need help?");
+        calc5HelpButton.setText("Need Help?");
         calc5HelpButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calc5HelpButtonMouseClicked(evt);
@@ -726,9 +726,7 @@ public class Calc5 extends javax.swing.JFrame {
             double homeInsuranceDiv12 = homeInsuranceDouble / 12;
             while (counterForWhile < loanTermNumberOfMonths)
             {
-                /////////////////////////////////////
-//                fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
-                ///// might need moving to the bottom of the while
+
                 
                 if (counterForPercentIncrease >= 12)
                 {
