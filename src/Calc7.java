@@ -555,10 +555,10 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Expected rate of return (into decimal)
         double r;
-        if (Helper.isValidNumber(jTextField3.getText())) {
+        if (Helper.isValidNumber(jTextField3.getText()) && Double.parseDouble(jTextField3.getText()) != 0) {
             r = Double.parseDouble(jTextField3.getText())/100;
         } else {
-            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid Expected Rate of Return. Enter a percentage greater than (0).", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField3.setText("");
             jTextField3.requestFocus();
             return;
@@ -598,7 +598,7 @@ public class Calc7 extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Marginal tax rate is empty. If you don't want to calculate taxable income enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid marginal tax rate. Enter (0) if no taxable income should be calculated.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField6.setText("");
             jTextField6.requestFocus();
             return;
@@ -610,78 +610,89 @@ public class Calc7 extends javax.swing.JFrame {
         // clears the table if previous calculation was made
         jTable1.setModel(new DefaultTableModel(null, new String[]{"Age", "Roth IRA", "Taxable account"}));
         
-        // Checking to see if max out is selected
-        if (jRadioButton3.isSelected()) {
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R; i++) {
-                if (i < 50) {
-                    Cm = 7000;
-                } else {
-                    Cm = 8000;
+        if (PV == 0 && C == 0 && r == 0 && A == 0 && R == 0 && tr == 0) {
+            JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
+            jTextField1.requestFocus();
+        } else {
+            // Checking to see if max out is selected
+            if (jRadioButton3.isSelected()) {
+                //itterates through all  the ages and adds it to table 
+                for (int i = A; i < R; i++) {
+                    if (i < 50) {
+                        Cm = 7000;
+                    } else {
+                        Cm = 8000;
+                    }
+                    int j = i - A;
+                    int Ar = A + j;
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
+                    Double rothr = futurer + pvcr;
+                    if (Double.isNaN(futurer)) {
+                        JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
+                        jTextField1.setText("");
+                        jTextField1.requestFocus();
+                        return;
+                    }
+                    String rothrs = Helper.formatDouble(rothr);
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    // taxable account
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    String trackrs = Helper.formatDouble(track);
+                    model.addRow(new Object[] {Ar,rothrs,trackrs});
+                    track = (track *(1+ATR)) + Cm;
                 }
-                int j = i - A;
-                int Ar = A + j;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
-                Double rothr = futurer + pvcr;
-                if (Double.isNaN(futurer)) {
-                    JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
-                    jTextField1.setText("");
-                    jTextField1.requestFocus();
+                // Calculate the Roth
+                Double future = Helper.futureCurrent(PV, r, N);
+                Double pvc = Helper.futureContributionsCalculator(Cm, r, N);
+                Double roth = future + pvc;
+                String roths = Helper.formatDouble(roth);
+                jLabel12.setText(roths);
+                String tracks = Helper.formatDouble(track);
+                jLabel13.setText(tracks);
+            } else {
+                // makes sure the limits for contribution are not exceeded
+                if (A < 50 && C > 7000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                } else if (A >= 50 && C > 8000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
                     return;
                 }
-                String rothrs = Helper.formatDouble(rothr);
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                String trackrs = Helper.formatDouble(track);
-                model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + Cm;
+                //itterates through all  the ages and adds it to table 
+                for (int i = A; i < R; i++) {
+                    int j = i - A;
+                    int Ar = A + j;
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(C, r, j);
+                    Double rothr = futurer + pvcr;
+                    String rothrs = Helper.formatDouble(rothr);
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    // taxable account
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    String trackrs = Helper.formatDouble(track);
+                    model.addRow(new Object[] {Ar,rothrs,trackrs});
+                    track = (track *(1+ATR)) + C;
+                }
+                // Calculate the Roth
+                Double future = Helper.futureCurrent(PV, r, N);
+                Double pvc = Helper.futureContributionsCalculator(C, r, N);
+                Double roth = future + pvc;
+                String roths = Helper.formatDouble(roth);
+                jLabel12.setText(roths);
+                String tracks = Helper.formatDouble(track);
+                jLabel13.setText(tracks);
             }
-            // Calculate the Roth
-            Double future = Helper.futureCurrent(PV, r, N);
-            Double pvc = Helper.futureContributionsCalculator(Cm, r, N);
-            Double roth = future + pvc;
-            String roths = Helper.formatDouble(roth);
-            jLabel12.setText(roths);
-            String tracks = Helper.formatDouble(track);
-            jLabel13.setText(tracks);
-        } else {
-            // makes sure the limits for contribution are not exceeded
-            if (A < 50 && C > 7000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
-            } else if (A >= 50 && C > 8000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
-            }
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R; i++) {
-                int j = i - A;
-                int Ar = A + j;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(C, r, j);
-                Double rothr = futurer + pvcr;
-                String rothrs = Helper.formatDouble(rothr);
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                String trackrs = Helper.formatDouble(track);
-                model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + C;
-            }
-            // Calculate the Roth
-            Double future = Helper.futureCurrent(PV, r, N);
-            Double pvc = Helper.futureContributionsCalculator(C, r, N);
-            Double roth = future + pvc;
-            String roths = Helper.formatDouble(roth);
-            jLabel12.setText(roths);
-            String tracks = Helper.formatDouble(track);
-            jLabel13.setText(tracks);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -795,69 +806,75 @@ public class Calc7 extends javax.swing.JFrame {
         // making the chart
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         
-        // Checking to see if max out is selected
-        if (jRadioButton3.isSelected()) {
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R + 1; i++) {
-                if (i < 50) {
-                    Cm = 7000;
-                } else {
-                    Cm = 8000;
-                }
-                int j = i - A;
-                // roth
-                // chart
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
-                rothr = futurer + pvcr;
-                dataset.addValue(rothr, "Roth IRA", String.valueOf(i));
-                // taxable account
-                // chart
-                dataset.addValue(track, "Taxable Account", String.valueOf(i));
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                track = (track *(1+ATR)) + Cm;
-            }
-            //chart 
-            JFreeChart chart = ChartFactory.createLineChart("Investment Growth", "Year", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
-            ChartPanel chartPanel = new ChartPanel (chart);
-            JFrame frame = new JFrame ();
-            frame.setSize(1000, 800);
-            frame.setContentPane(chartPanel);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-
+        if (PV == 0 && C == 0 && r == 0 && A == 0 && R == 0 && tr == 0) {
+            JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField1.requestFocus();
         } else {
-            // makes sure the limits for contribution are not exceeded
-            if (A < 50 && C > 7000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
-            } else if (A >= 50 && C > 8000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
+            // Checking to see if max out is selected
+            if (jRadioButton3.isSelected()) {
+                //itterates through all  the ages and adds it to table 
+                for (int i = A; i < R + 1; i++) {
+                    if (i < 50) {
+                        Cm = 7000;
+                    } else {
+                        Cm = 8000;
+                    }
+                    int j = i - A;
+                    // roth
+                    // chart
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
+                    rothr = futurer + pvcr;
+                    dataset.addValue(rothr, "Roth IRA", String.valueOf(i));
+                    // taxable account
+                    // chart
+                    dataset.addValue(track, "Taxable Account", String.valueOf(i));
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    track = (track *(1+ATR)) + Cm;
+                }
+                //chart 
+                JFreeChart chart = ChartFactory.createLineChart("Investment Growth", "Year", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+                ChartPanel chartPanel = new ChartPanel (chart);
+                JFrame frame = new JFrame ();
+                frame.setSize(1000, 800);
+                frame.setContentPane(chartPanel);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+
+            } else {
+                // makes sure the limits for contribution are not exceeded
+                if (A < 50 && C > 7000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                } else if (A >= 50 && C > 8000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                }
+                //itterates through all  the ages and adds it to chart
+                for (int i = A; i < R + 1; i++) {
+                    int j = i - A;
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(C, r, j);
+                    rothr = futurer + pvcr;
+                    dataset.addValue(rothr, "Roth IRA", String.valueOf(i));
+                    // taxable account
+                    dataset.addValue(track, "Taxable Account", String.valueOf(i));
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    track = (track *(1+ATR)) + C;
+                }
+                JFreeChart chart = ChartFactory.createLineChart("Investment Growth", "Year", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+                ChartPanel chartPanel = new ChartPanel (chart);
+                JFrame frame = new JFrame ();
+                frame.setSize(1000, 800);
+                frame.setContentPane(chartPanel);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
-            //itterates through all  the ages and adds it to chart
-            for (int i = A; i < R + 1; i++) {
-                int j = i - A;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(C, r, j);
-                rothr = futurer + pvcr;
-                dataset.addValue(rothr, "Roth IRA", String.valueOf(i));
-                // taxable account
-                dataset.addValue(track, "Taxable Account", String.valueOf(i));
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                track = (track *(1+ATR)) + C;
-            }
-            JFreeChart chart = ChartFactory.createLineChart("Investment Growth", "Year", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
-            ChartPanel chartPanel = new ChartPanel (chart);
-            JFrame frame = new JFrame ();
-            frame.setSize(1000, 800);
-            frame.setContentPane(chartPanel);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
