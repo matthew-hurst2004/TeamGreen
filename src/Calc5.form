@@ -637,7 +637,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="monthlyPayBeforeExtraLabel" min="-2" pref="324" max="-2" attributes="0"/>
                                   <Component id="calculateButton" alignment="0" min="-2" pref="238" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" min="-2" pref="282" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" alignment="0" min="-2" pref="444" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -670,7 +670,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Note: full amount paid includes the down payment"/>
+                <Property name="text" type="java.lang.String" value="Note: full amount paid includes the down payment and the optional values."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="monthlyPaymentOutputLabel">

@@ -285,7 +285,7 @@ public class Calc5 extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(96, 0, 21));
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Note: full amount paid includes the down payment");
+        jLabel10.setText("Note: full amount paid includes the down payment and the optional values.");
 
         monthlyPaymentOutputLabel.setForeground(new java.awt.Color(255, 255, 255));
         monthlyPaymentOutputLabel.setText("Monthly Payment Label");
@@ -317,7 +317,7 @@ public class Calc5 extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(monthlyPayBeforeExtraLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -726,8 +726,9 @@ public class Calc5 extends javax.swing.JFrame {
             double homeInsuranceDiv12 = homeInsuranceDouble / 12;
             while (counterForWhile < loanTermNumberOfMonths)
             {
-                fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
-                
+                /////////////////////////////////////
+//                fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
+                ///// might need moving to the bottom of the while
                 
                 if (counterForPercentIncrease >= 12)
                 {
@@ -737,6 +738,7 @@ public class Calc5 extends javax.swing.JFrame {
                     homeInsuranceDiv12 = homeInsuranceDiv12 * ((homeInsuranceIncreasePercentage / 100) + 1);
                     counterForPercentIncrease = 0;
                 }
+                fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
                 counterForWhile = counterForWhile + 1;
                 counterForPercentIncrease = counterForPercentIncrease + 1;
             }
