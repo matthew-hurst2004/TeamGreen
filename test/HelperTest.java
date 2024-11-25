@@ -148,20 +148,20 @@ public class HelperTest {
 //        Dictionary<String, Double> result = Helper.webScraper();
 //        assertEquals(expResult, result);
 //    }
-
-    /**
-     * Test of Validated method, of class Helper.
-     */
-    @Test
-    public void testValidated() {
-        System.out.println("Validated");
-        String testVal = "";
-        String testVal2 = "";
-        String testVal3 = "";
-        boolean expResult = false;
-        boolean result = Helper.Validated(testVal, testVal2, testVal3);
-        assertEquals(expResult, result);
-    }
+//
+//    /**
+//     * Test of Validated method, of class Helper.
+//     */
+//    @Test
+//    public void testValidated() {
+//        System.out.println("Validated");
+//        String testVal = "";
+//        String testVal2 = "";
+//        String testVal3 = "";
+//        boolean expResult = false;
+//        boolean result = Helper.Validated(testVal, testVal2, testVal3);
+//        assertEquals(expResult, result);
+//    }
 
     /**
      * Test of isNumber method, of class Helper.

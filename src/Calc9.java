@@ -1,6 +1,15 @@
 
-import java.awt.Color;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -55,6 +64,7 @@ public class Calc9 extends javax.swing.JFrame {
         rightOneTimePaymentTextField = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        leftShowButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         originalLoanTermTextField = new javax.swing.JTextField();
         interestRateTextField = new javax.swing.JTextField();
@@ -108,6 +118,7 @@ public class Calc9 extends javax.swing.JFrame {
 
         jLabel12.setText("Interest rate");
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setText("Extra payments");
 
         unpaidPrincipalBalanceTextField.setText("0");
@@ -190,6 +201,13 @@ public class Calc9 extends javax.swing.JFrame {
 
         jLabel26.setText("$");
 
+        leftShowButton.setText("Show Graph");
+        leftShowButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                leftShowButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -241,7 +259,10 @@ public class Calc9 extends javax.swing.JFrame {
                             .addComponent(calculateRightButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(errorRightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(leftShowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +307,9 @@ public class Calc9 extends javax.swing.JFrame {
                 .addComponent(rightOutputLabel)
                 .addGap(18, 18, 18)
                 .addComponent(errorRightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(leftShowButton)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 101, 0));
@@ -351,6 +374,7 @@ public class Calc9 extends javax.swing.JFrame {
 
         jLabel6.setText("Per month");
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Extra payments");
 
         jLabel8.setText("$");
@@ -499,9 +523,9 @@ public class Calc9 extends javax.swing.JFrame {
                 .addComponent(calculateLeftSideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(outputWithLoanTermLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(leftErrorLabel)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(96, 0, 21));
@@ -568,9 +592,9 @@ public class Calc9 extends javax.swing.JFrame {
                             .addComponent(jLabel19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 47, Short.MAX_VALUE)))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 27, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -939,6 +963,135 @@ public class Calc9 extends javax.swing.JFrame {
         new calc5HelpFrame().setVisible(true);
     }//GEN-LAST:event_needHelpButtonMouseClicked
 
+    private void leftShowButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftShowButtonMouseClicked
+        // TODO add your handling code here:
+        rightOutputLabel.setText("");
+        errorRightLabel.setText("");
+        double extraPaymentMonthlyRightDouble;
+        
+        
+        try {
+            double unpaidPrincipalBalanceDouble = Double.parseDouble(unpaidPrincipalBalanceTextField.getText());
+            double monthlyPaymentDouble = Double.parseDouble(monthlyPaymentTextField.getText());
+            double rightInterestRateDouble = Double.parseDouble(rightInterestRateTextField.getText());
+            double rightYearlyExtradouble;
+            double rightOneTimePaymentDouble;
+            
+            
+            if (rightOneTimePaymentTextField.getText().equals("")) 
+            {
+                rightOneTimePaymentDouble = 0;
+                rightOneTimePaymentTextField.setText("0");
+                errorRightLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                rightOneTimePaymentDouble = Double.parseDouble(rightOneTimePaymentTextField.getText());
+            }               
+            
+            
+            if (rightYearlyExtraTextField.getText().equals("")) 
+            {
+                rightYearlyExtradouble = 0;
+                rightYearlyExtraTextField.setText("0");
+                leftErrorLabel.setText("The empty box will be read as zero.");
+            } else {
+                rightYearlyExtradouble = Double.parseDouble(rightYearlyExtraTextField.getText());
+            }                 
+            
+            if (rightInterestRateDouble <= 0) {
+                errorRightLabel.setText("The first three boxes need a number above zero.");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
+                return;
+
+            }
+
+            
+            if (extraPaymentMonthlyRightTextField.getText().equals("")) 
+            {
+                extraPaymentMonthlyRightDouble = 0;
+                rightYearlyExtraTextField.setText("0");
+                errorRightLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                extraPaymentMonthlyRightDouble = Double.parseDouble(extraPaymentMonthlyRightTextField.getText());
+            }   
+           
+            
+            if (unpaidPrincipalBalanceDouble == 0 || monthlyPaymentDouble == 0){
+                errorRightLabel.setText("Make sure the first three boxes are more than zero");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
+                return;
+            }     
+            
+
+            
+            double monthlyInterestRate = (rightInterestRateDouble / 100) / 12; // making it monthly and a decimal
+                        
+            int monthsLeft = 0;
+            
+            if (unpaidPrincipalBalanceDouble < rightOneTimePaymentDouble){
+                rightOutputLabel.setText("The one time payment will payoff the mortgage instantly.");
+                return;
+            }
+            
+            double oldUnpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble;
+            unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - rightOneTimePaymentDouble;
+            
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+            
+            while (unpaidPrincipalBalanceDouble > 0) {
+                dataset.addValue(unpaidPrincipalBalanceDouble, "New unpaid principal", String.valueOf(monthsLeft));
+                dataset.addValue(oldUnpaidPrincipalBalanceDouble, "Old unpaid principal", String.valueOf(monthsLeft));
+                                
+                double interestPayment = unpaidPrincipalBalanceDouble * monthlyInterestRate;
+                
+                double principalPayment = monthlyPaymentDouble - interestPayment;
+                            
+                unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - (principalPayment + extraPaymentMonthlyRightDouble);
+                
+                oldUnpaidPrincipalBalanceDouble = oldUnpaidPrincipalBalanceDouble - principalPayment;
+
+                if (monthsLeft % 12 == 0 && monthsLeft > 0) {
+                    unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - rightYearlyExtradouble;
+                }
+                
+                monthsLeft = monthsLeft + 1;
+
+                if (monthsLeft > 2400){
+                    rightOutputLabel.setText("With the numbers provided it will take over 200 years to pay off this mortgage.");
+                    return;
+                }                         
+            }            
+            
+            
+            int years = monthsLeft / 12; 
+            int remainingMonths = monthsLeft % 12; 
+
+           
+            
+            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Moths", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+            ChartPanel chartPanel = new ChartPanel (chart);
+            JFrame frame = new JFrame ();
+            frame.setSize(1000, 800);
+            frame.setContentPane(chartPanel);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);            
+
+            rightOutputLabel.setText("You have " + years + " years and " + remainingMonths + " months remaining");
+        } catch (NumberFormatException e) {
+            if (unpaidPrincipalBalanceTextField.getText().equals("") || monthlyPaymentTextField.getText().equals("") ||
+                    rightInterestRateTextField.getText().equals("")){
+                errorRightLabel.setText("Make sure the first three boxes have the proper numbers.");
+                JOptionPane.showMessageDialog(this,"Make sure the first three boxes have the proper numbers.");
+
+            }
+            JOptionPane.showMessageDialog(this,"Please look over the numbers entered.");
+            errorRightLabel.setText("Please look over the numbers entered.");
+
+        }
+                    
+        
+        
+    }//GEN-LAST:event_leftShowButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1020,6 +1173,7 @@ public class Calc9 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel leftErrorLabel;
     private javax.swing.JTextField leftOneTimePaymentTextField;
+    private javax.swing.JButton leftShowButton;
     private javax.swing.JTextField leftYearlyExtraTextField;
     private javax.swing.JTextField monthlyPaymentTextField;
     private javax.swing.JButton needHelpButton;

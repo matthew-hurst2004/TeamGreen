@@ -29,6 +29,7 @@ public class calc5HelpFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        buttonOfClose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
 
@@ -45,25 +46,39 @@ public class calc5HelpFrame extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Mortgage Calulator explained");
 
+        buttonOfClose.setText("Close");
+        buttonOfClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonOfCloseMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(buttonOfClose)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonOfClose)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(14, 14, 14))
         );
 
         jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(255, 101, 0));
-        jTextPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextPane1.setForeground(new java.awt.Color(96, 0, 21));
         jTextPane1.setText("MORTGAGE - Mortgages are a loans for a property. This is often a house and the payments are typically done monthly.       LOAN TERM - A loan term is an amount of time given to repay a loan. This can be shortened with extra payments.               DOWN PAYMENT - A down payment is an amount of money that needs to be paid at the very start of taking out a loan.                                                         INTEREST - Interest is an exta portion of money paid for taking out a loan. ");
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -104,6 +119,10 @@ public class calc5HelpFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonOfCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonOfCloseMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_buttonOfCloseMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -140,6 +159,7 @@ public class calc5HelpFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonOfClose;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
