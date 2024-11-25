@@ -46,6 +46,12 @@ public class Helper {
         return df.format(value);
     }
     
+    public static String formatAPR(double value)
+    {
+        DecimalFormat df = new DecimalFormat("#,##0.000");
+        return df.format(value);
+    }
+    
     public static String calculateDownPaymentReturnString(double homePrice, double percentageDownPayment, double closingCosts)
     {
         return formatDouble((homePrice * (percentageDownPayment / 100)) + closingCosts);
@@ -270,13 +276,8 @@ public class Helper {
 
     public static double calculateInterestRate(double P, double M, double n, double tolerance) 
     {
-        if (P == 0)
-        {
-            return 0;
-        }
-        else
-        {
-            double i = 0.05; // Initial guess for iRate (5%)
+
+            double i = 0.01; // Initial guess for iRate (1%)
             double increment = 0.0001; // Increment for derivative calculation
 
             while (true) 
@@ -296,7 +297,7 @@ public class Helper {
                 i = newRate;
             }
             return i; // Return the monthly interest rate
-        }
+        
          
     }
     
@@ -312,6 +313,7 @@ public class Helper {
 
     
     
+   
 
     
     public static void consumeNotNumbersAllowDecimal (JTextField textField, KeyEvent evt) {// Big thanks to Miguel (I think)
