@@ -325,9 +325,16 @@ public class Calc6 extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 16, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
+                                .addGap(9, 9, 9)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cboxOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -352,28 +359,18 @@ public class Calc6 extends javax.swing.JFrame {
                                                 .addComponent(lblYears1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel4Layout.createSequentialGroup()
                                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(txtCurrentLoanAmount, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                                                    .addComponent(txtCurrentLoanAmount, javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(txtCurrentMonthlyPayment, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(txtCurrentInterestRate, javax.swing.GroupLayout.Alignment.LEADING))
+                                                    .addComponent(txtCurrentInterestRate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(18, 18, 18)
                                                 .addComponent(lblPercent1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(lblTimeRemaining)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(lblTimeRemaining))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(77, 77, 77)
-                                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(86, 86, 86)
-                                .addComponent(lblCurrentLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 16, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAprOutput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblResults, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(66, 66, 66)
+                                .addComponent(lblCurrentLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblAprOutput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblResults, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
@@ -409,12 +406,10 @@ public class Calc6 extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCurrentLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNewLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCurrentLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(cboxOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
@@ -435,6 +430,7 @@ public class Calc6 extends javax.swing.JFrame {
                             .addComponent(lblYears1)
                             .addComponent(lblCurrentLoanTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtOriginalLoanTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblNewLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -462,6 +458,9 @@ public class Calc6 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTimeRemaining, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTimeRemainingYears, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -470,18 +469,15 @@ public class Calc6 extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTimeRemainingMonths, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblMonths))
-                        .addGap(10, 10, 10)
-                        .addComponent(lblAprOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblResults, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblAprOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(lblResults, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 52, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -817,6 +813,42 @@ public class Calc6 extends javax.swing.JFrame {
             model.addRow(new Object[]{"Cash out", "$" + 0, "$" + Helper.formatDouble(cashOutAmount)});
 
         }
+        if (cboxOptions.getSelectedIndex() == 0)
+        {
+            if ((newMonthlyPayment - currentMonthlyPayment) > 0)
+            {
+                lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                    "<br/>$" + Helper.formatDouble(newMonthlyPayment - currentMonthlyPayment) + "/month extra cost in monthly pay"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees + newAccumulatedInterest) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
+            }
+            else
+            {
+                lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                    "<br/>$" + Helper.formatDouble(Math.abs(newMonthlyPayment - currentMonthlyPayment)) + "/month savings in monthly pay"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees + newAccumulatedInterest) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
+            }
+        }
+        else
+        {
+            if ((newMonthlyPayment - originalLoanMonthlyPayment) > 0)
+            {
+                lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                    "<br/>$" + Helper.formatDouble(newMonthlyPayment - originalLoanMonthlyPayment) + "/month extra cost in monthly pay"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees + (totalNewMonthlyPayments - totalCurrentMonthlyPayments)) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
+            }
+            else
+            {
+                lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                    "<br/>$" + Helper.formatDouble(Math.abs(newMonthlyPayment - originalLoanMonthlyPayment)) + "/month savings in monthly pay"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees + (totalNewMonthlyPayments - totalCurrentMonthlyPayments)) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
+            }
+        }
+        
+        
         
         if (apr - (currentInterestRate * 1200) > 0.00002)
         {
@@ -840,20 +872,7 @@ public class Calc6 extends javax.swing.JFrame {
                         + " The financial cost of the new loan is comparable to that of the existing loan.<HTML>");
         }
         
-        if ((newMonthlyPayment - currentMonthlyPayment) > 0)
-        {
-            lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
-                "<br/>$" + Helper.formatDouble(newMonthlyPayment - currentMonthlyPayment) + "/month extra cost in monthly pay"
-        + "<br/>$" + Helper.formatDouble(pointsCost + costFees + newAccumulatedInterest) + " total extra cost for the new loan"
-        + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
-        }
-        else
-        {
-            lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
-                "<br/>$" + Helper.formatDouble(Math.abs(newMonthlyPayment - currentMonthlyPayment)) + "/month savings in monthly pay"
-        + "<br/>$" + Helper.formatDouble(pointsCost + costFees + newAccumulatedInterest) + " total extra cost for the new loan"
-        + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
-        }
+        
         
 
     // end button
