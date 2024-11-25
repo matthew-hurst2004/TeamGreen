@@ -94,6 +94,7 @@ public class Calc9 extends javax.swing.JFrame {
         leftOneTimePaymentTextField = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -421,6 +422,13 @@ public class Calc9 extends javax.swing.JFrame {
 
         jLabel28.setText("$");
 
+        jButton1.setText("Show Graph");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -470,7 +478,8 @@ public class Calc9 extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -525,7 +534,9 @@ public class Calc9 extends javax.swing.JFrame {
                 .addComponent(outputWithLoanTermLabel)
                 .addGap(18, 18, 18)
                 .addComponent(leftErrorLabel)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(96, 0, 21));
@@ -1067,7 +1078,7 @@ public class Calc9 extends javax.swing.JFrame {
 
            
             
-            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Moths", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Months", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
             ChartPanel chartPanel = new ChartPanel (chart);
             JFrame frame = new JFrame ();
             frame.setSize(1000, 800);
@@ -1091,6 +1102,174 @@ public class Calc9 extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_leftShowButtonMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here
+        
+        // This is where the magic happens
+        outputWithLoanTermLabel.setText("");
+        leftErrorLabel.setText("");
+        
+        try {
+            double originalLoanAmountDouble = Double.parseDouble(originalLoanAmountTextField.getText());
+            double originalLoanTermDouble = Double.parseDouble(originalLoanTermTextField.getText());
+            double interestRateDouble = Double.parseDouble(interestRateTextField.getText());
+            double remainingTermYearsDouble;
+            double remainingTermMonthsDouble;
+            double extraPaymentPerMonthDouble;
+            double leftYearlyExtradouble;
+            double leftOneTimePaymentDouble;
+            
+            
+            if (leftOneTimePaymentTextField.getText().equals("")) 
+            {
+                leftOneTimePaymentDouble = 0;
+                leftOneTimePaymentTextField.setText("0");
+                leftErrorLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                leftOneTimePaymentDouble = Double.parseDouble(leftOneTimePaymentTextField.getText());
+            }             
+            
+            if (interestRateDouble <= 0){
+                leftErrorLabel.setText("The first three boxes need a number above zero.");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
+                return;
+            }
+                                
+            if (leftYearlyExtraTextField.getText().equals("")) 
+            {
+                leftYearlyExtradouble = 0;
+                leftYearlyExtraTextField.setText("0");
+                leftErrorLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                leftYearlyExtradouble = Double.parseDouble(leftYearlyExtraTextField.getText());
+            }                         
+
+            if (extraPaymentPerMonthTextField.getText().equals("")) 
+            {
+                extraPaymentPerMonthDouble = 0;
+                extraPaymentPerMonthTextField.setText("0");
+                leftErrorLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                extraPaymentPerMonthDouble = Double.parseDouble(extraPaymentPerMonthTextField.getText());
+            }                       
+                         
+                    
+            if (remainingTermYearsTextField.getText().equals("")) 
+            {
+                remainingTermYearsDouble = 0;
+                remainingTermYearsTextField.setText("0");
+            } else {
+                remainingTermYearsDouble = Double.parseDouble(remainingTermYearsTextField.getText());
+            }        
+            
+            if (remainingTermMonthsTextField.getText().equals("")) 
+            {
+                remainingTermMonthsDouble = 0;
+                remainingTermMonthsTextField.setText("0");
+            } else {
+                remainingTermMonthsDouble = Double.parseDouble(remainingTermMonthsTextField.getText());
+            }
+            
+
+            
+                        
+            if (originalLoanAmountDouble == 0 || originalLoanTermDouble == 0){
+                leftErrorLabel.setText("The first three boxes need a number above zero.");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
+                return;
+            }
+            
+            if (remainingTermMonthsDouble + (remainingTermYearsDouble * 12) > (originalLoanTermDouble * 12)){
+                
+                JOptionPane.showMessageDialog(this, "The remaining loan term cannot be bigger than the orginal term.");
+                leftErrorLabel.setText("The remaining loan term cannot be bigger than the orginal term.");
+                return;
+
+            }
+            
+            if (remainingTermMonthsDouble + remainingTermYearsDouble == 0){ // I am making sure the remaining loan term is not zero
+                leftErrorLabel.setText("Make sure the remaining loan term is more than zero");
+                JOptionPane.showMessageDialog(this, "The remaing term needs to be above zero.");
+                return;
+            }
+            
+            // testing ends and logic starts
+            
+            interestRateDouble = interestRateDouble / 12 / 100; // make a monthly decimal
+            double totalMonths = (remainingTermYearsDouble * 12) + remainingTermMonthsDouble;  
+            
+            double monthlyPayment = originalLoanAmountDouble * (interestRateDouble * 
+                    Math.pow(1 + interestRateDouble, (originalLoanTermDouble * 12))) / (Math.pow(1 + interestRateDouble, (originalLoanTermDouble * 12)) - 1);
+            
+            
+            double originalRemainingDif = (originalLoanTermDouble * 12) - totalMonths;
+            
+            
+            // This accounts for the time before the extra payments 
+            while (originalRemainingDif > 0){
+                originalLoanAmountDouble = originalLoanAmountDouble * (1 + interestRateDouble) - monthlyPayment;
+                originalRemainingDif = originalRemainingDif - 1;
+            }
+
+
+            double totalPayment = monthlyPayment + extraPaymentPerMonthDouble;
+            
+            int monthsLeft = 0;
+            
+            double moneyLeft = originalLoanAmountDouble;
+            
+            double oldMoneyLeft = originalLoanAmountDouble;
+            
+            moneyLeft = moneyLeft - leftOneTimePaymentDouble;
+           
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+            
+            while (moneyLeft > 0) {                      
+                dataset.addValue(moneyLeft, "New unpaid principal", String.valueOf(monthsLeft));
+                dataset.addValue(oldMoneyLeft, "Old unpaid principal", String.valueOf(monthsLeft));
+                
+                oldMoneyLeft = oldMoneyLeft * (1 + interestRateDouble) - monthlyPayment;
+                moneyLeft = moneyLeft * (1 + interestRateDouble) - totalPayment;                
+                if (monthsLeft % 12 == 0 && monthsLeft >0){
+                    moneyLeft = moneyLeft - leftYearlyExtradouble;
+                }
+                
+                
+                monthsLeft = monthsLeft + 1;
+                if (monthsLeft > 2400){
+                outputWithLoanTermLabel.setText("With the numbers provided it will take over 200 years to pay off this mortgage.");
+                return;
+                        }
+            }
+            
+            
+            int years = monthsLeft / 12; 
+            int remainingMonths = monthsLeft % 12; 
+            
+            
+            
+            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Months", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+            ChartPanel chartPanel = new ChartPanel (chart);
+            JFrame frame = new JFrame ();
+            frame.setSize(1000, 800);
+            frame.setContentPane(chartPanel);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);                   
+            outputWithLoanTermLabel.setText("You have " + years + " years and " + remainingMonths + " months remaining");     
+            
+        } catch (NumberFormatException e) {
+           
+            if (originalLoanAmountTextField.getText().equals("") || originalLoanTermTextField.getText().equals("") ||
+                    interestRateTextField.getText().equals("")){
+                leftErrorLabel.setText("Make sure the first five boxes have the proper number");
+                JOptionPane.showMessageDialog(this, "Make sure the first five boxes have the proper number");
+
+            } else {
+                leftErrorLabel.setText("Please look over the numbers entered.");
+            }
+        }        
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1136,6 +1315,7 @@ public class Calc9 extends javax.swing.JFrame {
     private javax.swing.JTextField extraPaymentPerMonthTextField;
     private javax.swing.JLabel interestRateLabel;
     private javax.swing.JTextField interestRateTextField;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
