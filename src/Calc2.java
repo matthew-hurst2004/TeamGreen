@@ -68,6 +68,7 @@ public class Calc2 extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(96, 0, 21));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Annual Investment Interest Calculator");
 
         closeButton.setText("Back");

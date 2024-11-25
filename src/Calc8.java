@@ -71,6 +71,7 @@ public class Calc8 extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(96, 0, 21));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Currency Converter");
 
         closeButton.setText("Close");
