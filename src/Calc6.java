@@ -569,7 +569,7 @@ public class Calc6 extends javax.swing.JFrame {
         double tolerance = 0.000001; // Tolerance for accuracy
         
         // remaining balance
-        if (txtCurrentLoanAmount.getText().equals("")) 
+        if (txtCurrentLoanAmount.getText().equals("") || Double.parseDouble(txtCurrentLoanAmount.getText()) == 0) 
         {
             JOptionPane.showMessageDialog(this, "Please provide a positive remaining balance of the current loan.",
            "Error", JOptionPane.ERROR_MESSAGE);
@@ -706,9 +706,9 @@ public class Calc6 extends javax.swing.JFrame {
                 txtCashOutAmount.requestFocusInWindow();
                 return;
         } 
-        else if (Double.parseDouble(txtCashOutAmount.getText()) < 0 && Math.abs(Double.parseDouble(txtCashOutAmount.getText())) > currentLoanAmount)
+        else if (Double.parseDouble(txtCashOutAmount.getText()) < 0 && Math.abs(Double.parseDouble(txtCashOutAmount.getText())) >= currentLoanAmount)
         {
-            JOptionPane.showMessageDialog(this, "Cash out amount can not reduce balance amount below zero.",
+            JOptionPane.showMessageDialog(this, "Cash out amount can not reduce balance amount to or below zero.",
                "Error", JOptionPane.ERROR_MESSAGE);
                 txtCashOutAmount.setText("");
                 txtCashOutAmount.requestFocusInWindow();
@@ -741,6 +741,7 @@ public class Calc6 extends javax.swing.JFrame {
             newPrincipalFinal = currentLoanAmount + cashOutAmount; // updated remaining balance for new loan
             pointsCost = newPrincipalFinal * points; // cost of points on loan
             AprPrincipal = newPrincipalFinal - (pointsCost + costFees);
+            
         }
         else // original amount option
         {
@@ -771,7 +772,7 @@ public class Calc6 extends javax.swing.JFrame {
         // finding new apr
         double monthlyRate = Helper.calculateInterestRate(AprPrincipal, newMonthlyPayment, newLoanMonths, tolerance);
         double apr = monthlyRate * 12 * 100; // Convert monthly rate to annual percentage rate
-
+        
         
         
         DefaultTableModel model = (DefaultTableModel) tblOutput.getModel();
@@ -779,13 +780,13 @@ public class Calc6 extends javax.swing.JFrame {
         
         
         // option dependent output
-        if (cboxOptions.getSelectedIndex() == 0)
+        if (cboxOptions.getSelectedIndex() == 0) // table for remaining balance
         {
             model.addRow(new Object[]{"Principal/loan amount", "$" + Helper.formatDouble(currentLoanAmount), "$" + Helper.formatDouble(newPrincipalFinal), 
                 "$" + Helper.formatDouble(newPrincipalFinal - currentLoanAmount)});
             model.addRow(new Object[]{"Monthly Payment", "$" + Helper.formatDouble(currentMonthlyPayment), "$" + Helper.formatDouble(newMonthlyPayment), 
                 "$" + Helper.formatDouble(newMonthlyPayment - currentMonthlyPayment)});
-            model.addRow(new Object[]{"Length", currentLoanMonths, newLoanMonths, newLoanMonths - currentLoanMonths});
+            model.addRow(new Object[]{"Length (months)", currentLoanMonths, newLoanMonths, newLoanMonths - currentLoanMonths});
             model.addRow(new Object[]{"Interest Rate", Helper.formatAPR(currentInterestRate * 1200.0) + "%", Helper.formatAPR(apr) + "%", 
                 Helper.formatAPR(apr - (currentInterestRate * 1200)) + "%"});
             model.addRow(new Object[]{"Total Monthly Payment", "$" + Helper.formatDouble(totalCurrentMonthlyPayments), 
@@ -794,6 +795,11 @@ public class Calc6 extends javax.swing.JFrame {
                 "$" + Helper.formatDouble(newAccumulatedInterest), "$" + Helper.formatDouble(newAccumulatedInterest - currentAccumulatedInterest)});
             model.addRow(new Object[]{"Cost + points (upfront)", "$" + 0, "$" + Helper.formatDouble(pointsCost + costFees)});
             model.addRow(new Object[]{"Cash out", "$" + 0, "$" + Helper.formatDouble(cashOutAmount)});
+            if (cashOutAmount != 0)
+            {
+                model.addRow(new Object[]{"Take home amount after cost/point", "$" + 0, "$" 
+                        + Helper.formatDouble(cashOutAmount - (pointsCost + costFees))});
+            }
  }
         else
         {
@@ -801,7 +807,7 @@ public class Calc6 extends javax.swing.JFrame {
                 "$" + Helper.formatDouble(newPrincipalFinal), "$" + Helper.formatDouble(newPrincipalFinal - newPrincipalOriginal)});
             model.addRow(new Object[]{"Monthly Payment", "$" + Helper.formatDouble(originalLoanMonthlyPayment), 
                 "$" + Helper.formatDouble(newMonthlyPayment), "$" + Helper.formatDouble(newMonthlyPayment - originalLoanMonthlyPayment)});
-            model.addRow(new Object[]{"Length", originalLoanRemainingYears + originalLoanRemainingMonths, newLoanMonths, 
+            model.addRow(new Object[]{"Length (months)", originalLoanRemainingYears + originalLoanRemainingMonths, newLoanMonths, 
                 newLoanMonths - (originalLoanRemainingYears + originalLoanRemainingMonths)});
             model.addRow(new Object[]{"Interest Rate", Helper.formatAPR(currentInterestRate * 1200.0) + "%",
                 Helper.formatAPR(apr) + "%", Helper.formatAPR(apr - (currentInterestRate * 1200)) + "%"});
@@ -811,8 +817,13 @@ public class Calc6 extends javax.swing.JFrame {
                 "$" + Helper.formatDouble(newAccumulatedInterest), "$" + Helper.formatDouble(newAccumulatedInterest - originalLoanInterest)});
             model.addRow(new Object[]{"Cost + points (upfront)", "$" + 0, "$" + Helper.formatDouble(pointsCost + costFees)});
             model.addRow(new Object[]{"Cash out", "$" + 0, "$" + Helper.formatDouble(cashOutAmount)});
+            if (cashOutAmount != 0)
+            {
+                model.addRow(new Object[]{"Take home amount after cost/point", "$" + 0, "$" 
+                        + Helper.formatDouble(cashOutAmount - (pointsCost + costFees))});
+            }
 
-        }
+        } //table for original loan
         if (cboxOptions.getSelectedIndex() == 0)
         {
             if ((newMonthlyPayment - currentMonthlyPayment) > 0)

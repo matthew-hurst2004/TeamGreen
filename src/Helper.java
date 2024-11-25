@@ -286,7 +286,7 @@ public class Helper {
     public static double calculateInterestRate(double P, double M, double n, double tolerance) 
     {
 
-            double i = 0.01; // Initial guess for iRate (1%)
+            double i = 0.01; // Initial guess for iRate (.5%)
             double increment = 0.0001; // Increment for derivative calculation
 
             while (true) 
