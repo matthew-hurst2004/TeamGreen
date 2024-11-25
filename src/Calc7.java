@@ -5,11 +5,9 @@ import javax.swing.table.DefaultTableModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-<<<<<<< HEAD
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.chart.plot.PlotOrientation;
-=======
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 //import org.jfree.chart.ChartFactory;
@@ -18,7 +16,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
 //import org.jfree.data.category.CategoryDataset;
 //import org.jfree.data.category.DefaultCategoryDataset;
 //import org.jfree.chart.plot.PlotOrientation;
->>>>>>> 1d29c0a08d592c5442132b8a36bb570f9d42f5ab
 
 
 /*

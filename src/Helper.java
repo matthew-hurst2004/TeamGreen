@@ -48,15 +48,15 @@ public class Helper {
         return df.format(value);
     }
     
-<<<<<<< HEAD
     public static String formatAPR(double value)
     {
         DecimalFormat df = new DecimalFormat("#,##0.000");
-=======
+        return df.format(value);
+    }
+
     public static String formatDoubleSwapped(double value)
     {
         DecimalFormat df = new DecimalFormat("#.##0,00");
->>>>>>> 1d29c0a08d592c5442132b8a36bb570f9d42f5ab
         return df.format(value);
     }
     
