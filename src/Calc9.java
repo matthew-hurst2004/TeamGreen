@@ -52,6 +52,9 @@ public class Calc9 extends javax.swing.JFrame {
         calculateRightButton = new javax.swing.JButton();
         rightOutputLabel = new javax.swing.JLabel();
         errorRightLabel = new javax.swing.JLabel();
+        rightOneTimePaymentTextField = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         originalLoanTermTextField = new javax.swing.JTextField();
         interestRateTextField = new javax.swing.JTextField();
@@ -78,6 +81,9 @@ public class Calc9 extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         leftYearlyExtraTextField = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
+        leftOneTimePaymentTextField = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -169,6 +175,7 @@ public class Calc9 extends javax.swing.JFrame {
             }
         });
 
+        rightOutputLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rightOutputLabel.setText("Output label");
 
         errorRightLabel.setBackground(new java.awt.Color(0, 0, 0));
@@ -176,16 +183,39 @@ public class Calc9 extends javax.swing.JFrame {
         errorRightLabel.setForeground(new java.awt.Color(255, 255, 255));
         errorRightLabel.setText("Error Label");
 
+        rightOneTimePaymentTextField.setText("0");
+        rightOneTimePaymentTextField.setToolTipText("");
+
+        jLabel25.setText("One Time Payment");
+
+        jLabel26.setText("$");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rightOneTimePaymentTextField)
+                    .addComponent(extraPaymentMonthlyRightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                    .addComponent(rightYearlyExtraTextField))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel25))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -204,33 +234,14 @@ public class Calc9 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(158, 158, 158))
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rightOutputLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rightOutputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel22))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(extraPaymentMonthlyRightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                                    .addComponent(rightYearlyExtraTextField))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21)))
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(calculateRightButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(errorRightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(errorRightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,11 +261,11 @@ public class Calc9 extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(rightInterestRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
-                .addGap(77, 77, 77)
+                .addGap(88, 88, 88)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
-                .addGap(31, 31, 31)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(extraPaymentMonthlyRightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,13 +275,18 @@ public class Calc9 extends javax.swing.JFrame {
                     .addComponent(jLabel21)
                     .addComponent(rightYearlyExtraTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rightOneTimePaymentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(calculateRightButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rightOutputLabel)
                 .addGap(18, 18, 18)
                 .addComponent(errorRightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 101, 0));
@@ -355,6 +371,7 @@ public class Calc9 extends javax.swing.JFrame {
             }
         });
 
+        outputWithLoanTermLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         outputWithLoanTermLabel.setText("Output label");
 
         calculateLeftSideButton.setText("Calculate ");
@@ -374,6 +391,12 @@ public class Calc9 extends javax.swing.JFrame {
 
         jLabel24.setText("$");
 
+        leftOneTimePaymentTextField.setText("0");
+
+        jLabel27.setText("One Time Payment");
+
+        jLabel28.setText("$");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -385,43 +408,46 @@ public class Calc9 extends javax.swing.JFrame {
                     .addComponent(outputWithLoanTermLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel24))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(calculateLeftSideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(extraPaymentPerMonthTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(remainingTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(interestRateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(originalLoanTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(originalLoanAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(remainingTermMonthsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                    .addComponent(originalLoanAmountTextField)
+                                    .addComponent(originalLoanTermTextField)
+                                    .addComponent(interestRateTextField)
+                                    .addComponent(remainingTermYearsTextField))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(leftErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(leftYearlyExtraTextField)
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(calculateLeftSideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(remainingTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(interestRateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(originalLoanTermLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(originalLoanAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(remainingTermMonthsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addComponent(originalLoanAmountTextField)
-                            .addComponent(originalLoanTermTextField)
-                            .addComponent(interestRateTextField)
-                            .addComponent(remainingTermYearsTextField))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(leftErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel28))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(leftOneTimePaymentTextField)
+                                    .addComponent(leftYearlyExtraTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                    .addComponent(extraPaymentPerMonthTextField))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -464,13 +490,18 @@ public class Calc9 extends javax.swing.JFrame {
                     .addComponent(jLabel23)
                     .addComponent(leftYearlyExtraTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(leftOneTimePaymentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel28))
                 .addGap(18, 18, 18)
                 .addComponent(calculateLeftSideButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(outputWithLoanTermLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(leftErrorLabel)
-                .addGap(34, 34, 34))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(96, 0, 21));
@@ -505,24 +536,23 @@ public class Calc9 extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(needHelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(needHelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 166, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -539,8 +569,8 @@ public class Calc9 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 99, Short.MAX_VALUE)))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 47, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -587,8 +617,7 @@ public class Calc9 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -634,12 +663,22 @@ public class Calc9 extends javax.swing.JFrame {
             double remainingTermYearsDouble;
             double remainingTermMonthsDouble;
             double extraPaymentPerMonthDouble;
-            double amountAlreadyPaid;
             double leftYearlyExtradouble;
+            double leftOneTimePaymentDouble;
+            
+            
+            if (leftOneTimePaymentTextField.getText().equals("")) 
+            {
+                leftOneTimePaymentDouble = 0;
+                leftOneTimePaymentTextField.setText("0");
+                leftErrorLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                leftOneTimePaymentDouble = Double.parseDouble(leftOneTimePaymentTextField.getText());
+            }             
             
             if (interestRateDouble <= 0){
-                leftErrorLabel.setText("The interest cannot be zero.");
-                JOptionPane.showMessageDialog(this, "Please enter a positive nonzero number for the interest rate.");
+                leftErrorLabel.setText("The first three boxes need a number above zero.");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
                 return;
             }
                                 
@@ -647,6 +686,7 @@ public class Calc9 extends javax.swing.JFrame {
             {
                 leftYearlyExtradouble = 0;
                 leftYearlyExtraTextField.setText("0");
+                leftErrorLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
             } else {
                 leftYearlyExtradouble = Double.parseDouble(leftYearlyExtraTextField.getText());
             }                         
@@ -655,6 +695,7 @@ public class Calc9 extends javax.swing.JFrame {
             {
                 extraPaymentPerMonthDouble = 0;
                 extraPaymentPerMonthTextField.setText("0");
+                leftErrorLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
             } else {
                 extraPaymentPerMonthDouble = Double.parseDouble(extraPaymentPerMonthTextField.getText());
             }                       
@@ -663,6 +704,7 @@ public class Calc9 extends javax.swing.JFrame {
             if (remainingTermYearsTextField.getText().equals("")) 
             {
                 remainingTermYearsDouble = 0;
+                remainingTermYearsTextField.setText("0");
             } else {
                 remainingTermYearsDouble = Double.parseDouble(remainingTermYearsTextField.getText());
             }        
@@ -670,6 +712,7 @@ public class Calc9 extends javax.swing.JFrame {
             if (remainingTermMonthsTextField.getText().equals("")) 
             {
                 remainingTermMonthsDouble = 0;
+                remainingTermMonthsTextField.setText("0");
             } else {
                 remainingTermMonthsDouble = Double.parseDouble(remainingTermMonthsTextField.getText());
             }
@@ -678,8 +721,8 @@ public class Calc9 extends javax.swing.JFrame {
             
                         
             if (originalLoanAmountDouble == 0 || originalLoanTermDouble == 0){
-                leftErrorLabel.setText("Make sure the first two boxes are more than zero");
-                JOptionPane.showMessageDialog(this, "The first two boxes need a number above zero.");
+                leftErrorLabel.setText("The first three boxes need a number above zero.");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
                 return;
             }
             
@@ -708,38 +751,45 @@ public class Calc9 extends javax.swing.JFrame {
             
             double originalRemainingDif = (originalLoanTermDouble * 12) - totalMonths;
             
-
+            
+            // This accounts for the time before the extra payments 
             while (originalRemainingDif > 0){
                 originalLoanAmountDouble = originalLoanAmountDouble * (1 + interestRateDouble) - monthlyPayment;
                 originalRemainingDif = originalRemainingDif - 1;
             }
 
-            
 
             double totalPayment = monthlyPayment + extraPaymentPerMonthDouble;
-            int monthsLeft = 0;
-            double moneyLeft = originalLoanAmountDouble;
-            int perYearCounter = 0;
             
+            int monthsLeft = 0;
+            
+            double moneyLeft = originalLoanAmountDouble;
+            
+            
+            moneyLeft = moneyLeft - leftOneTimePaymentDouble;
+           
             while (moneyLeft > 0) {
                 moneyLeft = moneyLeft * (1 + interestRateDouble) - totalPayment;
-                if (perYearCounter >= 12){
+                        
+                
+                if (monthsLeft % 12 == 0 && monthsLeft >0){
                     moneyLeft = moneyLeft - leftYearlyExtradouble;
-                    perYearCounter = 0;
-                } else {
-                    perYearCounter = perYearCounter + 1;
                 }
+                
+                
                 monthsLeft = monthsLeft + 1;
                 if (monthsLeft > 2400){
                 outputWithLoanTermLabel.setText("With the numbers provided it will take over 200 years to pay off this mortgage.");
+                return;
                         }
             }
+            
             
             int years = monthsLeft / 12; 
             int remainingMonths = monthsLeft % 12; 
 
             
-        outputWithLoanTermLabel.setText("You have " + years + " years and " + remainingMonths + " months remaining");
+        outputWithLoanTermLabel.setText("You have " + years + " years and " + remainingMonths + " months remaining");     
             
         } catch (NumberFormatException e) {
            
@@ -786,19 +836,31 @@ public class Calc9 extends javax.swing.JFrame {
             double monthlyPaymentDouble = Double.parseDouble(monthlyPaymentTextField.getText());
             double rightInterestRateDouble = Double.parseDouble(rightInterestRateTextField.getText());
             double rightYearlyExtradouble;
+            double rightOneTimePaymentDouble;
+            
+            
+            if (rightOneTimePaymentTextField.getText().equals("")) 
+            {
+                rightOneTimePaymentDouble = 0;
+                rightOneTimePaymentTextField.setText("0");
+                errorRightLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
+            } else {
+                rightOneTimePaymentDouble = Double.parseDouble(rightOneTimePaymentTextField.getText());
+            }               
             
             
             if (rightYearlyExtraTextField.getText().equals("")) 
             {
                 rightYearlyExtradouble = 0;
+                rightYearlyExtraTextField.setText("0");
                 leftErrorLabel.setText("The empty box will be read as zero.");
             } else {
                 rightYearlyExtradouble = Double.parseDouble(rightYearlyExtraTextField.getText());
             }                 
             
             if (rightInterestRateDouble <= 0) {
-                errorRightLabel.setText("The interest cannot be zero.");
-                JOptionPane.showMessageDialog(this, "Please enter a positive nonzero number for the interest rate.");
+                errorRightLabel.setText("The first three boxes need a number above zero.");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
                 return;
 
             }
@@ -807,15 +869,16 @@ public class Calc9 extends javax.swing.JFrame {
             if (extraPaymentMonthlyRightTextField.getText().equals("")) 
             {
                 extraPaymentMonthlyRightDouble = 0;
-                errorRightLabel.setText("You didn't enter a number for the extra payment box and it will be read as zero.");
+                rightYearlyExtraTextField.setText("0");
+                errorRightLabel.setText("You didn't enter a number for the extra payment box and it will be read as 0.");
             } else {
                 extraPaymentMonthlyRightDouble = Double.parseDouble(extraPaymentMonthlyRightTextField.getText());
             }   
            
             
             if (unpaidPrincipalBalanceDouble == 0 || monthlyPaymentDouble == 0){
-                errorRightLabel.setText("Make sure the first two boxes are more than zero");
-                JOptionPane.showMessageDialog(this, "The first two boxes need a number above zero.");
+                errorRightLabel.setText("Make sure the first three boxes are more than zero");
+                JOptionPane.showMessageDialog(this, "The first three boxes need a number above zero.");
                 return;
             }     
             
@@ -823,30 +886,29 @@ public class Calc9 extends javax.swing.JFrame {
             
             double monthlyInterestRate = (rightInterestRateDouble / 100) / 12; // making it monthly and a decimal
                         
-            // make an int because it will never have decimals
             int monthsLeft = 0;
-            int perYearCounterRight = 0;
+            
+            if (unpaidPrincipalBalanceDouble < rightOneTimePaymentDouble){
+                rightOutputLabel.setText("The one time payment will payoff the mortgage instantly.");
+                return;
+            }
+            
+            unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - rightOneTimePaymentDouble;
             
             while (unpaidPrincipalBalanceDouble > 0) {
-                double interest = unpaidPrincipalBalanceDouble * monthlyInterestRate;
-
-                double principalPayment = (monthlyPaymentDouble - interest) + extraPaymentMonthlyRightDouble;
-                             
-                if (principalPayment > unpaidPrincipalBalanceDouble) { 
-                    monthsLeft = monthsLeft + 1;
-                    break;
-                }
                 
-                if (perYearCounterRight >= 12){
+                double interestPayment = unpaidPrincipalBalanceDouble * monthlyInterestRate;
+                
+                double principalPayment = monthlyPaymentDouble - interestPayment;
+                            
+                unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - (principalPayment + extraPaymentMonthlyRightDouble);
+
+                if (monthsLeft % 12 == 0 && monthsLeft > 0) {
                     unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - rightYearlyExtradouble;
-                    perYearCounterRight = 0;
-                } else {
-                    perYearCounterRight = perYearCounterRight + 1;
                 }
-
-                unpaidPrincipalBalanceDouble = unpaidPrincipalBalanceDouble - principalPayment;
-                monthsLeft = monthsLeft + 1;
                 
+                monthsLeft = monthsLeft + 1;
+
                 if (monthsLeft > 2400){
                     rightOutputLabel.setText("With the numbers provided it will take over 200 years to pay off this mortgage.");
                     return;
@@ -938,6 +1000,10 @@ public class Calc9 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -953,6 +1019,7 @@ public class Calc9 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel leftErrorLabel;
+    private javax.swing.JTextField leftOneTimePaymentTextField;
     private javax.swing.JTextField leftYearlyExtraTextField;
     private javax.swing.JTextField monthlyPaymentTextField;
     private javax.swing.JButton needHelpButton;
@@ -965,6 +1032,7 @@ public class Calc9 extends javax.swing.JFrame {
     private javax.swing.JTextField remainingTermMonthsTextField;
     private javax.swing.JTextField remainingTermYearsTextField;
     private javax.swing.JTextField rightInterestRateTextField;
+    private javax.swing.JTextField rightOneTimePaymentTextField;
     private javax.swing.JLabel rightOutputLabel;
     private javax.swing.JTextField rightYearlyExtraTextField;
     private javax.swing.JTextField unpaidPrincipalBalanceTextField;
