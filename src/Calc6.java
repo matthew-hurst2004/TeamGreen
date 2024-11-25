@@ -373,9 +373,6 @@ public class Calc6 extends javax.swing.JFrame {
                                 .addComponent(lblResults, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -399,8 +396,11 @@ public class Calc6 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPercent2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(48, 48, 48))
+                            .addComponent(lblYear, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(92, 92, 92))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,7 +477,7 @@ public class Calc6 extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 52, Short.MAX_VALUE))))
+                        .addGap(0, 46, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -824,7 +824,8 @@ public class Calc6 extends javax.swing.JFrame {
             }
 
         } //table for original loan
-        if (cboxOptions.getSelectedIndex() == 0)
+        
+        if (cboxOptions.getSelectedIndex() == 0) //remaining balance
         {
             if ((newMonthlyPayment - currentMonthlyPayment) > 0)
             {
@@ -841,23 +842,51 @@ public class Calc6 extends javax.swing.JFrame {
             + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
             }
         }
-        else
+        else // original loan
         {
-            if ((newMonthlyPayment - originalLoanMonthlyPayment) > 0)
+            
+            if ((newMonthlyPayment - originalLoanMonthlyPayment) > 0) // pays extra
             {
-                lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                if (cashOutAmount <= 0)
+                {
+                    double totalExtra = Math.abs(cashOutAmount) + pointsCost + costFees + (totalNewMonthlyPayments - totalCurrentMonthlyPayments);
+                    lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
                     "<br/>$" + Helper.formatDouble(newMonthlyPayment - originalLoanMonthlyPayment) + "/month extra cost in monthly pay"
-            + "<br/>$" + Helper.formatDouble(pointsCost + costFees + (totalNewMonthlyPayments - totalCurrentMonthlyPayments)) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(totalExtra) + 
+                            " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
+                }
+                else
+                {
+                    double totalExtra = (totalNewMonthlyPayments - totalCurrentMonthlyPayments) - (cashOutAmount - (pointsCost + costFees));
+                    lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                    "<br/>$" + Helper.formatDouble(newMonthlyPayment - originalLoanMonthlyPayment) + "/month extra cost in monthly pay"
+            + "<br/>$" + Helper.formatDouble(totalExtra) + " total extra cost for the new loan"
             + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
             }
-            else
+                }
+                
+            else // saves extra
             {
-                lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                if (cashOutAmount <= 0)
+                {
+                    double totalExtra = Math.abs(cashOutAmount) + pointsCost + costFees + (totalNewMonthlyPayments - totalCurrentMonthlyPayments);
+                    lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
                     "<br/>$" + Helper.formatDouble(Math.abs(newMonthlyPayment - originalLoanMonthlyPayment)) + "/month savings in monthly pay"
-            + "<br/>$" + Helper.formatDouble(pointsCost + costFees + (totalNewMonthlyPayments - totalCurrentMonthlyPayments)) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(totalExtra) + " total extra cost for the new loan"
             + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
-            }
-        }
+                } // end if
+                else
+                {
+                    double totalExtra = (totalNewMonthlyPayments - totalCurrentMonthlyPayments) - (cashOutAmount - (pointsCost + costFees));
+                    lblResults.setText("<HTML>New monthly payment: $" + Helper.formatDouble(newMonthlyPayment) + 
+                    "<br/>$" + Helper.formatDouble(Math.abs(newMonthlyPayment - originalLoanMonthlyPayment)) + "/month savings in monthly pay"
+            + "<br/>$" + Helper.formatDouble(totalExtra) + " total extra cost for the new loan"
+            + "<br/>$" + Helper.formatDouble(pointsCost + costFees) + " upfront cost<HTML>");
+                } // end else
+                
+            } // end else
+        }// end else 
         
         
         
