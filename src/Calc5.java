@@ -85,9 +85,12 @@ public class Calc5 extends javax.swing.JFrame {
         monthlyPayBeforeExtraLabel = new javax.swing.JLabel();
         calculateButton = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
+        calc5HelpButton = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("sgef");
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 101, 0));
@@ -243,7 +246,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(96, 0, 21));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Mortgage Caclulator");
@@ -276,13 +279,13 @@ public class Calc5 extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(closeButton)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(96, 0, 21));
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Note: full amount paid includes the down payment");
+        jLabel10.setText("Note: full amount paid includes the down payment and the optional values.");
 
         monthlyPaymentOutputLabel.setForeground(new java.awt.Color(255, 255, 255));
         monthlyPaymentOutputLabel.setText("Monthly Payment Label");
@@ -314,7 +317,7 @@ public class Calc5 extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(monthlyPayBeforeExtraLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -336,10 +339,22 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mortgage.jpg"))); // NOI18N
 
+        calc5HelpButton.setText("Need Help?");
+        calc5HelpButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calc5HelpButtonMouseClicked(evt);
+            }
+        });
+
+        jLabel23.setText("note: commas won't be accepted");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,12 +449,14 @@ public class Calc5 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel22)
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(calc5HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,7 +464,11 @@ public class Calc5 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(calc5HelpButton)
+                            .addComponent(jLabel23))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(homePriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -534,15 +555,13 @@ public class Calc5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 132, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -576,13 +595,16 @@ public class Calc5 extends javax.swing.JFrame {
         if (otherCostIncreaseTextField.getText().equals("")) 
         {
             otherCostsIncreasePercentage = 0;
+            otherCostIncreaseTextField.setText("0");
         } else {
             otherCostsIncreasePercentage = Double.parseDouble(otherCostIncreaseTextField.getText());
+            
         }                 
         
         if (hoaFeeIncreaseTextField.getText().equals("")) 
         {
             hoaFeeIncreasePercentage = 0;
+            hoaFeeIncreaseTextField.setText("0");
         } else {
             hoaFeeIncreasePercentage = Double.parseDouble(hoaFeeIncreaseTextField.getText());
         }            
@@ -590,6 +612,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (homeInsuranceIncreaseTextField.getText().equals("")) 
         {
             homeInsuranceIncreasePercentage = 0;
+            homeInsuranceIncreaseTextField.setText("0");
         } else {
             homeInsuranceIncreasePercentage = Double.parseDouble(homeInsuranceIncreaseTextField.getText());
         }          
@@ -597,6 +620,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (propertyTaxIncreaseTextField.getText().equals("")) 
         {
             propertyTaxIncreasePercentage = 0;
+            propertyTaxIncreaseTextField.setText("0");
         } else {
             propertyTaxIncreasePercentage = Double.parseDouble(propertyTaxIncreaseTextField.getText());
         }  
@@ -604,6 +628,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (pmiInsurance.getText().equals("")) 
         {
             pmiInsuranceDouble = 0;
+            pmiInsurance.setText("0");
         } else {
             pmiInsuranceDouble = Double.parseDouble(pmiInsurance.getText());
         }              
@@ -611,6 +636,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (otherCostTextField.getText().equals("")) 
         {
             otherCostsDouble = 0;
+            otherCostTextField.setText("0");
         } else {
             otherCostsDouble = Double.parseDouble(otherCostTextField.getText());
         }                            
@@ -618,6 +644,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (homeInsurance.getText().equals("")) 
         {
             homeInsuranceDouble = 0;
+            homeInsurance.setText("0");
         } else {
             homeInsuranceDouble = Double.parseDouble(homeInsurance.getText());
         }                     
@@ -625,6 +652,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (propertyTaxTextField.getText().equals("")) 
         {
             propertyTaxDouble = 0;
+            propertyTaxTextField.setText("0");
         } else {
             propertyTaxDouble = Double.parseDouble(propertyTaxTextField.getText());
         }             
@@ -632,6 +660,7 @@ public class Calc5 extends javax.swing.JFrame {
         if (hoaFeeTextField.getText().equals("")) 
         {
             hoaFeeDouble = 0;
+            hoaFeeTextField.setText("0");
         } else {
             hoaFeeDouble = Double.parseDouble(hoaFeeTextField.getText());
         }                
@@ -697,8 +726,7 @@ public class Calc5 extends javax.swing.JFrame {
             double homeInsuranceDiv12 = homeInsuranceDouble / 12;
             while (counterForWhile < loanTermNumberOfMonths)
             {
-                fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
-                
+
                 
                 if (counterForPercentIncrease >= 12)
                 {
@@ -708,6 +736,7 @@ public class Calc5 extends javax.swing.JFrame {
                     homeInsuranceDiv12 = homeInsuranceDiv12 * ((homeInsuranceIncreasePercentage / 100) + 1);
                     counterForPercentIncrease = 0;
                 }
+                fullAmountPaid = fullAmountPaid + (monthlyPayment) + (pmiInsuranceDouble / 12) + (otherCostsDiv12) + (hoaFeeDiv12) + (PropertyTaxDiv12) + (homeInsuranceDiv12);
                 counterForWhile = counterForWhile + 1;
                 counterForPercentIncrease = counterForPercentIncrease + 1;
             }
@@ -779,6 +808,10 @@ public class Calc5 extends javax.swing.JFrame {
         Helper.consumeNotNumbersAllowDecimalShortLength(otherCostIncreaseTextField, evt);
     }//GEN-LAST:event_otherCostIncreaseTextFieldKeyTyped
 
+    private void calc5HelpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calc5HelpButtonMouseClicked
+        new calc5HelpFrame().setVisible(true);
+    }//GEN-LAST:event_calc5HelpButtonMouseClicked
+
     
     /**
      * @param args the command line arguments
@@ -816,6 +849,7 @@ public class Calc5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton calc5HelpButton;
     private javax.swing.JButton calculateButton;
     private javax.swing.JButton closeButton;
     private javax.swing.JTextField downPaymentTextField;
@@ -842,6 +876,7 @@ public class Calc5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;

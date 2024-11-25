@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -46,9 +48,15 @@ public class Helper {
         return df.format(value);
     }
     
+<<<<<<< HEAD
     public static String formatAPR(double value)
     {
         DecimalFormat df = new DecimalFormat("#,##0.000");
+=======
+    public static String formatDoubleSwapped(double value)
+    {
+        DecimalFormat df = new DecimalFormat("#.##0,00");
+>>>>>>> 1d29c0a08d592c5442132b8a36bb570f9d42f5ab
         return df.format(value);
     }
     
@@ -141,6 +149,7 @@ public class Helper {
                 String currency = tds.get(0).text();
                 Double rate1 = Double.valueOf(tds.get(1).text());
                 dict.put(currency, rate1);
+                System.out.println("dsf");
             }
         }
         
@@ -395,17 +404,17 @@ public class Helper {
     
     // Calc fucuture value of current balance (roth IRA)
     public static double futureCurrent (double current, double r, double years) {
-        double future = current * Math.pow(1 + r, years);
+        Double future = current * Math.pow(1 + r, years);
         return future;
     }
     // Calc the contributions over N years
     public static double futureContributionsCalculator (double C, double r, double N) {
-        double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
+        Double FVC = C * ((Math.pow(1 + r, N) - 1) / r);
         return FVC;
     }
     // Calc the after tax return
     public static double afterTaxReturn (double r, double tr) {
-        double atr = r * (1 - tr);
+        Double atr = r * (1 - tr);
         return atr;
     }
     // Calc value of taxable account
@@ -452,4 +461,11 @@ public class Helper {
         return monthsUntillRentMoreBuy;
     }   
     
+    // need this for chart
+    public static CategoryDataset convertDataset (DefaultCategoryDataset d)
+    {
+        return d;
+    }
+
+
 }

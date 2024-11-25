@@ -1,12 +1,24 @@
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+<<<<<<< HEAD
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.chart.plot.PlotOrientation;
+=======
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+//import org.jfree.chart.ChartFactory;
+//import org.jfree.chart.ChartPanel;
+//import org.jfree.chart.JFreeChart;
+//import org.jfree.data.category.CategoryDataset;
+//import org.jfree.data.category.DefaultCategoryDataset;
+//import org.jfree.chart.plot.PlotOrientation;
+>>>>>>> 1d29c0a08d592c5442132b8a36bb570f9d42f5ab
 
 
 /*
@@ -222,6 +234,12 @@ public class Calc7 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -232,8 +250,8 @@ public class Calc7 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(82, 82, 82))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -252,41 +270,35 @@ public class Calc7 extends javax.swing.JFrame {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)))
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -503,14 +515,14 @@ public class Calc7 extends javax.swing.JFrame {
         // TODO add your handling code here:
         // consume non-numbers and allow one decimal
         // checks each time a key is pressed
-        Helper.consumeNotNumbersAllowDecimal(jTextField4, evt);
+        Helper.consumeNotNumbers(jTextField4, evt);
     }//GEN-LAST:event_jTextField4KeyTyped
 
     private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
         // TODO add your handling code here:
         // consume non-numbers and allow one decimal
         // checks each time a key is pressed
-        Helper.consumeNotNumbersAllowDecimal(jTextField5, evt);
+        Helper.consumeNotNumbers(jTextField5, evt);
     }//GEN-LAST:event_jTextField5KeyTyped
 
     private void jTextField6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyTyped
@@ -549,10 +561,10 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Expected rate of return (into decimal)
         double r;
-        if (Helper.isValidNumber(jTextField3.getText())) {
+        if (Helper.isValidNumber(jTextField3.getText()) && Double.parseDouble(jTextField3.getText()) != 0) {
             r = Double.parseDouble(jTextField3.getText())/100;
         } else {
-            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid Expected Rate of Return. Enter a percentage greater than (0).", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField3.setText("");
             jTextField3.requestFocus();
             return;
@@ -562,16 +574,16 @@ public class Calc7 extends javax.swing.JFrame {
         if (Helper.isValidNumber(jTextField4.getText())) {
             A = Integer.parseInt(jTextField4.getText());
         } else {
-            JOptionPane.showMessageDialog(this, "Starting Age is empty. If you have no current balance enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Starting Age is empty. If you started getting money early enter (0) as lowest value. (Good for you)", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField4.setText("");
             jTextField4.requestFocus();
             return;
         }
         int R;
-        if (Helper.isValidNumber(jTextField5.getText())) {
+        if (Helper.isValidNumber(jTextField5.getText()) && Integer.parseInt(jTextField5.getText()) < 200) {
             R = Integer.parseInt(jTextField5.getText());
         } else {
-            JOptionPane.showMessageDialog(this, "Retirement Age is empty.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Retirement Age is empty or larger than 200.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField5.setText("");
             jTextField5.requestFocus();
             return;
@@ -592,7 +604,7 @@ public class Calc7 extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Marginal tax rate is empty. If you don't want to calculate taxable income enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid marginal tax rate. Enter (0) if no taxable income should be calculated.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField6.setText("");
             jTextField6.requestFocus();
             return;
@@ -604,72 +616,89 @@ public class Calc7 extends javax.swing.JFrame {
         // clears the table if previous calculation was made
         jTable1.setModel(new DefaultTableModel(null, new String[]{"Age", "Roth IRA", "Taxable account"}));
         
-        // Checking to see if max out is selected
-        if (jRadioButton3.isSelected()) {
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R; i++) {
-                if (i < 50) {
-                    Cm = 7000;
-                } else {
-                    Cm = 8000;
-                }
-                int j = i - A;
-                int Ar = A + j;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
-                Double rothr = futurer + pvcr;
-                String rothrs = Helper.formatDouble(rothr);
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                String trackrs = Helper.formatDouble(track);
-                model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + Cm;
-            }
-            // Calculate the Roth
-            Double future = Helper.futureCurrent(PV, r, N);
-            Double pvc = Helper.futureContributionsCalculator(Cm, r, N);
-            Double roth = future + pvc;
-            String roths = Helper.formatDouble(roth);
-            jLabel12.setText(roths);
-            String tracks = Helper.formatDouble(track);
-            jLabel13.setText(tracks);
+        if (PV == 0 && C == 0 && r == 0 && A == 0 && R == 0 && tr == 0) {
+            JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
+            jTextField1.requestFocus();
         } else {
-            // makes sure the limits for contribution are not exceeded
-            if (A < 50 && C > 7000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
-            } else if (A >= 50 && C > 8000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
+            // Checking to see if max out is selected
+            if (jRadioButton3.isSelected()) {
+                //itterates through all  the ages and adds it to table 
+                for (int i = A; i < R; i++) {
+                    if (i < 50) {
+                        Cm = 7000;
+                    } else {
+                        Cm = 8000;
+                    }
+                    int j = i - A;
+                    int Ar = A + j;
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
+                    Double rothr = futurer + pvcr;
+                    if (Double.isNaN(futurer)) {
+                        JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
+                        jTextField1.setText("");
+                        jTextField1.requestFocus();
+                        return;
+                    }
+                    String rothrs = Helper.formatDouble(rothr);
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    // taxable account
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    String trackrs = Helper.formatDouble(track);
+                    model.addRow(new Object[] {Ar,rothrs,trackrs});
+                    track = (track *(1+ATR)) + Cm;
+                }
+                // Calculate the Roth
+                Double future = Helper.futureCurrent(PV, r, N);
+                Double pvc = Helper.futureContributionsCalculator(Cm, r, N);
+                Double roth = future + pvc;
+                String roths = Helper.formatDouble(roth);
+                jLabel12.setText(roths);
+                String tracks = Helper.formatDouble(track);
+                jLabel13.setText(tracks);
+            } else {
+                // makes sure the limits for contribution are not exceeded
+                if (A < 50 && C > 7000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                } else if (A >= 50 && C > 8000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                }
+                //itterates through all  the ages and adds it to table 
+                for (int i = A; i < R; i++) {
+                    int j = i - A;
+                    int Ar = A + j;
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(C, r, j);
+                    Double rothr = futurer + pvcr;
+                    String rothrs = Helper.formatDouble(rothr);
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    // taxable account
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    String trackrs = Helper.formatDouble(track);
+                    model.addRow(new Object[] {Ar,rothrs,trackrs});
+                    track = (track *(1+ATR)) + C;
+                }
+                // Calculate the Roth
+                Double future = Helper.futureCurrent(PV, r, N);
+                Double pvc = Helper.futureContributionsCalculator(C, r, N);
+                Double roth = future + pvc;
+                String roths = Helper.formatDouble(roth);
+                jLabel12.setText(roths);
+                String tracks = Helper.formatDouble(track);
+                jLabel13.setText(tracks);
             }
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R; i++) {
-                int j = i - A;
-                int Ar = A + j;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(C, r, j);
-                Double rothr = futurer + pvcr;
-                String rothrs = Helper.formatDouble(rothr);
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                String trackrs = Helper.formatDouble(track);
-                model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + C;
-            }
-            // Calculate the Roth
-            Double future = Helper.futureCurrent(PV, r, N);
-            Double pvc = Helper.futureContributionsCalculator(C, r, N);
-            Double roth = future + pvc;
-            String roths = Helper.formatDouble(roth);
-            jLabel12.setText(roths);
-            String tracks = Helper.formatDouble(track);
-            jLabel13.setText(tracks);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -726,10 +755,10 @@ public class Calc7 extends javax.swing.JFrame {
         }
         // Expected rate of return (into decimal)
         double r;
-        if (Helper.isValidNumber(jTextField3.getText())) {
+        if (Helper.isValidNumber(jTextField3.getText()) && Double.parseDouble(jTextField3.getText()) != 0) {
             r = Double.parseDouble(jTextField3.getText())/100;
         } else {
-            JOptionPane.showMessageDialog(this, "Expected Rate of Return is empty. If you have no rate of return enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid Expected Rate of Return. Enter a percentage greater than (0).", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField3.setText("");
             jTextField3.requestFocus();
             return;
@@ -769,7 +798,7 @@ public class Calc7 extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Marginal tax rate is empty. If you don't want to calculate taxable income enter (0) as the value.", "Alert", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid marginal tax rate. Enter (0) if no taxable income should be calculated.", "Alert", JOptionPane.WARNING_MESSAGE);
             jTextField6.setText("");
             jTextField6.requestFocus();
             return;
@@ -777,67 +806,85 @@ public class Calc7 extends javax.swing.JFrame {
         // Tracker to iterate the taxable account
         double track = Double.parseDouble(jTextField1.getText());
         // adds max limit
-        double Cm = 0;
-        // clears the table if previous calculation was made
-        jTable1.setModel(new DefaultTableModel(null, new String[]{"Age", "Roth IRA", "Taxable account"}));
+        double Cm;
+        // tracks roth
+        double rothr = PV;
+        // making the chart
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         
-        // Checking to see if max out is selected
-        if (jRadioButton3.isSelected()) {
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R; i++) {
-                if (i < 50) {
-                    Cm = 7000;
-                } else {
-                    Cm = 8000;
-                }
-                int j = i - A;
-                int Ar = A + j;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
-                Double rothr = futurer + pvcr;
-                String rothrs = Helper.formatDouble(rothr);
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                String trackrs = Helper.formatDouble(track);
-                model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + Cm;
-            }
-            // Calculate the Roth
-            Double future = Helper.futureCurrent(PV, r, N);
-            Double pvc = Helper.futureContributionsCalculator(Cm, r, N);
-            Double roth = future + pvc;
-            String roths = Helper.formatDouble(roth);
-            jLabel12.setText(roths);
-            String tracks = Helper.formatDouble(track);
-            jLabel13.setText(tracks);
+        if (PV == 0 && C == 0 && r == 0 && A == 0 && R == 0 && tr == 0) {
+            JOptionPane.showMessageDialog(this, "Nothing to calculate.", "Alert", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField6.setText("");
+            jTextField1.requestFocus();
         } else {
-            // makes sure the limits for contribution are not exceeded
-            if (A < 50 && C > 7000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
-            } else if (A >= 50 && C > 8000) {
-                JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
-                jTextField2.setText("");
-                jTextField2.requestFocus();
-                return;
-            }
-            //itterates through all  the ages and adds it to table 
-            for (int i = A; i < R; i++) {
-                int j = i - A;
-                int Ar = A + j;
-                Double futurer = Helper.futureCurrent(PV, r, j);
-                Double pvcr = Helper.futureContributionsCalculator(C, r, j);
-                Double rothr = futurer + pvcr;
-                String rothrs = Helper.formatDouble(rothr);
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                // taxable account
-                Double ATR = Helper.afterTaxReturn(r, tr);
-                String trackrs = Helper.formatDouble(track);
-                model.addRow(new Object[] {Ar,rothrs,trackrs});
-                track = (track *(1+ATR)) + C;
+            // Checking to see if max out is selected
+            if (jRadioButton3.isSelected()) {
+                //itterates through all  the ages and adds it to table 
+                for (int i = A; i < R + 1; i++) {
+                    if (i < 50) {
+                        Cm = 7000;
+                    } else {
+                        Cm = 8000;
+                    }
+                    int j = i - A;
+                    // roth
+                    // chart
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(Cm, r, j);
+                    rothr = futurer + pvcr;
+                    dataset.addValue(rothr, "Roth IRA", String.valueOf(i));
+                    // taxable account
+                    // chart
+                    dataset.addValue(track, "Taxable Account", String.valueOf(i));
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    track = (track *(1+ATR)) + Cm;
+                }
+                //chart 
+                JFreeChart chart = ChartFactory.createLineChart("Investment Growth", "Year", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+                ChartPanel chartPanel = new ChartPanel (chart);
+                JFrame frame = new JFrame ();
+                frame.setSize(1000, 800);
+                frame.setContentPane(chartPanel);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+
+            } else {
+                // makes sure the limits for contribution are not exceeded
+                if (A < 50 && C > 7000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $7,000 if you are younger than 50.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                } else if (A >= 50 && C > 8000) {
+                    JOptionPane.showMessageDialog(this, "Annual Contribution limit is $8,000.", "Alert", JOptionPane.WARNING_MESSAGE);
+                    jTextField2.setText("");
+                    jTextField2.requestFocus();
+                    return;
+                }
+                //itterates through all  the ages and adds it to chart
+                for (int i = A; i < R + 1; i++) {
+                    int j = i - A;
+                    Double futurer = Helper.futureCurrent(PV, r, j);
+                    Double pvcr = Helper.futureContributionsCalculator(C, r, j);
+                    rothr = futurer + pvcr;
+                    dataset.addValue(rothr, "Roth IRA", String.valueOf(i));
+                    // taxable account
+                    dataset.addValue(track, "Taxable Account", String.valueOf(i));
+                    Double ATR = Helper.afterTaxReturn(r, tr);
+                    track = (track *(1+ATR)) + C;
+                }
+                JFreeChart chart = ChartFactory.createLineChart("Investment Growth", "Year", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+                ChartPanel chartPanel = new ChartPanel (chart);
+                JFrame frame = new JFrame ();
+                frame.setSize(1000, 800);
+                frame.setContentPane(chartPanel);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
