@@ -304,6 +304,13 @@ public class Calc3 extends javax.swing.JFrame {
          if (Helper.isValidNumber(loanTermYearsString))
         {
             loanTermMonths = (Double.parseDouble(loanTermYearsString)) * 12;
+            if (loanTermMonths == 0)
+            {
+                JOptionPane.showMessageDialog(this, "You can not enter a loan term of 0!", "Alert", JOptionPane.WARNING_MESSAGE);
+                jTextField2.requestFocus();
+                jTextField2.setText("");
+                return;
+            }
         }
         
         else
