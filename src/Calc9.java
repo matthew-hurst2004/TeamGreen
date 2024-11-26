@@ -188,12 +188,10 @@ public class Calc9 extends javax.swing.JFrame {
         });
 
         rightOutputLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        rightOutputLabel.setText("Output label");
 
         errorRightLabel.setBackground(new java.awt.Color(0, 0, 0));
         errorRightLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         errorRightLabel.setForeground(new java.awt.Color(255, 255, 255));
-        errorRightLabel.setText("Error Label");
 
         rightOneTimePaymentTextField.setText("0");
         rightOneTimePaymentTextField.setToolTipText("");
@@ -310,7 +308,7 @@ public class Calc9 extends javax.swing.JFrame {
                 .addComponent(errorRightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(leftShowButton)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 101, 0));
@@ -397,7 +395,6 @@ public class Calc9 extends javax.swing.JFrame {
         });
 
         outputWithLoanTermLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        outputWithLoanTermLabel.setText("Output label");
 
         calculateLeftSideButton.setText("Calculate ");
         calculateLeftSideButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -408,7 +405,6 @@ public class Calc9 extends javax.swing.JFrame {
 
         leftErrorLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         leftErrorLabel.setForeground(new java.awt.Color(255, 255, 255));
-        leftErrorLabel.setText("Error label");
 
         jLabel23.setText("Per Year");
 
@@ -807,7 +803,7 @@ public class Calc9 extends javax.swing.JFrame {
                 moneyLeft = moneyLeft * (1 + interestRateDouble) - totalPayment;
                         
                 
-                if (monthsLeft % 12 == 0 && monthsLeft >0){
+                if (monthsLeft % 12 == 0 && monthsLeft > 0 ){
                     moneyLeft = moneyLeft - leftYearlyExtradouble;
                 }
                 
@@ -1231,7 +1227,7 @@ public class Calc9 extends javax.swing.JFrame {
                 
                 oldMoneyLeft = oldMoneyLeft * (1 + interestRateDouble) - monthlyPayment;
                 moneyLeft = moneyLeft * (1 + interestRateDouble) - totalPayment;                
-                if (monthsLeft % 12 == 0 && monthsLeft >0){
+                if (monthsLeft % 12 == 0 && monthsLeft > 0){
                     moneyLeft = moneyLeft - leftYearlyExtradouble;
                 }
                 

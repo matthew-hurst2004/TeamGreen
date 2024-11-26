@@ -288,13 +288,10 @@ public class Calc5 extends javax.swing.JFrame {
         jLabel10.setText("Note: full amount paid includes the down payment and the optional values.");
 
         monthlyPaymentOutputLabel.setForeground(new java.awt.Color(255, 255, 255));
-        monthlyPaymentOutputLabel.setText("Monthly Payment Label");
 
         fullAmountPaidLabel.setForeground(new java.awt.Color(255, 255, 255));
-        fullAmountPaidLabel.setText("Full amout to be paid");
 
         monthlyPayBeforeExtraLabel.setForeground(new java.awt.Color(255, 255, 255));
-        monthlyPayBeforeExtraLabel.setText("payment before optional");
 
         calculateButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         calculateButton.setText("Calculate");
@@ -339,7 +336,7 @@ public class Calc5 extends javax.swing.JFrame {
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mortgage.jpg"))); // NOI18N
 
-        calc5HelpButton.setText("Help");
+        calc5HelpButton.setText("Need Help?");
         calc5HelpButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calc5HelpButtonMouseClicked(evt);
@@ -350,8 +347,6 @@ public class Calc5 extends javax.swing.JFrame {
                 calc5HelpButtonActionPerformed(evt);
             }
         });
-
-        jLabel23.setText("note: commas won't be accepted");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -459,9 +454,10 @@ public class Calc5 extends javax.swing.JFrame {
                                         .addComponent(jLabel22)
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(calc5HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(calc5HelpButton)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
