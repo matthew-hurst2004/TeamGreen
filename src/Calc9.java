@@ -1074,7 +1074,7 @@ public class Calc9 extends javax.swing.JFrame {
 
            
             
-            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Months", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Months", "Unpaid Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
             ChartPanel chartPanel = new ChartPanel (chart);
             JFrame frame = new JFrame ();
             frame.setSize(1000, 800);
@@ -1245,7 +1245,7 @@ public class Calc9 extends javax.swing.JFrame {
             
             
             
-            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Months", "Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart chart = ChartFactory.createLineChart("Mortgage Payoff", "Months", "Unpaid Balance", Helper.convertDataset(dataset), PlotOrientation.VERTICAL, true, true, false);
             ChartPanel chartPanel = new ChartPanel (chart);
             JFrame frame = new JFrame ();
             frame.setSize(1000, 800);
