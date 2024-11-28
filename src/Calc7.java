@@ -737,7 +737,7 @@ public class Calc7 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        //making a graph
+        //making a graph dskjfhdskhfksadhfksdhfkjsadhfkjdsgfkshfkjasfjkdasfdsfas
         double PV;
         if (Helper.isValidNumber(jTextField1.getText())) {
             PV = Double.parseDouble(jTextField1.getText());
