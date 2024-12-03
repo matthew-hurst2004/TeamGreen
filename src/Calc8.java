@@ -187,12 +187,15 @@ public class Calc8 extends javax.swing.JFrame {
     private void doWork()
     {
         String toConvertFrom = jTextField1.getText();
-        char thirdFromLast = toConvertFrom.charAt(toConvertFrom.length() - 3);
-        if (thirdFromLast == ',')
+        char thirdFromLast = 'x';
+        if (toConvertFrom.length() > 2)
         {
-            toConvertFrom = toConvertFrom.replace(',', '.');
+            thirdFromLast = toConvertFrom.charAt(toConvertFrom.length() - 3);
         }
-        
+         if (thirdFromLast == ',')
+         {
+            toConvertFrom = toConvertFrom.replace(',', '.');
+         }
          double result = Double.parseDouble(toConvertFrom);
          if ("United States Dollar".equals(jComboBox1.getSelectedItem()))
          {
@@ -232,7 +235,11 @@ public class Calc8 extends javax.swing.JFrame {
         else if (Arrays.stream(swapped).anyMatch(jComboBox1.getSelectedItem()::equals))
         {
             System.out.println("swapped currency");
-            char thirdFromLast = jTextField1.getText().charAt(jTextField1.getText().length() - 3);
+            char thirdFromLast = 'x';
+            if (jTextField1.getText().length() > 2)
+            {
+                thirdFromLast = jTextField1.getText().charAt(jTextField1.getText().length() - 3);
+            }
             if (thirdFromLast == ',')
             {
                 if (jTextField1.getText().indexOf('.') != -1)
