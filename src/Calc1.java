@@ -17,10 +17,10 @@ public class Calc1 extends javax.swing.JFrame {
      * Creates new form Calc1
      */
     public Calc1() {
-        this.setUndecorated(true);
+//        this.setUndecorated(true);
         initComponents();
         jLabel5.setVisible(false);
-        this.setResizable(false);
+//        this.setResizable(false);
         jLabel7.setForeground(Color.WHITE);
         jTextPane1.setText("This calculator determines the amount needed for a desired down payment percentage given a home price. Enter the price of the home you want,"
                 + "the percentage down payment (NerdWallet reports that the average down payment is 3%-10%) and your closing costs if you have any. Click the button and observe the amount you will need.");
@@ -56,6 +56,7 @@ public class Calc1 extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setForeground(new java.awt.Color(51, 0, 255));
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 101, 0));
 
@@ -110,7 +111,7 @@ public class Calc1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(closeButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(270, 270, 270))
         );
@@ -145,7 +146,7 @@ public class Calc1 extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addGap(12, 12, 12))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -180,14 +181,14 @@ public class Calc1 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))))
+                        .addGap(139, 139, 139))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
