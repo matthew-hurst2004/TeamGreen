@@ -3,10 +3,6 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="66" green="66" red="66" type="rgb"/>
-    </Property>
-    <Property name="undecorated" type="boolean" value="true"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -154,14 +150,13 @@
                                       <Component id="lblPercent2" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="lblYear" min="-2" pref="44" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                                   <Component id="lblNewLoan" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="490" max="-2" attributes="0"/>
